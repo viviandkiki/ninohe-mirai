@@ -4,15 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-
-const NAV_LINKS = [
-  { href: "/powers", label: "6つの力" },
-  { href: "/graph", label: "論点マップ" },
-  { href: "/movement", label: "動き" },
-  { href: "/actors", label: "担い手" },
-  { href: "/methodology", label: "調査方法" },
-  { href: "/about", label: "このサイトについて" },
-];
+import { useLocale } from "@/lib/i18n/context";
+import LanguageToggle from "./LanguageToggle";
 
 function MountainLogo() {
   return (
@@ -27,15 +20,25 @@ function MountainLogo() {
 export default function SiteHeader() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const { t } = useLocale();
+
+  const NAV_LINKS = [
+    { href: "/powers", label: t.nav.powers },
+    { href: "/graph", label: t.nav.graph },
+    { href: "/movement", label: t.nav.movement },
+    { href: "/actors", label: t.nav.actors },
+    { href: "/methodology", label: t.nav.methodology },
+    { href: "/about", label: t.nav.about },
+  ];
 
   return (
     <header className="sticky top-0 z-50 bg-[#f7f4ef] border-b border-[#e5e1da] shadow-sm">
-      <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+      <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between gap-2">
+        <Link href="/" className="flex items-center gap-2.5 hover:opacity-80 transition-opacity shrink-0">
           <MountainLogo />
           <div className="flex flex-col leading-none">
-            <span className="text-sm font-bold text-[#1a1a2e] tracking-tight">ニノヘミライ</span>
-            <span className="text-[10px] text-[#6b7280] hidden sm:block">二戸の資源と未来を見える化する</span>
+            <span className="text-sm font-bold text-[#1a1a2e] tracking-tight">{t.siteName}</span>
+            <span className="text-[10px] text-[#6b7280] hidden sm:block">{t.siteTagline}</span>
           </div>
         </Link>
 
@@ -55,13 +58,16 @@ export default function SiteHeader() {
           ))}
         </nav>
 
-        <button
-          className="md:hidden p-2 rounded text-[#6b7280] hover:bg-[#e5e1da] transition-colors"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="メニュー"
-        >
-          {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        <div className="flex items-center gap-2 shrink-0">
+          <LanguageToggle />
+          <button
+            className="md:hidden p-2 rounded text-[#6b7280] hover:bg-[#e5e1da] transition-colors"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="メニュー"
+          >
+            {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
       {menuOpen && (
