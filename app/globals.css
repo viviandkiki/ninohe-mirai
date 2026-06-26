@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800;900&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -16,7 +16,7 @@
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  font-family: "BIZ UDPGothic", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-family: "M PLUS Rounded 1c", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 18px;
   line-height: 1.9;
   -webkit-font-smoothing: antialiased;
@@ -32,7 +32,7 @@ h2 { font-size: clamp(22px, 3vw, 36px); }
 h3 { font-size: clamp(18px, 2.5vw, 28px); }
 
 h1, h2, h3, .font-serif {
-  font-family: "BIZ UDPGothic", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-family: "M PLUS Rounded 1c", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
   font-weight: 700;
 }
 
@@ -131,14 +131,27 @@ h1, h2, h3, .font-serif {
   width: max-content;
   animation: scrollRight 30s linear infinite;
 }
-.carousel-track-left:hover,
-.carousel-track-right:hover {
-  animation-play-state: paused;
-}
 .carousel-wrapper {
   overflow: hidden;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  cursor: pointer;
+}
+/* ラッパーホバーでトラックのアニメーションを停止（トラック直接ではなくラッパー指定が確実） */
+.carousel-wrapper:hover .carousel-track-left,
+.carousel-wrapper:hover .carousel-track-right {
+  animation-play-state: paused;
+}
+
+/* ===== カルーセルカードホバー ===== */
+.carousel-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+}
+.carousel-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(46,125,140,0.4);
+  border-color: rgba(77,212,231,0.6) !important;
 }
 
 /* ===== ZZZ-style floating particles ===== */
