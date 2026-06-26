@@ -10,7 +10,7 @@ function CouncilChip({ movement }: { movement: Movement }) {
   const isRecent = new Date(movement.date) >= cutoff;
 
   return (
-    <div className="flex-shrink-0 w-80 light-card p-5 carousel-card">
+    <div className="flex-shrink-0 w-80 light-card p-5 carousel-card mr-4">
       <div className="flex flex-wrap items-center gap-2 mb-2">
         <span className="flex items-center gap-1 text-sm text-[#475569]">
           <Calendar className="w-3.5 h-3.5" />
