@@ -13,7 +13,7 @@
     "trend": "down",
     "strengths": ["製造業の安定した雇用基盤", "農林業の担い手育成プログラム", "テレワーク推進による移住者増加"],
     "challenges": ["若年層の流出が続く", "求人倍率の低下傾向", "賃金水準が全国平均を下回る"],
-    "indicatorIds": ["ind-employment-rate", "ind-job-offers", "ind-youth-employment"]
+    "indicatorIds": ["ind-employment-rate", "ind-job-offers", "ind-youth-employment", "ind-population-working-ratio"]
   },
   {
     "id": "power-earn",
@@ -61,7 +61,7 @@
     "trend": "up",
     "strengths": ["地域おこし協力隊の積極活用", "広域連携による行政効率化", "大学・高校との連携プログラム"],
     "challenges": ["関係人口の拡大が課題", "SNS・デジタル発信の強化が必要", "市外との交流イベントの定着"],
-    "indicatorIds": ["ind-migration-in", "ind-volunteer-count", "ind-external-partnerships"]
+    "indicatorIds": ["ind-migration-in", "ind-volunteer-count", "ind-external-partnerships", "ind-wifi-spots", "ind-public-facilities"]
   },
   {
     "id": "power-prepare",
@@ -77,7 +77,7 @@
     "trend": "stable",
     "strengths": ["地域防災計画の整備完了", "消防・救急体制の充実", "公営住宅の整備"],
     "challenges": ["高齢化率が37%超", "医師・看護師不足", "インフラ老朽化への対応費用増大"],
-    "indicatorIds": ["ind-aging-rate", "ind-doctors", "ind-infrastructure-age"]
+    "indicatorIds": ["ind-aging-rate", "ind-doctors", "ind-infrastructure-age", "ind-aed-spots", "ind-care-services"]
   },
   {
     "id": "power-live",
@@ -93,6 +93,6 @@
     "trend": "stable",
     "strengths": ["豊かな自然環境（折爪岳・安比川）", "保育所・子育て支援センターの整備", "食の安全と地産地消"],
     "challenges": ["学校の統廃合が進む", "公共交通の利便性低下", "若年世代の転出が続く"],
-    "indicatorIds": ["ind-child-rate", "ind-school-count", "ind-life-satisfaction"]
+    "indicatorIds": ["ind-population-total", "ind-child-rate", "ind-school-count", "ind-life-satisfaction", "ind-childcare-facilities", "ind-public-toilets"]
   }
 ]

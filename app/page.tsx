@@ -76,12 +76,12 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             <KpiCard
               title="総人口"
-              value="25,680"
+              value="23,837"
               unit="人"
-              change="前年比 −0.9%"
+              change="2023年比 −1,843人"
               changeUp={false}
-              sourceNote="二戸市統計書"
-              updatedAt="2023年"
+              sourceNote="岩手県オープンデータ"
+              updatedAt="2025年3月"
               accentColor="#1e3a5f"
               sourceTier="city"
               geographyScope="二戸市"
@@ -100,14 +100,14 @@ export default function HomePage() {
             />
             <KpiCard
               title="高齢化率"
-              value={aging?.value ?? 37.8}
+              value={aging?.value ?? 40.4}
               unit="%"
-              change="前年比 +1.0pt"
+              change="2023年比 +2.6pt"
               changeUp={false}
-              sourceNote="e-Stat 社会・人口統計体系"
-              updatedAt="2023年"
+              sourceNote="岩手県オープンデータ"
+              updatedAt="2025年3月"
               accentColor="#c9614a"
-              sourceTier="estat"
+              sourceTier="city"
               geographyScope="二戸市"
             />
           </div>

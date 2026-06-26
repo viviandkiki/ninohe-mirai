@@ -63,6 +63,40 @@
     "lastUpdated": "2024年"
   },
   {
+    "id": "ind-wifi-spots",
+    "powerId": "power-connect",
+    "name": "公衆無線LANアクセスポイント数",
+    "value": 18,
+    "unit": "箇所",
+    "year": 2025,
+    "trend": [
+      {"year": 2025, "value": 18}
+    ],
+    "sourceId": "src-ninohe-open-data",
+    "notes": "岩手県オープンデータカタログ掲載。二戸市内の公共エリア設置Wi-Fiスポット数。",
+    "sourceTier": "city",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2025年11月",
+    "lastUpdated": "2025年11月"
+  },
+  {
+    "id": "ind-public-facilities",
+    "powerId": "power-connect",
+    "name": "公共施設数",
+    "value": 165,
+    "unit": "件",
+    "year": 2024,
+    "trend": [
+      {"year": 2024, "value": 165}
+    ],
+    "sourceId": "src-ninohe-open-data",
+    "notes": "岩手県オープンデータカタログ掲載。市が管理する公共施設の一覧数。",
+    "sourceTier": "city",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2024年8月",
+    "lastUpdated": "2024年8月"
+  },
+  {
     "id": "ind-gdp-local",
     "powerId": "power-earn",
     "name": "市内総生産（名目）",
@@ -189,25 +223,44 @@
     "lastUpdated": "2024年"
   },
   {
+    "id": "ind-population-total",
+    "powerId": "power-live",
+    "name": "総人口",
+    "value": 23837,
+    "unit": "人",
+    "year": 2025,
+    "trend": [
+      {"year": 2023, "value": 25680},
+      {"year": 2025, "value": 23837}
+    ],
+    "sourceId": "src-ninohe-open-data",
+    "notes": "岩手県オープンデータカタログ掲載（二戸市_地域_年齢_男女別人口）。2023年値は二戸市統計書（住民基本台帳）。",
+    "sourceTier": "city",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2025年3月31日",
+    "lastUpdated": "2025年9月"
+  },
+  {
     "id": "ind-child-rate",
     "powerId": "power-live",
     "name": "年少人口比率（0〜14歳）",
-    "value": 9.8,
+    "value": 8.6,
     "unit": "%",
-    "year": 2023,
+    "year": 2025,
     "trend": [
       {"year": 2019, "value": 11.2},
       {"year": 2020, "value": 10.8},
       {"year": 2021, "value": 10.4},
       {"year": 2022, "value": 10.1},
-      {"year": 2023, "value": 9.8}
+      {"year": 2023, "value": 9.8},
+      {"year": 2025, "value": 8.6}
     ],
-    "sourceId": "src-ninohe-statistics",
-    "notes": "国勢調査準拠（e-Stat / 社会・人口統計体系）。全国平均（11.4%）を下回り、少子化が顕著。",
-    "sourceTier": "estat",
+    "sourceId": "src-ninohe-open-data",
+    "notes": "岩手県OD（二戸市_地域_年齢_男女別人口）より算出。0〜14歳 2,054人 / 総人口 23,837人。全国平均（11.4%）を大きく下回る。",
+    "sourceTier": "city",
     "geographyScope": "二戸市",
-    "targetPeriod": "2023年10月",
-    "lastUpdated": "2024年3月"
+    "targetPeriod": "2025年3月31日",
+    "lastUpdated": "2025年9月"
   },
   {
     "id": "ind-life-satisfaction",
@@ -252,25 +305,60 @@
     "lastUpdated": "2024年"
   },
   {
+    "id": "ind-childcare-facilities",
+    "powerId": "power-live",
+    "name": "子育て施設数",
+    "value": 31,
+    "unit": "件",
+    "year": 2025,
+    "trend": [
+      {"year": 2025, "value": 31}
+    ],
+    "sourceId": "src-ninohe-open-data",
+    "notes": "岩手県OD（二戸市_子育て施設一覧）。保育所・幼稚園・認定こども園・学童保育・子育て支援センター等を含む。",
+    "sourceTier": "city",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2025年11月",
+    "lastUpdated": "2025年11月"
+  },
+  {
+    "id": "ind-public-toilets",
+    "powerId": "power-live",
+    "name": "公衆トイレ数",
+    "value": 39,
+    "unit": "件",
+    "year": 2025,
+    "trend": [
+      {"year": 2025, "value": 39}
+    ],
+    "sourceId": "src-ninohe-open-data",
+    "notes": "岩手県OD（二戸市_公衆トイレ一覧）。市が管理する公衆トイレの設置箇所数。",
+    "sourceTier": "city",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2025年11月",
+    "lastUpdated": "2025年11月"
+  },
+  {
     "id": "ind-aging-rate",
     "powerId": "power-prepare",
     "name": "高齢化率",
-    "value": 37.8,
+    "value": 40.4,
     "unit": "%",
-    "year": 2023,
+    "year": 2025,
     "trend": [
       {"year": 2019, "value": 34.2},
       {"year": 2020, "value": 35.1},
       {"year": 2021, "value": 35.9},
       {"year": 2022, "value": 36.8},
-      {"year": 2023, "value": 37.8}
+      {"year": 2023, "value": 37.8},
+      {"year": 2025, "value": 40.4}
     ],
-    "sourceId": "src-ninohe-statistics",
-    "notes": "65歳以上人口の割合。e-Stat / 社会・人口統計体系準拠。全国平均（29.1%）を大きく上回る。",
-    "sourceTier": "estat",
+    "sourceId": "src-ninohe-open-data",
+    "notes": "岩手県OD（二戸市_地域_年齢_男女別人口）より算出。65歳以上 9,639人 / 総人口 23,837人。全国平均（29.1%）を大きく上回る。2023年以前はe-Stat/社会・人口統計体系準拠。",
+    "sourceTier": "city",
     "geographyScope": "二戸市",
-    "targetPeriod": "2023年10月",
-    "lastUpdated": "2024年3月"
+    "targetPeriod": "2025年3月31日",
+    "lastUpdated": "2025年9月"
   },
   {
     "id": "ind-doctors",
@@ -315,6 +403,40 @@
     "lastUpdated": "2023年"
   },
   {
+    "id": "ind-aed-spots",
+    "powerId": "power-prepare",
+    "name": "AED設置箇所数",
+    "value": 51,
+    "unit": "箇所",
+    "year": 2024,
+    "trend": [
+      {"year": 2024, "value": 51}
+    ],
+    "sourceId": "src-ninohe-open-data",
+    "notes": "岩手県OD（二戸市_AED設置箇所一覧）。公共施設・学校・民間施設等に設置されたAEDの登録数。",
+    "sourceTier": "city",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2024年9月",
+    "lastUpdated": "2024年9月"
+  },
+  {
+    "id": "ind-care-services",
+    "powerId": "power-prepare",
+    "name": "介護サービス事業所数",
+    "value": 68,
+    "unit": "件",
+    "year": 2025,
+    "trend": [
+      {"year": 2025, "value": 68}
+    ],
+    "sourceId": "src-ninohe-open-data",
+    "notes": "岩手県OD（二戸市_介護サービス事業所一覧）。高齢化率40%超の市内で高齢者支援を担う事業所数。",
+    "sourceTier": "city",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2025年11月",
+    "lastUpdated": "2025年11月"
+  },
+  {
     "id": "ind-employment-rate",
     "powerId": "power-work",
     "name": "就業率",
@@ -355,6 +477,23 @@
     "geographyScope": "岩手県北圏域",
     "targetPeriod": "2023年度",
     "lastUpdated": "2024年"
+  },
+  {
+    "id": "ind-population-working-ratio",
+    "powerId": "power-work",
+    "name": "生産年齢人口比率（15〜64歳）",
+    "value": 50.9,
+    "unit": "%",
+    "year": 2025,
+    "trend": [
+      {"year": 2025, "value": 50.9}
+    ],
+    "sourceId": "src-ninohe-open-data",
+    "notes": "岩手県OD（二戸市_地域_年齢_男女別人口）より算出。15〜64歳 12,144人 / 総人口 23,837人。全国平均（59.4%）を下回る。",
+    "sourceTier": "city",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2025年3月31日",
+    "lastUpdated": "2025年9月"
   },
   {
     "id": "ind-registry-a01",
