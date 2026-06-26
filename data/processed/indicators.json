@@ -7,29 +7,18 @@
     "unit": "件",
     "year": 2024,
     "trend": [
-      {
-        "year": 2020,
-        "value": 10
-      },
-      {
-        "year": 2021,
-        "value": 12
-      },
-      {
-        "year": 2022,
-        "value": 14
-      },
-      {
-        "year": 2023,
-        "value": 16
-      },
-      {
-        "year": 2024,
-        "value": 18
-      }
+      {"year": 2020, "value": 10},
+      {"year": 2021, "value": 12},
+      {"year": 2022, "value": 14},
+      {"year": 2023, "value": 16},
+      {"year": 2024, "value": 18}
     ],
     "sourceId": "src-ninohe-official",
-    "notes": "大学・企業・他自治体との連携協定。"
+    "notes": "大学・企業・他自治体との連携協定。",
+    "sourceTier": "city",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2024年",
+    "lastUpdated": "2024年"
   },
   {
     "id": "ind-migration-in",
@@ -39,29 +28,18 @@
     "unit": "人",
     "year": 2023,
     "trend": [
-      {
-        "year": 2019,
-        "value": 38
-      },
-      {
-        "year": 2020,
-        "value": 42
-      },
-      {
-        "year": 2021,
-        "value": 48
-      },
-      {
-        "year": 2022,
-        "value": 46
-      },
-      {
-        "year": 2023,
-        "value": 64
-      }
+      {"year": 2019, "value": 38},
+      {"year": 2020, "value": 42},
+      {"year": 2021, "value": 48},
+      {"year": 2022, "value": 46},
+      {"year": 2023, "value": 64}
     ],
     "sourceId": "src-ninohe-migration",
-    "notes": "移住相談を経て定住に至った件数。近年増加傾向。"
+    "notes": "移住相談を経て定住に至った件数。近年増加傾向。",
+    "sourceTier": "city",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2023年度",
+    "lastUpdated": "2024年3月"
   },
   {
     "id": "ind-volunteer-count",
@@ -71,29 +49,18 @@
     "unit": "人",
     "year": 2024,
     "trend": [
-      {
-        "year": 2020,
-        "value": 6
-      },
-      {
-        "year": 2021,
-        "value": 7
-      },
-      {
-        "year": 2022,
-        "value": 9
-      },
-      {
-        "year": 2023,
-        "value": 10
-      },
-      {
-        "year": 2024,
-        "value": 12
-      }
+      {"year": 2020, "value": 6},
+      {"year": 2021, "value": 7},
+      {"year": 2022, "value": 9},
+      {"year": 2023, "value": 10},
+      {"year": 2024, "value": 12}
     ],
     "sourceId": "src-ninohe-official",
-    "notes": "総務省制度活用の地域おこし協力隊。活動範囲は農林業・観光・福祉等。"
+    "notes": "総務省制度活用の地域おこし協力隊。活動範囲は農林業・観光・福祉等。",
+    "sourceTier": "city",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2024年",
+    "lastUpdated": "2024年"
   },
   {
     "id": "ind-gdp-local",
@@ -103,29 +70,18 @@
     "unit": "億円",
     "year": 2021,
     "trend": [
-      {
-        "year": 2017,
-        "value": 825
-      },
-      {
-        "year": 2018,
-        "value": 818
-      },
-      {
-        "year": 2019,
-        "value": 812
-      },
-      {
-        "year": 2020,
-        "value": 798
-      },
-      {
-        "year": 2021,
-        "value": 810
-      }
+      {"year": 2017, "value": 825},
+      {"year": 2018, "value": 818},
+      {"year": 2019, "value": 812},
+      {"year": 2020, "value": 798},
+      {"year": 2021, "value": 810}
     ],
     "sourceId": "src-iwate-economy",
-    "notes": "岩手県市町村民所得統計より推計。"
+    "notes": "岩手県市町村民所得統計より推計。",
+    "sourceTier": "estimate",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2021年度",
+    "lastUpdated": "2023年"
   },
   {
     "id": "ind-retail-sales",
@@ -135,29 +91,18 @@
     "unit": "億円",
     "year": 2022,
     "trend": [
-      {
-        "year": 2018,
-        "value": 205
-      },
-      {
-        "year": 2019,
-        "value": 198
-      },
-      {
-        "year": 2020,
-        "value": 190
-      },
-      {
-        "year": 2021,
-        "value": 188
-      },
-      {
-        "year": 2022,
-        "value": 185
-      }
+      {"year": 2018, "value": 205},
+      {"year": 2019, "value": 198},
+      {"year": 2020, "value": 190},
+      {"year": 2021, "value": 188},
+      {"year": 2022, "value": 185}
     ],
     "sourceId": "src-commerce-stats",
-    "notes": "商業統計調査。小売業・卸売業の合計。"
+    "notes": "商業統計調査（経済センサス活動調査）。小売業・卸売業の合計。",
+    "sourceTier": "estat",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2022年",
+    "lastUpdated": "2023年"
   },
   {
     "id": "ind-tourism",
@@ -167,29 +112,18 @@
     "unit": "万人",
     "year": 2023,
     "trend": [
-      {
-        "year": 2019,
-        "value": 68
-      },
-      {
-        "year": 2020,
-        "value": 38
-      },
-      {
-        "year": 2021,
-        "value": 42
-      },
-      {
-        "year": 2022,
-        "value": 49
-      },
-      {
-        "year": 2023,
-        "value": 52
-      }
+      {"year": 2019, "value": 68},
+      {"year": 2020, "value": 38},
+      {"year": 2021, "value": 42},
+      {"year": 2022, "value": 49},
+      {"year": 2023, "value": 52}
     ],
     "sourceId": "src-iwate-tourism",
-    "notes": "岩手県観光統計。コロナ禍からの回復傾向にある。"
+    "notes": "岩手県観光統計。コロナ禍からの回復傾向にある。",
+    "sourceTier": "prefecture",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2023年",
+    "lastUpdated": "2024年"
   },
   {
     "id": "ind-cultural-assets",
@@ -199,29 +133,18 @@
     "unit": "件",
     "year": 2024,
     "trend": [
-      {
-        "year": 2020,
-        "value": 45
-      },
-      {
-        "year": 2021,
-        "value": 46
-      },
-      {
-        "year": 2022,
-        "value": 46
-      },
-      {
-        "year": 2023,
-        "value": 47
-      },
-      {
-        "year": 2024,
-        "value": 48
-      }
+      {"year": 2020, "value": 45},
+      {"year": 2021, "value": 46},
+      {"year": 2022, "value": 46},
+      {"year": 2023, "value": 47},
+      {"year": 2024, "value": 48}
     ],
     "sourceId": "src-ninohe-education",
-    "notes": "国・県・市指定の合計。"
+    "notes": "国・県・市指定の合計。",
+    "sourceTier": "city",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2024年",
+    "lastUpdated": "2024年"
   },
   {
     "id": "ind-traditional-industries",
@@ -231,29 +154,18 @@
     "unit": "人",
     "year": 2023,
     "trend": [
-      {
-        "year": 2019,
-        "value": 168
-      },
-      {
-        "year": 2020,
-        "value": 155
-      },
-      {
-        "year": 2021,
-        "value": 150
-      },
-      {
-        "year": 2022,
-        "value": 145
-      },
-      {
-        "year": 2023,
-        "value": 142
-      }
+      {"year": 2019, "value": 168},
+      {"year": 2020, "value": 155},
+      {"year": 2021, "value": 150},
+      {"year": 2022, "value": 145},
+      {"year": 2023, "value": 142}
     ],
     "sourceId": "src-ninohe-industry",
-    "notes": "南部鉄器・南部蒔絵・漆器等の従事者。後継者育成が急務。"
+    "notes": "浄法寺漆・南部美人関連産業・漆器等の従事者。後継者育成が急務。",
+    "sourceTier": "city",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2023年",
+    "lastUpdated": "2023年"
   },
   {
     "id": "ind-volunteers-festivals",
@@ -263,29 +175,18 @@
     "unit": "人",
     "year": 2023,
     "trend": [
-      {
-        "year": 2019,
-        "value": 4100
-      },
-      {
-        "year": 2020,
-        "value": 1200
-      },
-      {
-        "year": 2021,
-        "value": 1500
-      },
-      {
-        "year": 2022,
-        "value": 2800
-      },
-      {
-        "year": 2023,
-        "value": 3200
-      }
+      {"year": 2019, "value": 4100},
+      {"year": 2020, "value": 1200},
+      {"year": 2021, "value": 1500},
+      {"year": 2022, "value": 2800},
+      {"year": 2023, "value": 3200}
     ],
     "sourceId": "src-ninohe-education",
-    "notes": "主要伝統行事（剣舞・さんさ踊り等）の延べ参加者数。コロナ禍から回復中。"
+    "notes": "主要伝統行事（剣舞・さんさ踊り等）の延べ参加者数。コロナ禍から回復中。",
+    "sourceTier": "city",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2023年",
+    "lastUpdated": "2024年"
   },
   {
     "id": "ind-child-rate",
@@ -295,29 +196,18 @@
     "unit": "%",
     "year": 2023,
     "trend": [
-      {
-        "year": 2019,
-        "value": 11.2
-      },
-      {
-        "year": 2020,
-        "value": 10.8
-      },
-      {
-        "year": 2021,
-        "value": 10.4
-      },
-      {
-        "year": 2022,
-        "value": 10.1
-      },
-      {
-        "year": 2023,
-        "value": 9.8
-      }
+      {"year": 2019, "value": 11.2},
+      {"year": 2020, "value": 10.8},
+      {"year": 2021, "value": 10.4},
+      {"year": 2022, "value": 10.1},
+      {"year": 2023, "value": 9.8}
     ],
     "sourceId": "src-ninohe-statistics",
-    "notes": "全国平均（11.4%）を下回り、少子化が顕著。"
+    "notes": "国勢調査準拠（e-Stat / 社会・人口統計体系）。全国平均（11.4%）を下回り、少子化が顕著。",
+    "sourceTier": "estat",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2023年10月",
+    "lastUpdated": "2024年3月"
   },
   {
     "id": "ind-life-satisfaction",
@@ -327,29 +217,18 @@
     "unit": "%",
     "year": 2023,
     "trend": [
-      {
-        "year": 2019,
-        "value": 71
-      },
-      {
-        "year": 2020,
-        "value": 67
-      },
-      {
-        "year": 2021,
-        "value": 65
-      },
-      {
-        "year": 2022,
-        "value": 66
-      },
-      {
-        "year": 2023,
-        "value": 68
-      }
+      {"year": 2019, "value": 71},
+      {"year": 2020, "value": 67},
+      {"year": 2021, "value": 65},
+      {"year": 2022, "value": 66},
+      {"year": 2023, "value": 68}
     ],
     "sourceId": "src-ninohe-survey",
-    "notes": "市民アンケート。「二戸市に住み続けたい」と回答した割合。"
+    "notes": "二戸市市民意識調査。「二戸市に住み続けたい」と回答した割合。",
+    "sourceTier": "survey",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2023年度",
+    "lastUpdated": "2023年度"
   },
   {
     "id": "ind-school-count",
@@ -359,29 +238,18 @@
     "unit": "校",
     "year": 2024,
     "trend": [
-      {
-        "year": 2020,
-        "value": 18
-      },
-      {
-        "year": 2021,
-        "value": 17
-      },
-      {
-        "year": 2022,
-        "value": 16
-      },
-      {
-        "year": 2023,
-        "value": 15
-      },
-      {
-        "year": 2024,
-        "value": 14
-      }
+      {"year": 2020, "value": 18},
+      {"year": 2021, "value": 17},
+      {"year": 2022, "value": 16},
+      {"year": 2023, "value": 15},
+      {"year": 2024, "value": 14}
     ],
     "sourceId": "src-ninohe-education",
-    "notes": "少子化に伴い統廃合が進む。"
+    "notes": "少子化に伴い統廃合が進む。",
+    "sourceTier": "city",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2024年4月",
+    "lastUpdated": "2024年"
   },
   {
     "id": "ind-aging-rate",
@@ -391,29 +259,18 @@
     "unit": "%",
     "year": 2023,
     "trend": [
-      {
-        "year": 2019,
-        "value": 34.2
-      },
-      {
-        "year": 2020,
-        "value": 35.1
-      },
-      {
-        "year": 2021,
-        "value": 35.9
-      },
-      {
-        "year": 2022,
-        "value": 36.8
-      },
-      {
-        "year": 2023,
-        "value": 37.8
-      }
+      {"year": 2019, "value": 34.2},
+      {"year": 2020, "value": 35.1},
+      {"year": 2021, "value": 35.9},
+      {"year": 2022, "value": 36.8},
+      {"year": 2023, "value": 37.8}
     ],
     "sourceId": "src-ninohe-statistics",
-    "notes": "65歳以上人口の割合。全国平均（29.1%）を大きく上回る。"
+    "notes": "65歳以上人口の割合。e-Stat / 社会・人口統計体系準拠。全国平均（29.1%）を大きく上回る。",
+    "sourceTier": "estat",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2023年10月",
+    "lastUpdated": "2024年3月"
   },
   {
     "id": "ind-doctors",
@@ -423,29 +280,18 @@
     "unit": "人",
     "year": 2022,
     "trend": [
-      {
-        "year": 2018,
-        "value": 198
-      },
-      {
-        "year": 2019,
-        "value": 195
-      },
-      {
-        "year": 2020,
-        "value": 190
-      },
-      {
-        "year": 2021,
-        "value": 186
-      },
-      {
-        "year": 2022,
-        "value": 182
-      }
+      {"year": 2018, "value": 198},
+      {"year": 2019, "value": 195},
+      {"year": 2020, "value": 190},
+      {"year": 2021, "value": 186},
+      {"year": 2022, "value": 182}
     ],
     "sourceId": "src-iwate-medical",
-    "notes": "岩手県医師・歯科医師・薬剤師統計。全国平均は261人。"
+    "notes": "岩手県医師・歯科医師・薬剤師統計。全国平均は261人。",
+    "sourceTier": "prefecture",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2022年12月",
+    "lastUpdated": "2023年"
   },
   {
     "id": "ind-infrastructure-age",
@@ -455,29 +301,18 @@
     "unit": "%",
     "year": 2023,
     "trend": [
-      {
-        "year": 2019,
-        "value": 31
-      },
-      {
-        "year": 2020,
-        "value": 34
-      },
-      {
-        "year": 2021,
-        "value": 37
-      },
-      {
-        "year": 2022,
-        "value": 39
-      },
-      {
-        "year": 2023,
-        "value": 42
-      }
+      {"year": 2019, "value": 31},
+      {"year": 2020, "value": 34},
+      {"year": 2021, "value": 37},
+      {"year": 2022, "value": 39},
+      {"year": 2023, "value": 42}
     ],
     "sourceId": "src-ninohe-infrastructure",
-    "notes": "建設後30年以上経過した市管理橋梁・道路等の割合。"
+    "notes": "建設後30年以上経過した市管理橋梁・道路等の割合。",
+    "sourceTier": "city",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2023年度",
+    "lastUpdated": "2023年"
   },
   {
     "id": "ind-employment-rate",
@@ -487,29 +322,18 @@
     "unit": "%",
     "year": 2022,
     "trend": [
-      {
-        "year": 2018,
-        "value": 59.8
-      },
-      {
-        "year": 2019,
-        "value": 59.2
-      },
-      {
-        "year": 2020,
-        "value": 58.5
-      },
-      {
-        "year": 2021,
-        "value": 58.1
-      },
-      {
-        "year": 2022,
-        "value": 57.8
-      }
+      {"year": 2018, "value": 59.8},
+      {"year": 2019, "value": 59.2},
+      {"year": 2020, "value": 58.5},
+      {"year": 2021, "value": 58.1},
+      {"year": 2022, "value": 57.8}
     ],
     "sourceId": "src-ninohe-statistics",
-    "notes": "国勢調査準拠。15歳以上人口のうち就業者の割合。"
+    "notes": "国勢調査（e-Stat）準拠。15歳以上人口のうち就業者の割合。",
+    "sourceTier": "estat",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2022年",
+    "lastUpdated": "2023年"
   },
   {
     "id": "ind-job-offers",
@@ -519,29 +343,18 @@
     "unit": "倍",
     "year": 2023,
     "trend": [
-      {
-        "year": 2019,
-        "value": 1.21
-      },
-      {
-        "year": 2020,
-        "value": 0.88
-      },
-      {
-        "year": 2021,
-        "value": 0.95
-      },
-      {
-        "year": 2022,
-        "value": 0.98
-      },
-      {
-        "year": 2023,
-        "value": 0.92
-      }
+      {"year": 2019, "value": 1.21},
+      {"year": 2020, "value": 0.88},
+      {"year": 2021, "value": 0.95},
+      {"year": 2022, "value": 0.98},
+      {"year": 2023, "value": 0.92}
     ],
     "sourceId": "src-iwate-labor",
-    "notes": "岩手労働局二戸公共職業安定所管内の数値。"
+    "notes": "岩手労働局二戸公共職業安定所管内の数値。二戸市単独値でなく管内圏域値。",
+    "sourceTier": "prefecture",
+    "geographyScope": "岩手県北圏域",
+    "targetPeriod": "2023年度",
+    "lastUpdated": "2024年"
   },
   {
     "id": "ind-registry-a01",
@@ -551,13 +364,14 @@
     "unit": "件",
     "year": 2026,
     "trend": [
-      {
-        "year": 2026,
-        "value": 7
-      }
+      {"year": 2026, "value": 7}
     ],
     "sourceId": "src-ninohe-open-data",
-    "notes": "台帳ID: A01. 岩手県オープンデータカタログから自動取得。"
+    "notes": "台帳ID: A01. 岩手県オープンデータカタログから自動取得。",
+    "sourceTier": "city",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2026年6月",
+    "lastUpdated": "2026年6月（自動取得）"
   },
   {
     "id": "ind-youth-employment",
@@ -567,28 +381,17 @@
     "unit": "人",
     "year": 2022,
     "trend": [
-      {
-        "year": 2018,
-        "value": 3250
-      },
-      {
-        "year": 2019,
-        "value": 3120
-      },
-      {
-        "year": 2020,
-        "value": 3010
-      },
-      {
-        "year": 2021,
-        "value": 2930
-      },
-      {
-        "year": 2022,
-        "value": 2840
-      }
+      {"year": 2018, "value": 3250},
+      {"year": 2019, "value": 3120},
+      {"year": 2020, "value": 3010},
+      {"year": 2021, "value": 2930},
+      {"year": 2022, "value": 2840}
     ],
     "sourceId": "src-ninohe-statistics",
-    "notes": "国勢調査。若年就業者の減少傾向が続いている。"
+    "notes": "国勢調査（e-Stat）。若年就業者の減少傾向が続いている。",
+    "sourceTier": "estat",
+    "geographyScope": "二戸市",
+    "targetPeriod": "2022年",
+    "lastUpdated": "2023年"
   }
 ]

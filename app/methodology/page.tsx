@@ -62,6 +62,47 @@ export default function MethodologyPage() {
         </div>
       </section>
 
+      {/* データ採用方針 */}
+      <section className="mb-10">
+        <h2 className="text-lg font-bold text-[#111827] mb-4">データ採用方針</h2>
+        <p className="text-base text-[#4b5563] leading-relaxed mb-4">
+          数値の一次根拠は、可能な限り二戸市・岩手県・e-Stat（政府統計）に置きます。
+          国の白書・年次報告書は政策文脈の補助線として活用し、数値カードの主表示には使いません。
+          二戸市単独値がない場合は岩手県北圏域または岩手県全体の値を参考表示し、その旨をバッジで明記します。
+        </p>
+        <div className="space-y-2 mb-6">
+          {[
+            { rank: 1, label: "二戸市公式資料", badge: "市公式ベース", badgeCls: "bg-blue-50 text-blue-800 border-blue-200", desc: "市が公表する統計・報告書・施策資料" },
+            { rank: 2, label: "岩手県公式統計", badge: "県統計ベース", badgeCls: "bg-teal-50 text-teal-800 border-teal-200", desc: "岩手県観光統計・医療統計等" },
+            { rank: 3, label: "e-Stat / 国勢調査 / 経済センサス / 統計GIS", badge: "政府統計ベース", badgeCls: "bg-emerald-50 text-emerald-800 border-emerald-200", desc: "政府統計の総合窓口・社会人口統計体系" },
+            { rank: 4, label: "推計値（岩手県市町村民所得統計等）", badge: "推計値", badgeCls: "bg-amber-50 text-amber-800 border-amber-200", desc: "統計的手法による推計。一次統計と区別して表示" },
+            { rank: 5, label: "市民意識調査・アンケート", badge: "調査値", badgeCls: "bg-purple-50 text-purple-800 border-purple-200", desc: "市民の主観的評価。事実データと区別して表示" },
+            { rank: 6, label: "国の白書・年次報告書", badge: "参考値", badgeCls: "bg-gray-50 text-gray-600 border-gray-200", desc: "解説・政策文脈の補助線。数値カードの主表示には使用しない" },
+          ].map((item) => (
+            <div key={item.rank} className="flex items-start gap-3 bg-white border border-[#e2ddd6] rounded-lg px-4 py-3">
+              <span className="text-xs font-bold text-[#4b5563] mt-0.5 w-4 shrink-0">{item.rank}</span>
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap items-center gap-2 mb-0.5">
+                  <span className="text-sm font-medium text-[#111827]">{item.label}</span>
+                  <span className={`px-1.5 py-0.5 rounded border text-[10px] font-medium ${item.badgeCls}`}>{item.badge}</span>
+                </div>
+                <p className="text-xs text-[#4b5563]">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="bg-[#f5f2ec] border border-[#e2ddd6] rounded-xl p-4">
+          <p className="text-sm font-semibold text-[#111827] mb-2">各指標に付与するメタ情報</p>
+          <ul className="text-sm text-[#4b5563] space-y-1">
+            <li><strong>出典（source）</strong>：データの一次ソース名と組織</li>
+            <li><strong>対象時点（targetPeriod）</strong>：数値が示す時点または期間</li>
+            <li><strong>最終更新（lastUpdated）</strong>：このサイトでの最終確認・更新時点</li>
+            <li><strong>地理的範囲（geographyScope）</strong>：二戸市 / 岩手県北圏域 / 岩手県 / 全国</li>
+            <li><strong>データ種別バッジ</strong>：市公式ベース・政府統計ベース・県統計ベース・推計値・調査値・参考値</li>
+          </ul>
+        </div>
+      </section>
+
       {/* Data pipeline */}
       <section className="mb-10">
         <h2 className="text-sm font-bold text-[#1a1a2e] mb-4">データパイプライン</h2>

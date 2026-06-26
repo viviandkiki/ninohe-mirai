@@ -26,6 +26,10 @@ export const IndicatorSchema = z.object({
   trend: z.array(TrendPointSchema),
   sourceId: z.string(),
   notes: z.string().optional(),
+  sourceTier: z.enum(["city", "estat", "prefecture", "estimate", "survey", "reference"]).optional(),
+  geographyScope: z.enum(["二戸市", "岩手県北圏域", "岩手県", "全国"]).optional(),
+  targetPeriod: z.string().optional(),
+  lastUpdated: z.string().optional(),
 });
 export type Indicator = z.infer<typeof IndicatorSchema>;
 
