@@ -23,7 +23,7 @@ export default function SiteHeader() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-[#0a0e1a]/90 border-b border-[#1e2a3a] backdrop-blur-md shadow-lg">
+    <header className="sticky top-0 z-50 bg-white/95 border-b border-[#e2e8f0] backdrop-blur-md shadow-sm">
       <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between gap-2">
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity shrink-0">
           <Image
@@ -35,8 +35,8 @@ export default function SiteHeader() {
             priority
           />
           <div className="flex flex-col leading-none">
-            <span className="text-base font-bold text-white tracking-tight">{t.siteName}</span>
-            <span className="text-xs text-[#6b7280] hidden sm:block">{t.siteTagline}</span>
+            <span className="text-base font-bold text-[#0f172a] tracking-tight">{t.siteName}</span>
+            <span className="text-xs text-[#475569] hidden sm:block">{t.siteTagline}</span>
           </div>
         </Link>
 
@@ -47,8 +47,8 @@ export default function SiteHeader() {
               href={link.href}
               className={`px-3 py-1.5 rounded text-base transition-colors font-medium ${
                 pathname.startsWith(link.href)
-                  ? "bg-[#2e7d8c]/20 text-[#4dd4e7] font-semibold"
-                  : "text-[#9ca3af] hover:text-white hover:bg-white/5"
+                  ? "bg-[#e0f2f7] text-[#0e6b7c] font-semibold"
+                  : "text-[#475569] hover:text-[#0f172a] hover:bg-[#f1f5f9]"
               }`}
             >
               {link.label}
@@ -59,7 +59,7 @@ export default function SiteHeader() {
         <div className="flex items-center gap-2 shrink-0">
           <LanguageToggle />
           <button
-            className="md:hidden p-2 rounded text-[#9ca3af] hover:bg-white/10 transition-colors"
+            className="md:hidden p-2 rounded text-[#475569] hover:bg-[#f1f5f9] transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="メニュー"
           >
@@ -69,7 +69,7 @@ export default function SiteHeader() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden border-t border-[#1e2a3a] bg-[#0a0e1a]/95 backdrop-blur-md">
+        <div className="md:hidden border-t border-[#e2e8f0] bg-white">
           <nav className="max-w-5xl mx-auto px-4 py-3 flex flex-col gap-1">
             {NAV_LINKS.map((link) => (
               <Link
@@ -77,8 +77,8 @@ export default function SiteHeader() {
                 href={link.href}
                 className={`px-3 py-3 rounded text-base font-medium transition-colors ${
                   pathname.startsWith(link.href)
-                    ? "bg-[#2e7d8c]/20 text-[#4dd4e7]"
-                    : "text-[#9ca3af] hover:text-white hover:bg-white/5"
+                    ? "bg-[#e0f2f7] text-[#0e6b7c]"
+                    : "text-[#475569] hover:text-[#0f172a] hover:bg-[#f1f5f9]"
                 }`}
                 onClick={() => setMenuOpen(false)}
               >

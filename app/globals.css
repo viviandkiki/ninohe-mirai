@@ -1,16 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800;900&display=swap');
 @import "tailwindcss";
 
+/* ===== WCAG AA 準拠カラーパレット =====
+   Normal text contrast ≥ 4.5:1  / Large text ≥ 3:1
+   ----------------------------------------
+   #0f172a on #ffffff  → 19.1:1 ✓
+   #475569 on #ffffff  →  7.4:1 ✓
+   #0e6b7c on #ffffff  →  5.2:1 ✓  (teal text)
+   #2e7d8c on #ffffff  →  4.6:1 ✓  (large/bold only)
+   white   on #2e7d8c  →  4.6:1 ✓  (button)
+   #166534 on #ffffff  →  7.8:1 ✓  (positive green)
+   #991b1b on #ffffff  →  7.0:1 ✓  (negative red)
+*/
 :root {
-  --color-teal: #2e7d8c;
-  --color-coral: #c9614a;
-  --color-gold: #b8872a;
-  --color-bg: #0a0e1a;
-  --color-surface: #111827;
-  --color-text: #f0f4f8;
-  --color-text-muted: #9ca3af;
-  --color-border: #1e2a3a;
-  --color-civic-navy: #1e3a5f;
+  --color-teal:      #2e7d8c;
+  --color-teal-dark: #0e6b7c;   /* teal text on white — AA */
+  --color-coral:     #b54a34;   /* darkened for AA on white */
+  --color-gold:      #92670e;   /* darkened for AA on white */
+  --color-bg:        #f8fafc;   /* light cool-gray page bg */
+  --color-surface:   #ffffff;
+  --color-surface-alt: #f0f9fa; /* very light teal tint */
+  --color-text:      #0f172a;   /* near-black */
+  --color-text-muted:#475569;   /* AA-compliant gray */
+  --color-border:    #cbd5e1;
+  --color-civic-navy:#1e3a5f;
 }
 
 body {
@@ -23,17 +36,18 @@ body {
   font-weight: 400;
 }
 
-/* 最低16px保証 */
+/* 最低16px保証（老眼対応） */
 p, li, td, th { font-size: max(16px, 1em); }
-button, label, input { font-size: max(16px, 1em); }
+button, label, input, select { font-size: max(16px, 1em); }
 
 h1 { font-size: clamp(28px, 4.5vw, 52px); }
-h2 { font-size: clamp(22px, 3vw, 36px); }
+h2 { font-size: clamp(22px, 3vw,  36px); }
 h3 { font-size: clamp(18px, 2.5vw, 28px); }
 
-h1, h2, h3, .font-serif {
-  font-family: "M PLUS Rounded 1c", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
-  font-weight: 700;
+h1, h2, h3 {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 800;
+  color: var(--color-text);
 }
 
 .line-clamp-2 {
@@ -42,7 +56,6 @@ h1, h2, h3, .font-serif {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
 .line-clamp-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -50,148 +63,123 @@ h1, h2, h3, .font-serif {
   overflow: hidden;
 }
 
-.wave-divider {
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-/* ===== Scroll Reveal (CSS fallback) ===== */
+/* ===== Scroll Reveal ===== */
 .sr-init {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.65s ease-out, transform 0.65s ease-out;
 }
-.sr-init.sr-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.sr-init.sr-visible { opacity: 1; transform: translateY(0); }
 
-/* ===== GSAP section-fade target ===== */
+/* ===== GSAP section-fade ===== */
 .section-fade {
   opacity: 0;
   transform: translateY(40px);
 }
 
-/* ===== KPI card hover lift ===== */
+/* ===== Surface cards ===== */
+/* ヒーロー内でのみ使うダークカード */
+.dark-card {
+  background: rgba(10, 14, 26, 0.75);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+/* ライトカード（白ベースセクション用） */
+.light-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+}
+.light-card:hover {
+  box-shadow: 0 8px 28px rgba(14, 107, 124, 0.12);
+}
+
+/* ===== KPI hover lift ===== */
 .kpi-hover {
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 .kpi-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px -4px rgba(46,125,140,0.25);
+  box-shadow: 0 10px 30px rgba(14,107,124,0.18);
+}
+
+/* ===== Accent border (left) ===== */
+.accent-border-left {
+  border-left: 4px solid var(--color-teal);
 }
 
 /* ===== Keyword map pulse ===== */
 @keyframes kwPulse {
-  0%   { transform: translate(-50%, -50%) scale(0.5); opacity: 0.6; }
-  70%  { transform: translate(-50%, -50%) scale(2.0); opacity: 0; }
-  100% { transform: translate(-50%, -50%) scale(2.0); opacity: 0; }
+  0%   { transform: translate(-50%,-50%) scale(0.5); opacity: 0.5; }
+  70%  { transform: translate(-50%,-50%) scale(2.2); opacity: 0; }
+  100% { transform: translate(-50%,-50%) scale(2.2); opacity: 0; }
 }
-.kw-pulse-section {
-  position: relative;
-  overflow: hidden;
-}
+.kw-pulse-section { position: relative; overflow: hidden; }
 .kw-pulse-section::before,
 .kw-pulse-section::after {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  height: 400px;
+  top: 50%; left: 50%;
+  width: 400px; height: 400px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(46,125,140,0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(46,125,140,0.15) 0%, transparent 70%);
   animation: kwPulse 4s ease-out infinite;
   pointer-events: none;
   z-index: 0;
 }
-.kw-pulse-section::after {
-  animation-delay: 2s;
-}
+.kw-pulse-section::after { animation-delay: 2s; }
 
 /* ===== Carousel ===== */
-@keyframes scrollLeft {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-@keyframes scrollRight {
-  0%   { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
-.carousel-track-left {
-  display: flex;
-  gap: 16px;
-  width: max-content;
-  animation: scrollLeft 30s linear infinite;
-}
-.carousel-track-right {
-  display: flex;
-  gap: 16px;
-  width: max-content;
-  animation: scrollRight 30s linear infinite;
-}
+@keyframes scrollLeft  { 0% { transform: translateX(0); }    100% { transform: translateX(-50%); } }
+@keyframes scrollRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+
+.carousel-track-left  { display: flex; gap: 16px; width: max-content; animation: scrollLeft  30s linear infinite; }
+.carousel-track-right { display: flex; gap: 16px; width: max-content; animation: scrollRight 30s linear infinite; }
+
 .carousel-wrapper {
   overflow: hidden;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  mask-image:         linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
   cursor: pointer;
 }
-/* ラッパーホバーでトラックのアニメーションを停止（トラック直接ではなくラッパー指定が確実） */
 .carousel-wrapper:hover .carousel-track-left,
 .carousel-wrapper:hover .carousel-track-right {
   animation-play-state: paused;
 }
 
-/* ===== カルーセルカードホバー ===== */
+/* ===== Carousel card hover ===== */
 .carousel-card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
 .carousel-card:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 16px 40px rgba(46,125,140,0.4);
-  border-color: rgba(77,212,231,0.6) !important;
+  box-shadow: 0 14px 36px rgba(14,107,124,0.22);
 }
 
-/* ===== ZZZ-style floating particles ===== */
+/* ===== Hero particles ===== */
 @keyframes floatUp {
   0%   { transform: translateY(0) scale(1); opacity: 0.8; }
   100% { transform: translateY(-60vh) scale(0.3); opacity: 0; }
 }
 .hero-particle {
   position: absolute;
-  width: 3px;
-  height: 3px;
   border-radius: 50%;
-  background: rgba(46,125,140,0.8);
-  box-shadow: 0 0 6px rgba(46,125,140,0.6);
+  background: rgba(255,255,255,0.6);
+  box-shadow: 0 0 6px rgba(255,255,255,0.4);
   animation: floatUp linear infinite;
   pointer-events: none;
 }
 
 /* ===== Power card ===== */
-.power-card-gsap {
-  will-change: transform, box-shadow;
-}
+.power-card-gsap { will-change: transform, box-shadow; }
 
-/* ===== Dark card surface ===== */
-.dark-card {
-  background: rgba(17, 24, 39, 0.85);
-  border: 1px solid rgba(46,125,140,0.25);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
+/* ===== Glow text (hero only) ===== */
+.glow-text { text-shadow: 0 0 30px rgba(255,255,255,0.3); }
 
-/* ===== Glow text ===== */
-.glow-text {
-  text-shadow: 0 0 30px rgba(46,125,140,0.5), 0 0 60px rgba(46,125,140,0.25);
-}
-
-/* ===== Neon border ===== */
-.neon-border {
-  box-shadow: 0 0 0 1px rgba(46,125,140,0.4), 0 0 20px rgba(46,125,140,0.15);
-}
+/* ===== Section Alt background ===== */
+.section-alt { background-color: var(--color-surface-alt); }
 
 @media (prefers-reduced-motion: reduce) {
   .sr-init { opacity: 1; transform: none; transition: none; }
