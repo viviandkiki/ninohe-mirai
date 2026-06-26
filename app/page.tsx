@@ -6,7 +6,6 @@ import {
   getPowerBySlug,
   indicators,
   movements,
-  actors,
 } from "@/lib/data";
 import PowerCard from "@/components/PowerCard";
 import MovementCard from "@/components/MovementCard";
@@ -17,6 +16,9 @@ import Link from "next/link";
 import { ArrowRight, MapPin, Calendar, ExternalLink, Network } from "lucide-react";
 import { buildGraphData } from "@/lib/graph-data";
 import GraphViewWrapper from "@/components/GraphViewWrapper";
+import HeroCanvas from "@/components/HeroCanvas";
+import AnimatedCounter from "@/components/AnimatedCounter";
+import ScrollReveal from "@/components/ScrollReveal";
 
 function UpdateBadgeInline({ date }: { date: string }) {
   const d = new Date(date);
@@ -49,8 +51,9 @@ export default function HomePage() {
   return (
     <>
       {/* ===== Section 1: ファーストビュー ===== */}
-      <section className="bg-[#f5f2ec] border-b border-[#e2ddd6]">
-        <div className="max-w-5xl mx-auto px-4 py-12 sm:py-16">
+      <section className="relative hero-gradient border-b border-[#e2ddd6] overflow-hidden">
+        <HeroCanvas />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 py-14 sm:py-20">
           {latestUpdate && (
             <div className="mb-5">
               <UpdateBadgeInline date={latestUpdate.date} />
@@ -74,42 +77,34 @@ export default function HomePage() {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-            <KpiCard
-              title="総人口"
-              value="23,837"
-              unit="人"
-              change="2023年比 −1,843人"
-              changeUp={false}
-              sourceNote="岩手県オープンデータ"
-              updatedAt="2025年3月"
-              accentColor="#1e3a5f"
-              sourceTier="city"
-              geographyScope="二戸市"
-            />
-            <KpiCard
-              title="移住定住者数"
-              value={migration?.value ?? 64}
-              unit="人"
-              change="前年比 +18人"
-              changeUp={true}
-              sourceNote="二戸市移住定住実績"
-              updatedAt="2023年"
-              accentColor="#2e7d8c"
-              sourceTier="city"
-              geographyScope="二戸市"
-            />
-            <KpiCard
-              title="高齢化率"
-              value={aging?.value ?? 40.4}
-              unit="%"
-              change="2023年比 +2.6pt"
-              changeUp={false}
-              sourceNote="岩手県オープンデータ"
-              updatedAt="2025年3月"
-              accentColor="#c9614a"
-              sourceTier="city"
-              geographyScope="二戸市"
-            />
+            {/* Hero KPI — large animated numbers */}
+            <div className="kpi-hover bg-white/70 backdrop-blur-sm border border-[#e2ddd6] rounded-2xl p-5 shadow-sm">
+              <p className="text-xs font-medium text-[#6b7280] mb-1 uppercase tracking-wider">総人口</p>
+              <p className="text-4xl font-bold text-[#1e3a5f] tabular-nums leading-none mb-1">
+                <AnimatedCounter target={23837} duration={1400} />
+                <span className="text-lg font-medium ml-1 text-[#4b5563]">人</span>
+              </p>
+              <p className="text-xs text-[#c9614a] font-medium">2023年比 −1,843人</p>
+              <p className="text-[10px] text-[#9ca3af] mt-1">岩手県オープンデータ 2025年3月</p>
+            </div>
+            <div className="kpi-hover bg-white/70 backdrop-blur-sm border border-[#e2ddd6] rounded-2xl p-5 shadow-sm">
+              <p className="text-xs font-medium text-[#6b7280] mb-1 uppercase tracking-wider">移住定住者数</p>
+              <p className="text-4xl font-bold text-[#2e7d8c] tabular-nums leading-none mb-1">
+                <AnimatedCounter target={migration?.value ?? 64} duration={1000} />
+                <span className="text-lg font-medium ml-1 text-[#4b5563]">人</span>
+              </p>
+              <p className="text-xs text-[#2d7a5f] font-medium">前年比 +18人</p>
+              <p className="text-[10px] text-[#9ca3af] mt-1">二戸市移住定住実績 2023年</p>
+            </div>
+            <div className="kpi-hover bg-white/70 backdrop-blur-sm border border-[#e2ddd6] rounded-2xl p-5 shadow-sm">
+              <p className="text-xs font-medium text-[#6b7280] mb-1 uppercase tracking-wider">高齢化率</p>
+              <p className="text-4xl font-bold text-[#c9614a] tabular-nums leading-none mb-1">
+                <AnimatedCounter target={aging?.value ?? 40.4} duration={1200} decimals={1} />
+                <span className="text-lg font-medium ml-1 text-[#4b5563]">%</span>
+              </p>
+              <p className="text-xs text-[#c9614a] font-medium">2023年比 +2.6pt</p>
+              <p className="text-[10px] text-[#9ca3af] mt-1">岩手県オープンデータ 2025年3月</p>
+            </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3">
@@ -133,6 +128,7 @@ export default function HomePage() {
 
       <PageContainer>
         {/* ===== Section 2: 市の全体像（6テーマ） ===== */}
+        <ScrollReveal>
         <section className="mb-16">
           <div className="flex items-center justify-between mb-3">
             <SectionHeading title="市の現状：6つのテーマ" subtitle="公開データから見た二戸の今" />
@@ -148,13 +144,17 @@ export default function HomePage() {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {powers.map((power) => (
-              <PowerCard key={power.id} power={power} />
+            {powers.map((power, idx) => (
+              <ScrollReveal key={power.id} delay={idx * 80}>
+                <PowerCard power={power} />
+              </ScrollReveal>
             ))}
           </div>
         </section>
+        </ScrollReveal>
 
         {/* ===== Section 3: 主要指標 ===== */}
+        <ScrollReveal delay={100}>
         <section className="mb-16">
           <div className="mb-3">
             <SectionHeading title="主要指標" subtitle="数値で見る二戸の現在地" />
@@ -265,8 +265,10 @@ export default function HomePage() {
             ※ 最新の数値は各出典元でご確認ください。このサイトの指標は定期更新中です。
           </p>
         </section>
+        </ScrollReveal>
 
         {/* ===== Section 4: 最近の議会 ===== */}
+        <ScrollReveal delay={80}>
         <section className="mb-16">
           <div className="flex items-center justify-between mb-3">
             <SectionHeading title="最近の議会" subtitle="市議会の最新セッション" />
@@ -356,8 +358,10 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        </ScrollReveal>
 
         {/* ===== Section 5: 論点マップ プレビュー ===== */}
+        <ScrollReveal delay={60}>
         <section className="mb-16">
           <div className="flex items-center justify-between mb-3">
             <SectionHeading title="論点マップ" subtitle="テーマと担い手のつながり" />
@@ -380,8 +384,10 @@ export default function HomePage() {
           </div>
           <GraphViewWrapper data={graphData} height={420} />
         </section>
+        </ScrollReveal>
 
         {/* ===== About ===== */}
+        <ScrollReveal delay={40}>
         <section className="bg-white border border-[#e2ddd6] rounded-xl p-6 mb-8">
           <h2 className="text-lg font-bold text-[#111827] mb-3">
             ニノヘミライとは
@@ -400,6 +406,7 @@ export default function HomePage() {
             </Link>
           </div>
         </section>
+        </ScrollReveal>
       </PageContainer>
     </>
   );

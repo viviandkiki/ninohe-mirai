@@ -44,3 +44,46 @@ h1, h2, h3, .font-serif {
   overflow: hidden;
   line-height: 0;
 }
+
+/* ===== Scroll Reveal ===== */
+.sr-init {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+}
+.sr-init.sr-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Hero animated gradient background ===== */
+@keyframes heroShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.hero-gradient {
+  background: linear-gradient(135deg, #f5f2ec 0%, #edf2f5 40%, #f0ece4 70%, #f5f2ec 100%);
+  background-size: 300% 300%;
+  animation: heroShift 20s ease infinite;
+}
+
+/* ===== KPI card hover lift ===== */
+.kpi-hover {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.kpi-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px -4px rgba(0,0,0,0.10);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sr-init {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero-gradient {
+    animation: none;
+  }
+}
