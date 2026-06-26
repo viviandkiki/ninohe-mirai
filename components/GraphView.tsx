@@ -42,11 +42,15 @@ const isActorType = (t: string) => t.startsWith("actor-");
 export default function GraphView({
   data,
   filterOptions = [{ key: "all", label: "すべて" }],
+  fullscreen = false,
+  height,
 }: {
   data: GraphData;
   height?: number;
   filterOptions?: FilterOption[];
+  fullscreen?: boolean;
 }) {
+  const svgHeight = fullscreen ? "calc(100vh - 200px)" : (height ?? 560);
   const svgRef = useRef<SVGSVGElement>(null);
   const simNodesRef = useRef<SimNode[]>([]);
   const simLinksRef = useRef<SimLink[]>([]);
@@ -310,7 +314,7 @@ export default function GraphView({
             ref={svgRef}
             viewBox={`0 0 ${W} ${H}`}
             className="w-full block"
-            style={{ height: 560, cursor: isPanningRef.current ? "grabbing" : "grab", touchAction: "none" }}
+            style={{ height: svgHeight, cursor: isPanningRef.current ? "grabbing" : "grab", touchAction: "none" }}
             onWheel={handleWheel}
             onPointerDown={onSvgPointerDown}
             onPointerMove={onPointerMove}

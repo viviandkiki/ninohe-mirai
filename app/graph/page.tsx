@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import PageContainer from "@/components/PageContainer";
-import SectionHeading from "@/components/SectionHeading";
 import { buildKeywordGraphData, CATEGORY_COLORS, KEYWORD_CATEGORIES } from "@/lib/keyword-graph";
 import GraphViewWrapper from "@/components/GraphViewWrapper";
+import Link from "next/link";
+import { ArrowLeft, Network } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "キーワードマップ",
@@ -19,32 +19,46 @@ export default function GraphPage() {
   const graphData = buildKeywordGraphData();
 
   return (
-    <PageContainer>
-      <div className="mb-8">
-        <p className="text-xs font-semibold text-[#2e7d8c] uppercase tracking-widest mb-1">
-          KEYWORD MAP
-        </p>
-        <SectionHeading title="キーワードマップ" subtitle="二戸をひもとく言葉のネットワーク" />
-        <p className="text-base text-[#4b5563] leading-relaxed max-w-2xl">
-          漆・九戸城・里山・南部美人など、二戸にまつわるキーワードと担い手（行政・団体・NPO）が有機的につながります。
-          線の太さは関与の強さ、丸の大きさは接続数を表します。ノードをクリックするとつながりが表示されます。
+    <div className="min-h-screen bg-[#0a0e1a] flex flex-col">
+      {/* 全画面ヘッダー */}
+      <div className="flex items-center justify-between px-4 py-4 border-b border-[#1e2a3a] bg-[#0a0e1a]/90 backdrop-blur-md">
+        <div className="flex items-center gap-3">
+          <Link
+            href="/"
+            className="flex items-center gap-1.5 text-base text-[#9ca3af] hover:text-white font-medium transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            トップに戻る
+          </Link>
+          <span className="text-[#1e2a3a]">|</span>
+          <div className="flex items-center gap-2">
+            <Network className="w-5 h-5 text-[#2e7d8c]" />
+            <div>
+              <span className="text-xs text-[#2e7d8c] font-bold uppercase tracking-widest block">KEYWORD MAP</span>
+              <span className="text-lg font-black text-white leading-none">キーワードマップ</span>
+            </div>
+          </div>
+        </div>
+        <p className="hidden md:block text-sm text-[#6b7280] max-w-sm">
+          漆・九戸城・里山・南部美人など、二戸のキーワードと担い手のネットワーク
         </p>
       </div>
 
-      <GraphViewWrapper
-        data={graphData}
-        filterOptions={FILTER_OPTIONS}
-      />
+      {/* 全画面グラフ */}
+      <div className="flex-1 relative" style={{ minHeight: "calc(100vh - 130px)" }}>
+        <GraphViewWrapper
+          data={graphData}
+          filterOptions={FILTER_OPTIONS}
+          fullscreen
+        />
+      </div>
 
-      <div className="mt-8 bg-white border border-[#e2ddd6] rounded-xl p-5">
-        <h2 className="text-base font-bold text-[#111827] mb-2">このマップについて</h2>
-        <p className="text-sm text-[#4b5563] leading-relaxed">
-          二戸の産業・歴史・自然・文化・くらしに関するキーワードを収録しています。
-          キーワード間の線は「関連性」を示しています。
-          データは <code className="bg-[#f5f2ec] px-1 rounded text-xs">data/keywords.json</code> で管理しており、
-          新しいキーワードを追加するとグラフに自動反映されます。
+      {/* フッター注記 */}
+      <div className="px-4 py-3 border-t border-[#1e2a3a] bg-[#050810]">
+        <p className="text-sm text-[#4b5563] text-center">
+          線の太さ=関与の強さ ・ 丸の大きさ=接続数 ・ ドラッグで移動 ・ スクロールでズーム ・ ダブルクリックで固定解除
         </p>
       </div>
-    </PageContainer>
+    </div>
   );
 }
