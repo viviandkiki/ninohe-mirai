@@ -1,28 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
 @import "tailwindcss";
 
 :root {
   --color-teal: #2e7d8c;
   --color-coral: #c9614a;
   --color-gold: #b8872a;
-  --color-bg: #f5f2ec;
-  --color-surface: #ffffff;
-  --color-text: #111827;
-  --color-text-muted: #4b5563;
-  --color-border: #e2ddd6;
+  --color-bg: #0a0e1a;
+  --color-surface: #111827;
+  --color-text: #f0f4f8;
+  --color-text-muted: #9ca3af;
+  --color-border: #1e2a3a;
   --color-civic-navy: #1e3a5f;
 }
 
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 17px;
-  line-height: 1.85;
+  font-family: "BIZ UDPGothic", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 18px;
+  line-height: 1.9;
   -webkit-font-smoothing: antialiased;
+  font-weight: 400;
 }
 
+/* 最低16px保証 */
+p, li, td, th { font-size: max(16px, 1em); }
+button, label, input { font-size: max(16px, 1em); }
+
+h1 { font-size: clamp(28px, 4.5vw, 52px); }
+h2 { font-size: clamp(22px, 3vw, 36px); }
+h3 { font-size: clamp(18px, 2.5vw, 28px); }
+
 h1, h2, h3, .font-serif {
-  font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-family: "BIZ UDPGothic", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-weight: 700;
 }
 
 .line-clamp-2 {
@@ -45,7 +56,7 @@ h1, h2, h3, .font-serif {
   line-height: 0;
 }
 
-/* ===== Scroll Reveal ===== */
+/* ===== Scroll Reveal (CSS fallback) ===== */
 .sr-init {
   opacity: 0;
   transform: translateY(20px);
@@ -56,16 +67,10 @@ h1, h2, h3, .font-serif {
   transform: translateY(0);
 }
 
-/* ===== Hero animated gradient background ===== */
-@keyframes heroShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-.hero-gradient {
-  background: linear-gradient(135deg, #f5f2ec 0%, #edf2f5 40%, #f0ece4 70%, #f5f2ec 100%);
-  background-size: 300% 300%;
-  animation: heroShift 20s ease infinite;
+/* ===== GSAP section-fade target ===== */
+.section-fade {
+  opacity: 0;
+  transform: translateY(40px);
 }
 
 /* ===== KPI card hover lift ===== */
@@ -73,17 +78,110 @@ h1, h2, h3, .font-serif {
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 .kpi-hover:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px -4px rgba(0,0,0,0.10);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -4px rgba(46,125,140,0.25);
+}
+
+/* ===== Keyword map pulse ===== */
+@keyframes kwPulse {
+  0%   { transform: translate(-50%, -50%) scale(0.5); opacity: 0.6; }
+  70%  { transform: translate(-50%, -50%) scale(2.0); opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(2.0); opacity: 0; }
+}
+.kw-pulse-section {
+  position: relative;
+  overflow: hidden;
+}
+.kw-pulse-section::before,
+.kw-pulse-section::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(46,125,140,0.2) 0%, transparent 70%);
+  animation: kwPulse 4s ease-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+.kw-pulse-section::after {
+  animation-delay: 2s;
+}
+
+/* ===== Carousel ===== */
+@keyframes scrollLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes scrollRight {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.carousel-track-left {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: scrollLeft 30s linear infinite;
+}
+.carousel-track-right {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: scrollRight 30s linear infinite;
+}
+.carousel-track-left:hover,
+.carousel-track-right:hover {
+  animation-play-state: paused;
+}
+.carousel-wrapper {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+
+/* ===== ZZZ-style floating particles ===== */
+@keyframes floatUp {
+  0%   { transform: translateY(0) scale(1); opacity: 0.8; }
+  100% { transform: translateY(-60vh) scale(0.3); opacity: 0; }
+}
+.hero-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(46,125,140,0.8);
+  box-shadow: 0 0 6px rgba(46,125,140,0.6);
+  animation: floatUp linear infinite;
+  pointer-events: none;
+}
+
+/* ===== Power card ===== */
+.power-card-gsap {
+  will-change: transform, box-shadow;
+}
+
+/* ===== Dark card surface ===== */
+.dark-card {
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid rgba(46,125,140,0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ===== Glow text ===== */
+.glow-text {
+  text-shadow: 0 0 30px rgba(46,125,140,0.5), 0 0 60px rgba(46,125,140,0.25);
+}
+
+/* ===== Neon border ===== */
+.neon-border {
+  box-shadow: 0 0 0 1px rgba(46,125,140,0.4), 0 0 20px rgba(46,125,140,0.15);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .sr-init {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-  .hero-gradient {
-    animation: none;
-  }
+  .sr-init { opacity: 1; transform: none; transition: none; }
+  .carousel-track-left, .carousel-track-right { animation: none; }
+  .kw-pulse-section::before, .kw-pulse-section::after { animation: none; }
 }

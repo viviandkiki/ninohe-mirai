@@ -19,14 +19,13 @@ function MountainLogoSmall() {
 
 export default function SiteFooter() {
   return (
-    <footer className="mt-auto border-t border-[#e2ddd6] bg-[#1e3a5f] text-white">
+    <footer className="mt-auto border-t border-[#1e2a3a] bg-[#050810] text-white">
       <div className="max-w-5xl mx-auto px-4 py-10">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
           {/* About */}
           <div>
             <div className="flex items-center gap-2 font-bold mb-3">
-              <MountainLogoSmall />
-              <span className="text-base text-white">ニノヘミライ</span>
+              <span className="text-xl text-white font-black tracking-tight">ニノヘミライ</span>
             </div>
             <p className="text-sm text-white/60 leading-relaxed mb-3">
               二戸市の公開情報を市民に分かりやすく届ける公共ダッシュボード。
@@ -56,7 +55,7 @@ export default function SiteFooter() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-white/60 hover:text-white transition-colors"
+                  className="text-base text-white/60 hover:text-[#4dd4e7] transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -69,7 +68,7 @@ export default function SiteFooter() {
             <p className="text-xs font-semibold text-white/50 uppercase tracking-widest mb-3">
               データポリシー
             </p>
-            <ul className="space-y-2 text-sm text-white/60 leading-relaxed">
+            <ul className="space-y-2 text-base text-white/60 leading-relaxed">
               <li>・ 掲載データは公開情報に基づきます</li>
               <li>・ 事実と編集部の要約は分けて表示します</li>
               <li>・ 私人の個人情報は掲載しません</li>
