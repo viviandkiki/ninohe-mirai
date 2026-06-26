@@ -1,0 +1,47 @@
+{
+  "fetchedAt": "2026-06-26T06:29:22.505Z",
+  "pages": [
+    {
+      "url": "https://www.city.ninohe.lg.jp/Info/736",
+      "label": "人口ビジョン・総合戦略",
+      "title": "第２次二戸市総合計画、人口ビジョン、まち・ひと・しごと創生総合戦略",
+      "detectedDate": null,
+      "httpStatus": 200
+    },
+    {
+      "url": "https://www.city.ninohe.lg.jp/info/1020",
+      "label": "総合計画推進委員会",
+      "title": "総合計画推進委員会について",
+      "detectedDate": null,
+      "httpStatus": 200
+    },
+    {
+      "url": "https://www.city.ninohe.lg.jp/info/1187",
+      "label": "財務諸表",
+      "title": "統一的な基準による財務諸表の公表について（平成28年度～）",
+      "detectedDate": null,
+      "httpStatus": 200
+    },
+    {
+      "url": "https://www.city.ninohe.lg.jp/info/295",
+      "label": "決算概要",
+      "title": "決算報告について （平成17～令和６年度）",
+      "detectedDate": null,
+      "httpStatus": 200
+    },
+    {
+      "url": "https://www.city.ninohe.lg.jp/menu/37",
+      "label": "財務・会計",
+      "title": "岩手県二戸市財務・会計",
+      "detectedDate": null,
+      "httpStatus": 200
+    },
+    {
+      "url": "https://www.city.ninohe.lg.jp/info/2148",
+      "label": "議会TOP",
+      "title": "二戸市議会TOP",
+      "detectedDate": null,
+      "httpStatus": 200
+    }
+  ]
+}

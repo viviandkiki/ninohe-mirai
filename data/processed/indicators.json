@@ -1,0 +1,594 @@
+[
+  {
+    "id": "ind-external-partnerships",
+    "powerId": "power-connect",
+    "name": "連携協定締結数",
+    "value": 18,
+    "unit": "件",
+    "year": 2024,
+    "trend": [
+      {
+        "year": 2020,
+        "value": 10
+      },
+      {
+        "year": 2021,
+        "value": 12
+      },
+      {
+        "year": 2022,
+        "value": 14
+      },
+      {
+        "year": 2023,
+        "value": 16
+      },
+      {
+        "year": 2024,
+        "value": 18
+      }
+    ],
+    "sourceId": "src-ninohe-official",
+    "notes": "大学・企業・他自治体との連携協定。"
+  },
+  {
+    "id": "ind-migration-in",
+    "powerId": "power-connect",
+    "name": "移住定住者数",
+    "value": 64,
+    "unit": "人",
+    "year": 2023,
+    "trend": [
+      {
+        "year": 2019,
+        "value": 38
+      },
+      {
+        "year": 2020,
+        "value": 42
+      },
+      {
+        "year": 2021,
+        "value": 48
+      },
+      {
+        "year": 2022,
+        "value": 46
+      },
+      {
+        "year": 2023,
+        "value": 64
+      }
+    ],
+    "sourceId": "src-ninohe-migration",
+    "notes": "移住相談を経て定住に至った件数。近年増加傾向。"
+  },
+  {
+    "id": "ind-volunteer-count",
+    "powerId": "power-connect",
+    "name": "地域おこし協力隊員数",
+    "value": 12,
+    "unit": "人",
+    "year": 2024,
+    "trend": [
+      {
+        "year": 2020,
+        "value": 6
+      },
+      {
+        "year": 2021,
+        "value": 7
+      },
+      {
+        "year": 2022,
+        "value": 9
+      },
+      {
+        "year": 2023,
+        "value": 10
+      },
+      {
+        "year": 2024,
+        "value": 12
+      }
+    ],
+    "sourceId": "src-ninohe-official",
+    "notes": "総務省制度活用の地域おこし協力隊。活動範囲は農林業・観光・福祉等。"
+  },
+  {
+    "id": "ind-gdp-local",
+    "powerId": "power-earn",
+    "name": "市内総生産（名目）",
+    "value": 810,
+    "unit": "億円",
+    "year": 2021,
+    "trend": [
+      {
+        "year": 2017,
+        "value": 825
+      },
+      {
+        "year": 2018,
+        "value": 818
+      },
+      {
+        "year": 2019,
+        "value": 812
+      },
+      {
+        "year": 2020,
+        "value": 798
+      },
+      {
+        "year": 2021,
+        "value": 810
+      }
+    ],
+    "sourceId": "src-iwate-economy",
+    "notes": "岩手県市町村民所得統計より推計。"
+  },
+  {
+    "id": "ind-retail-sales",
+    "powerId": "power-earn",
+    "name": "商業年間販売額",
+    "value": 185,
+    "unit": "億円",
+    "year": 2022,
+    "trend": [
+      {
+        "year": 2018,
+        "value": 205
+      },
+      {
+        "year": 2019,
+        "value": 198
+      },
+      {
+        "year": 2020,
+        "value": 190
+      },
+      {
+        "year": 2021,
+        "value": 188
+      },
+      {
+        "year": 2022,
+        "value": 185
+      }
+    ],
+    "sourceId": "src-commerce-stats",
+    "notes": "商業統計調査。小売業・卸売業の合計。"
+  },
+  {
+    "id": "ind-tourism",
+    "powerId": "power-earn",
+    "name": "観光入込客数",
+    "value": 52,
+    "unit": "万人",
+    "year": 2023,
+    "trend": [
+      {
+        "year": 2019,
+        "value": 68
+      },
+      {
+        "year": 2020,
+        "value": 38
+      },
+      {
+        "year": 2021,
+        "value": 42
+      },
+      {
+        "year": 2022,
+        "value": 49
+      },
+      {
+        "year": 2023,
+        "value": 52
+      }
+    ],
+    "sourceId": "src-iwate-tourism",
+    "notes": "岩手県観光統計。コロナ禍からの回復傾向にある。"
+  },
+  {
+    "id": "ind-cultural-assets",
+    "powerId": "power-inherit",
+    "name": "文化財指定件数",
+    "value": 48,
+    "unit": "件",
+    "year": 2024,
+    "trend": [
+      {
+        "year": 2020,
+        "value": 45
+      },
+      {
+        "year": 2021,
+        "value": 46
+      },
+      {
+        "year": 2022,
+        "value": 46
+      },
+      {
+        "year": 2023,
+        "value": 47
+      },
+      {
+        "year": 2024,
+        "value": 48
+      }
+    ],
+    "sourceId": "src-ninohe-education",
+    "notes": "国・県・市指定の合計。"
+  },
+  {
+    "id": "ind-traditional-industries",
+    "powerId": "power-inherit",
+    "name": "伝統産業従事者数",
+    "value": 142,
+    "unit": "人",
+    "year": 2023,
+    "trend": [
+      {
+        "year": 2019,
+        "value": 168
+      },
+      {
+        "year": 2020,
+        "value": 155
+      },
+      {
+        "year": 2021,
+        "value": 150
+      },
+      {
+        "year": 2022,
+        "value": 145
+      },
+      {
+        "year": 2023,
+        "value": 142
+      }
+    ],
+    "sourceId": "src-ninohe-industry",
+    "notes": "南部鉄器・南部蒔絵・漆器等の従事者。後継者育成が急務。"
+  },
+  {
+    "id": "ind-volunteers-festivals",
+    "powerId": "power-inherit",
+    "name": "伝統行事参加者数",
+    "value": 3200,
+    "unit": "人",
+    "year": 2023,
+    "trend": [
+      {
+        "year": 2019,
+        "value": 4100
+      },
+      {
+        "year": 2020,
+        "value": 1200
+      },
+      {
+        "year": 2021,
+        "value": 1500
+      },
+      {
+        "year": 2022,
+        "value": 2800
+      },
+      {
+        "year": 2023,
+        "value": 3200
+      }
+    ],
+    "sourceId": "src-ninohe-education",
+    "notes": "主要伝統行事（剣舞・さんさ踊り等）の延べ参加者数。コロナ禍から回復中。"
+  },
+  {
+    "id": "ind-child-rate",
+    "powerId": "power-live",
+    "name": "年少人口比率（0〜14歳）",
+    "value": 9.8,
+    "unit": "%",
+    "year": 2023,
+    "trend": [
+      {
+        "year": 2019,
+        "value": 11.2
+      },
+      {
+        "year": 2020,
+        "value": 10.8
+      },
+      {
+        "year": 2021,
+        "value": 10.4
+      },
+      {
+        "year": 2022,
+        "value": 10.1
+      },
+      {
+        "year": 2023,
+        "value": 9.8
+      }
+    ],
+    "sourceId": "src-ninohe-statistics",
+    "notes": "全国平均（11.4%）を下回り、少子化が顕著。"
+  },
+  {
+    "id": "ind-life-satisfaction",
+    "powerId": "power-live",
+    "name": "市民生活満足度",
+    "value": 68,
+    "unit": "%",
+    "year": 2023,
+    "trend": [
+      {
+        "year": 2019,
+        "value": 71
+      },
+      {
+        "year": 2020,
+        "value": 67
+      },
+      {
+        "year": 2021,
+        "value": 65
+      },
+      {
+        "year": 2022,
+        "value": 66
+      },
+      {
+        "year": 2023,
+        "value": 68
+      }
+    ],
+    "sourceId": "src-ninohe-survey",
+    "notes": "市民アンケート。「二戸市に住み続けたい」と回答した割合。"
+  },
+  {
+    "id": "ind-school-count",
+    "powerId": "power-live",
+    "name": "小中学校数",
+    "value": 14,
+    "unit": "校",
+    "year": 2024,
+    "trend": [
+      {
+        "year": 2020,
+        "value": 18
+      },
+      {
+        "year": 2021,
+        "value": 17
+      },
+      {
+        "year": 2022,
+        "value": 16
+      },
+      {
+        "year": 2023,
+        "value": 15
+      },
+      {
+        "year": 2024,
+        "value": 14
+      }
+    ],
+    "sourceId": "src-ninohe-education",
+    "notes": "少子化に伴い統廃合が進む。"
+  },
+  {
+    "id": "ind-aging-rate",
+    "powerId": "power-prepare",
+    "name": "高齢化率",
+    "value": 37.8,
+    "unit": "%",
+    "year": 2023,
+    "trend": [
+      {
+        "year": 2019,
+        "value": 34.2
+      },
+      {
+        "year": 2020,
+        "value": 35.1
+      },
+      {
+        "year": 2021,
+        "value": 35.9
+      },
+      {
+        "year": 2022,
+        "value": 36.8
+      },
+      {
+        "year": 2023,
+        "value": 37.8
+      }
+    ],
+    "sourceId": "src-ninohe-statistics",
+    "notes": "65歳以上人口の割合。全国平均（29.1%）を大きく上回る。"
+  },
+  {
+    "id": "ind-doctors",
+    "powerId": "power-prepare",
+    "name": "人口10万人あたり医師数",
+    "value": 182,
+    "unit": "人",
+    "year": 2022,
+    "trend": [
+      {
+        "year": 2018,
+        "value": 198
+      },
+      {
+        "year": 2019,
+        "value": 195
+      },
+      {
+        "year": 2020,
+        "value": 190
+      },
+      {
+        "year": 2021,
+        "value": 186
+      },
+      {
+        "year": 2022,
+        "value": 182
+      }
+    ],
+    "sourceId": "src-iwate-medical",
+    "notes": "岩手県医師・歯科医師・薬剤師統計。全国平均は261人。"
+  },
+  {
+    "id": "ind-infrastructure-age",
+    "powerId": "power-prepare",
+    "name": "老朽化インフラ比率",
+    "value": 42,
+    "unit": "%",
+    "year": 2023,
+    "trend": [
+      {
+        "year": 2019,
+        "value": 31
+      },
+      {
+        "year": 2020,
+        "value": 34
+      },
+      {
+        "year": 2021,
+        "value": 37
+      },
+      {
+        "year": 2022,
+        "value": 39
+      },
+      {
+        "year": 2023,
+        "value": 42
+      }
+    ],
+    "sourceId": "src-ninohe-infrastructure",
+    "notes": "建設後30年以上経過した市管理橋梁・道路等の割合。"
+  },
+  {
+    "id": "ind-employment-rate",
+    "powerId": "power-work",
+    "name": "就業率",
+    "value": 57.8,
+    "unit": "%",
+    "year": 2022,
+    "trend": [
+      {
+        "year": 2018,
+        "value": 59.8
+      },
+      {
+        "year": 2019,
+        "value": 59.2
+      },
+      {
+        "year": 2020,
+        "value": 58.5
+      },
+      {
+        "year": 2021,
+        "value": 58.1
+      },
+      {
+        "year": 2022,
+        "value": 57.8
+      }
+    ],
+    "sourceId": "src-ninohe-statistics",
+    "notes": "国勢調査準拠。15歳以上人口のうち就業者の割合。"
+  },
+  {
+    "id": "ind-job-offers",
+    "powerId": "power-work",
+    "name": "有効求人倍率",
+    "value": 0.92,
+    "unit": "倍",
+    "year": 2023,
+    "trend": [
+      {
+        "year": 2019,
+        "value": 1.21
+      },
+      {
+        "year": 2020,
+        "value": 0.88
+      },
+      {
+        "year": 2021,
+        "value": 0.95
+      },
+      {
+        "year": 2022,
+        "value": 0.98
+      },
+      {
+        "year": 2023,
+        "value": 0.92
+      }
+    ],
+    "sourceId": "src-iwate-labor",
+    "notes": "岩手労働局二戸公共職業安定所管内の数値。"
+  },
+  {
+    "id": "ind-registry-a01",
+    "powerId": "power-work",
+    "name": "市の公開データ件数",
+    "value": 7,
+    "unit": "件",
+    "year": 2026,
+    "trend": [
+      {
+        "year": 2026,
+        "value": 7
+      }
+    ],
+    "sourceId": "src-ninohe-open-data",
+    "notes": "台帳ID: A01. 岩手県オープンデータカタログから自動取得。"
+  },
+  {
+    "id": "ind-youth-employment",
+    "powerId": "power-work",
+    "name": "若年就業者数（15〜34歳）",
+    "value": 2840,
+    "unit": "人",
+    "year": 2022,
+    "trend": [
+      {
+        "year": 2018,
+        "value": 3250
+      },
+      {
+        "year": 2019,
+        "value": 3120
+      },
+      {
+        "year": 2020,
+        "value": 3010
+      },
+      {
+        "year": 2021,
+        "value": 2930
+      },
+      {
+        "year": 2022,
+        "value": 2840
+      }
+    ],
+    "sourceId": "src-ninohe-statistics",
+    "notes": "国勢調査。若年就業者の減少傾向が続いている。"
+  }
+]

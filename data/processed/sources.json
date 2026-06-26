@@ -1,0 +1,129 @@
+[
+  {
+    "id": "src-ninohe-statistics",
+    "title": "二戸市統計書",
+    "organization": "二戸市",
+    "url": "https://www.city.ninohe.iwate.jp/",
+    "year": 2022,
+    "type": "official"
+  },
+  {
+    "id": "src-iwate-labor",
+    "title": "岩手労働市場年報",
+    "organization": "岩手労働局",
+    "url": "https://jsite.mhlw.go.jp/iwate-roudoukyoku/",
+    "year": 2023,
+    "type": "official"
+  },
+  {
+    "id": "src-iwate-economy",
+    "title": "岩手県市町村民所得統計",
+    "organization": "岩手県",
+    "url": "https://www.pref.iwate.jp/",
+    "year": 2021,
+    "type": "official"
+  },
+  {
+    "id": "src-commerce-stats",
+    "title": "商業統計調査",
+    "organization": "経済産業省",
+    "url": "https://www.meti.go.jp/",
+    "year": 2022,
+    "type": "official"
+  },
+  {
+    "id": "src-iwate-tourism",
+    "title": "岩手県観光統計",
+    "organization": "岩手県観光課",
+    "url": "https://www.pref.iwate.jp/",
+    "year": 2023,
+    "type": "official"
+  },
+  {
+    "id": "src-ninohe-education",
+    "title": "二戸市教育委員会資料",
+    "organization": "二戸市教育委員会",
+    "url": "https://www.city.ninohe.iwate.jp/",
+    "year": 2024,
+    "type": "official"
+  },
+  {
+    "id": "src-ninohe-industry",
+    "title": "二戸市伝統産業調査報告書",
+    "organization": "二戸市産業振興課",
+    "url": "https://www.city.ninohe.iwate.jp/",
+    "year": 2023,
+    "type": "official"
+  },
+  {
+    "id": "src-ninohe-migration",
+    "title": "二戸市移住定住促進事業実績報告",
+    "organization": "二戸市移住定住推進室",
+    "url": "https://www.city.ninohe.iwate.jp/",
+    "year": 2023,
+    "type": "official"
+  },
+  {
+    "id": "src-iwate-medical",
+    "title": "岩手県医師・歯科医師・薬剤師統計",
+    "organization": "岩手県保健福祉部",
+    "url": "https://www.pref.iwate.jp/",
+    "year": 2022,
+    "type": "official"
+  },
+  {
+    "id": "src-ninohe-infrastructure",
+    "title": "二戸市インフラ長寿命化計画",
+    "organization": "二戸市建設部",
+    "url": "https://www.city.ninohe.iwate.jp/",
+    "year": 2023,
+    "type": "official"
+  },
+  {
+    "id": "src-ninohe-official",
+    "title": "二戸市公式ウェブサイト・プレスリリース",
+    "organization": "二戸市",
+    "url": "https://www.city.ninohe.iwate.jp/",
+    "year": 2024,
+    "type": "official"
+  },
+  {
+    "id": "src-ninohe-open-data",
+    "title": "岩手県オープンデータカタログ（二戸市）",
+    "organization": "岩手県・二戸市",
+    "url": "https://iwate.dataeye.jp/datasets?organization_id=13",
+    "year": 2025,
+    "type": "official"
+  },
+  {
+    "id": "src-ninohe-council",
+    "title": "二戸市議会会議録",
+    "organization": "二戸市議会事務局",
+    "url": "https://www.city.ninohe.iwate.jp/",
+    "year": 2024,
+    "type": "official"
+  },
+  {
+    "id": "src-ninohe-survey",
+    "title": "二戸市市民意識調査",
+    "organization": "二戸市総合政策課",
+    "url": "https://www.city.ninohe.iwate.jp/",
+    "year": 2023,
+    "type": "survey"
+  },
+  {
+    "id": "src-local-news",
+    "title": "デーリー東北・岩手日報 報道",
+    "organization": "各報道機関",
+    "year": 2024,
+    "type": "media"
+  },
+  {
+    "id": "src-national-news",
+    "title": "文化庁・文化審議会 公開資料",
+    "organization": "文化庁",
+    "url": "https://www.bunka.go.jp/",
+    "year": 2024,
+    "type": "official"
+  }
+]

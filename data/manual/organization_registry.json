@@ -1,0 +1,68 @@
+[
+  {
+    "id": "ORG01",
+    "name": "二戸市役所",
+    "sector": "行政",
+    "role": "行政全般",
+    "sourceUrl": "https://www.city.ninohe.lg.jp/menu/25",
+    "relatedPowerSlugs": ["work", "earn", "live", "prepare"],
+    "status": "active",
+    "actorId": "actor-mayor",
+    "note": "公表・計画・統計の起点"
+  },
+  {
+    "id": "ORG02",
+    "name": "二戸市議会",
+    "sector": "議会",
+    "role": "議決・質問・審議",
+    "sourceUrl": "https://www.city.ninohe.lg.jp/info/2148",
+    "relatedPowerSlugs": ["work", "earn", "inherit", "connect", "prepare", "live"],
+    "status": "active",
+    "actorId": "actor-council-chair",
+    "note": "議会系の起点"
+  },
+  {
+    "id": "ORG03",
+    "name": "総合計画推進委員会",
+    "sector": "議会",
+    "role": "計画審議",
+    "sourceUrl": "https://www.city.ninohe.lg.jp/info/1020",
+    "relatedPowerSlugs": ["work", "earn", "connect"],
+    "status": "planned",
+    "actorId": null,
+    "note": "市民参加型審議の可視化用"
+  },
+  {
+    "id": "ORG04",
+    "name": "二戸市商工会",
+    "sector": "経済",
+    "role": "事業者支援",
+    "sourceUrl": "https://www.shokokai.com/ninohe/",
+    "relatedPowerSlugs": ["earn", "work"],
+    "status": "planned",
+    "actorId": null,
+    "note": "補助的に別途確認"
+  },
+  {
+    "id": "ORG05",
+    "name": "介護サービス事業所群",
+    "sector": "医療福祉",
+    "role": "高齢者支援",
+    "sourceUrl": "https://iwate.dataeye.jp/datasets?organization_id=13",
+    "relatedPowerSlugs": ["prepare", "live"],
+    "status": "planned",
+    "actorId": null,
+    "note": "個票を団体群としてまとめる"
+  },
+  {
+    "id": "ORG06",
+    "name": "子育て施設群",
+    "sector": "子育て教育",
+    "role": "子育て支援",
+    "sourceUrl": "https://iwate.dataeye.jp/datasets?organization_id=13",
+    "relatedPowerSlugs": ["live"],
+    "status": "planned",
+    "actorId": null,
+    "note": "個票を団体群としてまとめる"
+  }
+]

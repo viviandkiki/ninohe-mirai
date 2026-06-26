@@ -1,0 +1,99 @@
+[
+  {
+    "id": "cact-mayor",
+    "memberName": "五日市 王",
+    "role": "二戸市長（第9代）",
+    "affiliation": "二戸市役所",
+    "actorId": "actor-mayor",
+    "topicSummary": "浄法寺漆産業の振興・移住定住促進を重点施策として掲げる。令和8年1月就任。",
+    "recurringTopics": ["漆産業振興", "移住定住", "人口減少対策", "地域経済活性化"],
+    "powerFocus": ["work", "earn", "live"],
+    "sourceLinks": ["https://www.city.ninohe.lg.jp/menu/25"],
+    "sourceIssue": "二戸市公式サイト・就任会見",
+    "updatedAt": "2026-06-26"
+  },
+  {
+    "id": "cact-naizawa",
+    "memberName": "内沢 真申",
+    "role": "二戸市議会議長",
+    "affiliation": "無会派",
+    "actorId": "actor-council-chair",
+    "topicSummary": "議会運営・議事進行を統括。二戸市議会の中立的立場から議会改革を推進。",
+    "recurringTopics": ["議会運営", "市政全般"],
+    "powerFocus": ["work", "inherit"],
+    "sourceLinks": ["https://www.city.ninohe.lg.jp/info/2148"],
+    "sourceIssue": "二戸市議会TOP",
+    "updatedAt": "2026-06-26"
+  },
+  {
+    "id": "cact-idehori",
+    "memberName": "出堀 満則",
+    "role": "二戸市議会副議長",
+    "affiliation": "にのへ未来創生会",
+    "actorId": "actor-council-vice-chair",
+    "topicSummary": "にのへ未来創生会に所属。副議長として議会運営に参画。",
+    "recurringTopics": ["地域振興", "産業活性化"],
+    "powerFocus": ["earn", "connect"],
+    "sourceLinks": ["https://www.city.ninohe.lg.jp/info/2148"],
+    "sourceIssue": "二戸市議会TOP",
+    "updatedAt": "2026-06-26"
+  },
+  {
+    "id": "cact-numai",
+    "memberName": "沼井 賢壮",
+    "role": "二戸市議会議員（にのへ未来創生会代表）",
+    "affiliation": "にのへ未来創生会",
+    "actorId": "actor-council-a",
+    "topicSummary": "最大会派の代表。市政運営・地域経済に関する施策を積極的に議論する。",
+    "recurringTopics": ["市政運営", "地域経済", "産業振興"],
+    "powerFocus": ["work", "earn"],
+    "sourceLinks": [
+      "https://www.city.ninohe.lg.jp/info/2148",
+      "https://www.city.ninohe.lg.jp/Info/4021"
+    ],
+    "sourceIssue": "二戸市議会TOP・審議情報",
+    "updatedAt": "2026-06-26"
+  },
+  {
+    "id": "cact-hatake",
+    "memberName": "畠中 泰子",
+    "role": "二戸市議会議員（日本共産党二戸市議団代表）",
+    "affiliation": "日本共産党二戸市議団",
+    "actorId": "actor-council-b",
+    "topicSummary": "日本共産党二戸市議団の代表。福祉・医療・市民生活に関する質問を継続的に行う。",
+    "recurringTopics": ["医療・福祉", "市民生活", "国保・介護"],
+    "powerFocus": ["live", "prepare"],
+    "sourceLinks": [
+      "https://www.city.ninohe.lg.jp/info/2148",
+      "https://www.city.ninohe.lg.jp/div/gikai/pdf/gikaidayori/gikaidayori73.pdf"
+    ],
+    "sourceIssue": "二戸市議会TOP・議会だより",
+    "updatedAt": "2026-06-26"
+  },
+  {
+    "id": "cact-iwasaki",
+    "memberName": "岩崎 敬郎",
+    "role": "二戸市議会議員（清和会代表）",
+    "affiliation": "清和会",
+    "actorId": "actor-council-c",
+    "topicSummary": "清和会の代表。地域産業・伝統文化の振興をテーマに活動する。",
+    "recurringTopics": ["伝統産業", "文化振興", "地域経済"],
+    "powerFocus": ["earn", "inherit"],
+    "sourceLinks": ["https://www.city.ninohe.lg.jp/info/2148"],
+    "sourceIssue": "二戸市議会TOP",
+    "updatedAt": "2026-06-26"
+  },
+  {
+    "id": "cact-takamura",
+    "memberName": "髙村 人司",
+    "role": "二戸市議会議員（優和会代表）",
+    "affiliation": "優和会",
+    "actorId": "actor-council-d",
+    "topicSummary": "優和会の代表。地域コミュニティ形成と生活環境整備に取り組む。",
+    "recurringTopics": ["コミュニティ", "生活環境", "公共施設"],
+    "powerFocus": ["connect", "live"],
+    "sourceLinks": ["https://www.city.ninohe.lg.jp/info/2148"],
+    "sourceIssue": "二戸市議会TOP",
+    "updatedAt": "2026-06-26"
+  }
+]

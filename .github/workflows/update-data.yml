@@ -1,0 +1,84 @@
+name: Update Data
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Update mode (light = quick indicators only, full = all sources, council = council only)"
+        required: false
+        default: "light"
+        type: choice
+        options:
+          - light
+          - full
+          - council
+
+  schedule:
+    # Daily light update: 2:00 UTC (11:00 JST) — includes council fetch
+    - cron: "0 2 * * *"
+    # Weekly full update: Sunday 1:00 UTC (10:00 JST)
+    - cron: "0 1 * * 0"
+
+jobs:
+  update:
+    name: Fetch & Update Data
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Determine update mode
+        id: mode
+        run: |
+          # weekly cron → full, daily cron → light, manual → use input
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
+          elif [ "$(date +%u)" = "7" ]; then
+            echo "mode=full" >> $GITHUB_OUTPUT
+          else
+            echo "mode=light" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Fetch & transform data
+        env:
+          ESTAT_APP_ID: ${{ secrets.ESTAT_APP_ID }}
+          RESAS_API_KEY: ${{ secrets.RESAS_API_KEY }}
+          UPDATE_MODE: ${{ steps.mode.outputs.mode }}
+        run: |
+          if [ "${{ steps.mode.outputs.mode }}" = "council" ]; then
+            # 議会専用モード: 議会サイトのみスクレイプして movements.json に差分追加
+            npx tsx scripts/fetch/fetch-ninohe-council.ts
+            npx tsx scripts/transform/normalize-council.ts
+          else
+            pnpm update-data
+          fi
+
+      - name: Validate processed data
+        run: pnpm validate
+
+      - name: Commit changes if any
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/processed/ data/raw/
+          if git diff --staged --quiet; then
+            echo "No data changes to commit."
+          else
+            TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M UTC')
+            git commit -m "chore: auto-update data ${TIMESTAMP} [mode=${{ steps.mode.outputs.mode }}] [skip ci]"
+            git push
+          fi

@@ -1,0 +1,112 @@
+[
+  {
+    "id": "actor-mayor",
+    "type": "official",
+    "name": "五日市 王",
+    "role": "二戸市長（第9代）",
+    "affiliation": "二戸市役所",
+    "focusPowers": ["work", "earn", "live"],
+    "lastActive": "2026-01",
+    "summary": "令和8年（2026年）1月就任の二戸市長。二戸市出身、元岩手県議会議長。二戸市議会議員を3期務めた後に岩手県議会議員として活動。浄法寺漆産業の振興や移住定住促進を重点施策として掲げる。"
+  },
+  {
+    "id": "actor-council-chair",
+    "type": "council",
+    "name": "内沢 真申",
+    "role": "二戸市議会議長",
+    "affiliation": "二戸市議会（無会派）",
+    "focusPowers": ["work", "inherit"],
+    "lastActive": "2026-02",
+    "summary": "令和5年改選後に議長に就任（無会派）。議会運営を統括する。"
+  },
+  {
+    "id": "actor-council-vice-chair",
+    "type": "council",
+    "name": "出堀 満則",
+    "role": "二戸市議会副議長",
+    "affiliation": "二戸市議会（にのへ未来創生会）",
+    "focusPowers": ["earn", "connect"],
+    "lastActive": "2026-02",
+    "summary": "にのへ未来創生会に所属し、副議長を務める。"
+  },
+  {
+    "id": "actor-council-a",
+    "type": "council",
+    "name": "沼井 賢壮",
+    "role": "二戸市議会議員",
+    "affiliation": "二戸市議会（にのへ未来創生会代表）",
+    "focusPowers": ["work", "earn"],
+    "lastActive": "2026-02",
+    "summary": "最大会派「にのへ未来創生会」（7名）の代表。市政運営に関する施策を積極的に議論する。"
+  },
+  {
+    "id": "actor-council-b",
+    "type": "council",
+    "name": "畠中 泰子",
+    "role": "二戸市議会議員",
+    "affiliation": "二戸市議会（日本共産党二戸市議団代表）",
+    "focusPowers": ["live", "prepare"],
+    "lastActive": "2026-02",
+    "summary": "日本共産党二戸市議団（2名）の代表。福祉・医療・市民生活に関する質問を継続的に行う。"
+  },
+  {
+    "id": "actor-council-c",
+    "type": "council",
+    "name": "岩崎 敬郎",
+    "role": "二戸市議会議員",
+    "affiliation": "二戸市議会（清和会代表）",
+    "focusPowers": ["earn", "inherit"],
+    "lastActive": "2026-02",
+    "summary": "清和会（2名）の代表。地域産業・伝統文化の振興をテーマに活動。"
+  },
+  {
+    "id": "actor-council-d",
+    "type": "council",
+    "name": "髙村 人司",
+    "role": "二戸市議会議員",
+    "affiliation": "二戸市議会（優和会代表）",
+    "focusPowers": ["connect", "live"],
+    "lastActive": "2026-02",
+    "summary": "優和会（3名）の代表。地域コミュニティ形成と生活環境整備に取り組む。"
+  },
+  {
+    "id": "actor-nanbu-bijin",
+    "type": "community",
+    "name": "南部美人株式会社",
+    "role": "酒蔵・地域ブランド",
+    "affiliation": "二戸市",
+    "focusPowers": ["earn", "inherit", "connect"],
+    "lastActive": "2026-01",
+    "summary": "1902年創業の二戸市内の老舗酒蔵。世界50カ国以上に日本酒を輸出。2019年に世界初の日本酒ヴィーガン認証を取得。浄法寺漆を使ったクラフトジン・ウォッカなど地域素材を活かした新製品開発にも取り組む。"
+  },
+  {
+    "id": "actor-commerce",
+    "type": "community",
+    "name": "二戸商工会議所",
+    "role": "経済団体",
+    "affiliation": "二戸商工会議所",
+    "focusPowers": ["earn", "work"],
+    "lastActive": "2025-12",
+    "summary": "市内中小企業の経営支援・販路開拓・創業支援を担う。南部美人や浄法寺塗など地域ブランドの発信にも関与。"
+  },
+  {
+    "id": "actor-agriculture",
+    "type": "community",
+    "name": "JA新いわて二戸地区",
+    "role": "農業協同組合",
+    "affiliation": "JA新いわて",
+    "focusPowers": ["earn", "inherit", "live"],
+    "lastActive": "2025-12",
+    "summary": "いわて短角牛・折爪三元豚「佐助」・雑穀・果物（サクランボ「夏恋」・りんご「冬恋」）など二戸地域の農畜産物のブランド化と流通を支援する。"
+  },
+  {
+    "id": "actor-joboji-urushi",
+    "type": "npo",
+    "name": "岩手県浄法寺漆生産組合",
+    "role": "漆生産・文化継承",
+    "affiliation": "二戸市浄法寺地区",
+    "focusPowers": ["inherit", "earn", "connect"],
+    "lastActive": "2025-12",
+    "summary": "国産漆生産量の約70%を担う浄法寺地区の漆掻き職人・漆林所有者が参加する組合。浄法寺漆は日本遺産「奥南部漆物語」の核心部分であり、UNESCO無形文化遺産にも関連認定。世界遺産・国宝の修復にも使用される。"
+  }
+]

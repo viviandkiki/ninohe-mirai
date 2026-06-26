@@ -1,0 +1,56 @@
+{
+  "fetchedAt": "2026-06-26T06:37:56.059Z",
+  "totalCount": 7,
+  "openDataCountIndicator": 7,
+  "datasets": [
+    {
+      "id": "620",
+      "title": "二戸市_公衆トイレ一覧_2025-11-13",
+      "pageUrl": "https://iwate.dataeye.jp/datasets/620",
+      "resourceUrl": "https://iwate.dataeye.jp/resources/939",
+      "releasedAt": null
+    },
+    {
+      "id": "615",
+      "title": "二戸市_子育て施設一覧_2025-11-13",
+      "pageUrl": "https://iwate.dataeye.jp/datasets/615",
+      "resourceUrl": "https://iwate.dataeye.jp/resources/936",
+      "releasedAt": null
+    },
+    {
+      "id": "616",
+      "title": "二戸市_介護サービス事業所一覧_2025-11-13",
+      "pageUrl": "https://iwate.dataeye.jp/datasets/616",
+      "resourceUrl": "https://iwate.dataeye.jp/resources/937",
+      "releasedAt": null
+    },
+    {
+      "id": "619",
+      "title": "二戸市_公衆無線LANアクセスポイント一覧_2025-11-13",
+      "pageUrl": "https://iwate.dataeye.jp/datasets/619",
+      "resourceUrl": "https://iwate.dataeye.jp/resources/938",
+      "releasedAt": null
+    },
+    {
+      "id": "420",
+      "title": "二戸市_地域_年齢_男女別人口_2025-09-08",
+      "pageUrl": "https://iwate.dataeye.jp/datasets/420",
+      "resourceUrl": "https://iwate.dataeye.jp/resources/779",
+      "releasedAt": null
+    },
+    {
+      "id": "446",
+      "title": "二戸市_AED設置箇所一覧_2024-09-26",
+      "pageUrl": "https://iwate.dataeye.jp/datasets/446",
+      "resourceUrl": "https://iwate.dataeye.jp/resources/432",
+      "releasedAt": null
+    },
+    {
+      "id": "428",
+      "title": "二戸市_公共施設一覧_2024-08-23",
+      "pageUrl": "https://iwate.dataeye.jp/datasets/428",
+      "resourceUrl": "https://iwate.dataeye.jp/resources/414",
+      "releasedAt": null
+    }
+  ]
+}

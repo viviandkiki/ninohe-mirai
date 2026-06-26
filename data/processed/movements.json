@@ -1,0 +1,441 @@
+[
+  {
+    "id": "mov-council-r8-06-teireikai",
+    "date": "2026-06-01",
+    "title": "令和8年6月定例会",
+    "summary": "二戸市議会令和8年6月定例会が開催されました。",
+    "type": "policy",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-council-r8-03-teireikai",
+    "date": "2026-03-01",
+    "title": "令和8年3月定例会",
+    "summary": "二戸市議会令和8年3月定例会が開催されました。一般質問では各議員が市政課題について質問を行いました。",
+    "type": "policy",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-council-r8-02-rinji",
+    "date": "2026-02-01",
+    "title": "令和8年2月臨時会",
+    "summary": "二戸市議会令和8年2月臨時会が開催されました。議決結果は市議会ウェブサイトで公開されています。",
+    "type": "announcement",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-009",
+    "date": "2026-01-01",
+    "title": "五日市 王氏 第9代二戸市長に就任",
+    "summary": "元岩手県議会議長の五日市 王氏が二戸市長に就任。浄法寺漆産業の振興・移住定住促進・人口減少対策を重点施策に掲げ、市政運営をスタートした。",
+    "type": "announcement",
+    "actorIds": [
+      "actor-mayor"
+    ],
+    "powerSlugs": [
+      "work",
+      "earn",
+      "live"
+    ],
+    "sourceId": "src-ninohe-official"
+  },
+  {
+    "id": "mov-council-r7-12-rinji",
+    "date": "2025-12-01",
+    "title": "令和7年12月臨時会",
+    "summary": "二戸市議会令和7年12月臨時会が開催されました。議決結果は市議会ウェブサイトで公開されています。",
+    "type": "announcement",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-council-r7-12-teireikai",
+    "date": "2025-12-01",
+    "title": "令和7年12月定例会",
+    "summary": "二戸市議会令和7年12月定例会が開催されました。一般質問では各議員が市政課題について質問を行いました。議決結果は市議会ウェブサイトで公開されています。",
+    "type": "policy",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-council-r7-09-teireikai",
+    "date": "2025-09-01",
+    "title": "令和7年9月定例会",
+    "summary": "二戸市議会令和7年9月定例会が開催されました。一般質問では各議員が市政課題について質問を行いました。議決結果は市議会ウェブサイトで公開されています。",
+    "type": "policy",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-council-r7-08-rinji",
+    "date": "2025-08-01",
+    "title": "令和7年8月臨時会",
+    "summary": "二戸市議会令和7年8月臨時会が開催されました。議決結果は市議会ウェブサイトで公開されています。",
+    "type": "announcement",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-010",
+    "date": "2025-06-24",
+    "title": "人口減少対策政策提言書 二戸市に提出",
+    "summary": "市議会から二戸市長への人口減少対策に関する政策提言書が提出された。移住定住促進・子育て支援強化・若年層雇用創出の3点が柱となっている。市公式サイトで公開。",
+    "type": "policy",
+    "actorIds": [
+      "actor-council-chair",
+      "actor-council-a",
+      "actor-council-b"
+    ],
+    "powerSlugs": [
+      "connect",
+      "live",
+      "work"
+    ],
+    "sourceId": "src-ninohe-official"
+  },
+  {
+    "id": "mov-council-r7-06-teireikai",
+    "date": "2025-06-01",
+    "title": "令和7年6月定例会",
+    "summary": "二戸市議会令和7年6月定例会が開催されました。一般質問では各議員が市政課題について質問を行いました。議決結果は市議会ウェブサイトで公開されています。",
+    "type": "policy",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-council-r7-03-teireikai",
+    "date": "2025-03-01",
+    "title": "令和7年3月定例会",
+    "summary": "二戸市議会令和7年3月定例会が開催されました。一般質問では各議員が市政課題について質問を行いました。議決結果は市議会ウェブサイトで公開されています。",
+    "type": "policy",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-council-r7-02-rinji",
+    "date": "2025-02-01",
+    "title": "令和7年2月臨時会",
+    "summary": "二戸市議会令和7年2月臨時会が開催されました。議決結果は市議会ウェブサイトで公開されています。",
+    "type": "announcement",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-council-r7-01-rinji",
+    "date": "2025-01-01",
+    "title": "令和7年1月臨時会",
+    "summary": "二戸市議会令和7年1月臨時会が開催されました。議決結果は市議会ウェブサイトで公開されています。",
+    "type": "announcement",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-council-r6-12-teireikai",
+    "date": "2024-12-01",
+    "title": "令和6年12月定例会",
+    "summary": "二戸市議会令和6年12月定例会が開催されました。一般質問では各議員が市政課題について質問を行いました。議決結果は市議会ウェブサイトで公開されています。",
+    "type": "policy",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-council-r6-09-teireikai",
+    "date": "2024-09-01",
+    "title": "令和6年9月定例会",
+    "summary": "二戸市議会令和6年9月定例会が開催されました。一般質問では各議員が市政課題について質問を行いました。議決結果は市議会ウェブサイトで公開されています。",
+    "type": "policy",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-council-r6-08-rinji",
+    "date": "2024-08-01",
+    "title": "令和6年8月臨時会",
+    "summary": "二戸市議会令和6年8月臨時会が開催されました。議決結果は市議会ウェブサイトで公開されています。",
+    "type": "announcement",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-council-r6-07-rinji",
+    "date": "2024-07-01",
+    "title": "令和6年7月臨時会",
+    "summary": "二戸市議会令和6年7月臨時会が開催されました。議決結果は市議会ウェブサイトで公開されています。",
+    "type": "announcement",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-001",
+    "date": "2024-06-10",
+    "title": "第2次二戸市総合計画・後期基本計画 策定委員会 第3回開催",
+    "summary": "移住定住促進と地域産業振興を柱とした後期基本計画の具体的施策を審議。パブリックコメントは7月から受付予定。",
+    "type": "policy",
+    "actorIds": [
+      "actor-mayor"
+    ],
+    "powerSlugs": [
+      "work",
+      "earn",
+      "connect"
+    ],
+    "sourceId": "src-ninohe-official"
+  },
+  {
+    "id": "mov-002",
+    "date": "2024-06-05",
+    "title": "市議会 令和6年6月定例会 開会",
+    "summary": "令和6年度補正予算案を審議。防災インフラ整備費・子育て支援拡充費が主要議題。",
+    "type": "policy",
+    "actorIds": [
+      "actor-council-chair",
+      "actor-council-a",
+      "actor-council-b",
+      "actor-council-c"
+    ],
+    "powerSlugs": [
+      "prepare",
+      "live"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-council-r6-06-teireikai",
+    "date": "2024-06-01",
+    "title": "令和6年6月定例会",
+    "summary": "二戸市議会令和6年6月定例会が開催されました。一般質問では各議員が市政課題について質問を行いました。議決結果は市議会ウェブサイトで公開されています。",
+    "type": "policy",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-004",
+    "date": "2024-05-20",
+    "title": "地域おこし協力隊 新メンバー2名着任",
+    "summary": "東京・大阪からそれぞれ1名ずつ着任。農林業支援と観光PRを担当する予定。",
+    "type": "announcement",
+    "actorIds": [
+      "actor-mayor"
+    ],
+    "powerSlugs": [
+      "connect",
+      "work"
+    ],
+    "sourceId": "src-ninohe-official"
+  },
+  {
+    "id": "mov-005",
+    "date": "2024-05-12",
+    "title": "折爪岳クリーンアップ登山 開催",
+    "summary": "地域住民・移住者・観光客が参加した環境美化活動。参加者150名。環境教育プログラムとしても位置づけ。",
+    "type": "event",
+    "actorIds": [
+      "actor-joboji-urushi"
+    ],
+    "powerSlugs": [
+      "live",
+      "connect"
+    ],
+    "sourceId": "src-local-news"
+  },
+  {
+    "id": "mov-council-r6-05-rinji",
+    "date": "2024-05-01",
+    "title": "令和6年5月臨時会",
+    "summary": "二戸市議会令和6年5月臨時会が開催されました。議決結果は市議会ウェブサイトで公開されています。",
+    "type": "announcement",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-011",
+    "date": "2024-04-27",
+    "title": "おわん展2024（浄法寺塗漆工芸展）開催",
+    "summary": "二戸市浄法寺地区の漆工芸作家による作品展「おわん展2024」が開催された。国産漆を使った塗り椀・漆器を一堂に展示・販売し、後継者育成と観光振興を兼ねたイベントとして定着している。",
+    "type": "event",
+    "actorIds": [
+      "actor-joboji-urushi"
+    ],
+    "powerSlugs": [
+      "inherit",
+      "earn",
+      "connect"
+    ],
+    "sourceId": "src-local-news"
+  },
+  {
+    "id": "mov-006",
+    "date": "2024-04-26",
+    "title": "防災無線デジタル化工事 完了",
+    "summary": "市内全域で防災無線のデジタル化が完了。音声の明瞭度が向上し、外国語放送にも対応可能になった。",
+    "type": "announcement",
+    "actorIds": [
+      "actor-mayor"
+    ],
+    "powerSlugs": [
+      "prepare"
+    ],
+    "sourceId": "src-ninohe-official"
+  },
+  {
+    "id": "mov-007",
+    "date": "2024-04-15",
+    "title": "創業支援プログラム「二戸スタート」第2期 開始",
+    "summary": "商工会議所が運営する創業支援プログラムの第2期がスタート。定員10名に20名の申込があり、関心の高さが伺える。",
+    "type": "initiative",
+    "actorIds": [
+      "actor-commerce"
+    ],
+    "powerSlugs": [
+      "earn",
+      "work",
+      "connect"
+    ],
+    "sourceId": "src-local-news"
+  },
+  {
+    "id": "mov-008",
+    "date": "2024-03-25",
+    "title": "九戸城址 国史跡追加指定 答申",
+    "summary": "文化審議会が九戸城址の追加区域を国史跡に指定するよう答申した。今後の整備・公開に向けた動きが加速する。",
+    "type": "announcement",
+    "actorIds": [
+      "actor-joboji-urushi"
+    ],
+    "powerSlugs": [
+      "inherit",
+      "earn"
+    ],
+    "sourceId": "src-national-news"
+  },
+  {
+    "id": "mov-council-r6-03-rinji",
+    "date": "2024-03-01",
+    "title": "令和6年3月臨時会",
+    "summary": "二戸市議会令和6年3月臨時会が開催されました。議決結果は市議会ウェブサイトで公開されています。",
+    "type": "announcement",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-council-r6-03-teireikai",
+    "date": "2024-03-01",
+    "title": "令和6年3月定例会",
+    "summary": "二戸市議会令和6年3月定例会が開催されました。一般質問では各議員が市政課題について質問を行いました。議決結果は市議会ウェブサイトで公開されています。",
+    "type": "policy",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
+    "id": "mov-council-r6-01-rinji",
+    "date": "2024-01-01",
+    "title": "令和6年1月臨時会",
+    "summary": "二戸市議会令和6年1月臨時会が開催されました。議決結果は市議会ウェブサイトで公開されています。",
+    "type": "announcement",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  }
+]

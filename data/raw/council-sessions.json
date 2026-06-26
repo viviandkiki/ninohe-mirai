@@ -1,0 +1,305 @@
+{
+  "fetchedAt": "2026-06-26T05:24:54.713Z",
+  "sessions": [
+    {
+      "id": "r8-06-teireikai",
+      "name": "令和8年6月定例会",
+      "reiwaYear": 8,
+      "year": 2026,
+      "month": 6,
+      "sessionType": "定例会",
+      "date": "2026-06",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/R8_6singinittei.pdf",
+        "questions": null,
+        "results": null
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/4487"
+    },
+    {
+      "id": "r8-03-teireikai",
+      "name": "令和8年3月定例会",
+      "reiwaYear": 8,
+      "year": 2026,
+      "month": 3,
+      "sessionType": "定例会",
+      "date": "2026-03",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/R8_3singinittei.pdf",
+        "questions": "https://www.city.ninohe.lg.jp/div/gikai/pdf/R8_3ippan.pdf",
+        "results": null
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/4487"
+    },
+    {
+      "id": "r8-02-rinji",
+      "name": "令和8年2月臨時会",
+      "reiwaYear": 8,
+      "year": 2026,
+      "month": 2,
+      "sessionType": "臨時会",
+      "date": "2026-02",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/R8_2rinji_shinginittei.pdf",
+        "questions": null,
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/R8_2giketukekkaN.pdf"
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/4487"
+    },
+    {
+      "id": "r7-12-rinji",
+      "name": "令和7年12月臨時会",
+      "reiwaYear": 7,
+      "year": 2025,
+      "month": 12,
+      "sessionType": "臨時会",
+      "date": "2025-12",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/08_12rinjigijinittei.pdf",
+        "questions": null,
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/08_12rinjigiketukekka.pdf"
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/4021"
+    },
+    {
+      "id": "r7-12-teireikai",
+      "name": "令和7年12月定例会",
+      "reiwaYear": 7,
+      "year": 2025,
+      "month": 12,
+      "sessionType": "定例会",
+      "date": "2025-12",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/R0712giakinittei.pdf",
+        "questions": "https://www.city.ninohe.lg.jp/div/gikai/pdf/R0712ippansitumon.pdf",
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/08_12giketukekka.pdf"
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/4021"
+    },
+    {
+      "id": "r7-09-teireikai",
+      "name": "令和7年9月定例会",
+      "reiwaYear": 7,
+      "year": 2025,
+      "month": 9,
+      "sessionType": "定例会",
+      "date": "2025-09",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r7/070904shinginittei01.pdf",
+        "questions": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r7/070904ippansitumon.pdf",
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/R7-9giketukekka.pdf"
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/4021"
+    },
+    {
+      "id": "r7-08-rinji",
+      "name": "令和7年8月臨時会",
+      "reiwaYear": 7,
+      "year": 2025,
+      "month": 8,
+      "sessionType": "臨時会",
+      "date": "2025-08",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r7/R7_8singinittei.pdf",
+        "questions": null,
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r7/R7_8senkyokekka.pdf"
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/4021"
+    },
+    {
+      "id": "r7-06-teireikai",
+      "name": "令和7年6月定例会",
+      "reiwaYear": 7,
+      "year": 2025,
+      "month": 6,
+      "sessionType": "定例会",
+      "date": "2025-06",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r7/070610shinginittei01.pdf",
+        "questions": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r7/070609ippansitumon.pdf",
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r7/R7_giketukekka.pdf"
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/4021"
+    },
+    {
+      "id": "r7-03-teireikai",
+      "name": "令和7年3月定例会",
+      "reiwaYear": 7,
+      "year": 2025,
+      "month": 3,
+      "sessionType": "定例会",
+      "date": "2025-03",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r7/202503nittei.pdf",
+        "questions": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r7/202503situmon.pdf",
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r7/202503giketukekka.pdf"
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/4021"
+    },
+    {
+      "id": "r7-02-rinji",
+      "name": "令和7年2月臨時会",
+      "reiwaYear": 7,
+      "year": 2025,
+      "month": 2,
+      "sessionType": "臨時会",
+      "date": "2025-02",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r7/202502rinji_nittei.pdf",
+        "questions": null,
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r7/202502rinjigiketukekka.pdf"
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/4021"
+    },
+    {
+      "id": "r7-01-rinji",
+      "name": "令和7年1月臨時会",
+      "reiwaYear": 7,
+      "year": 2025,
+      "month": 1,
+      "sessionType": "臨時会",
+      "date": "2025-01",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r7/202501rinji_nittei.pdf",
+        "questions": null,
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r7/202501rinjigiketukekka.pdf"
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/4021"
+    },
+    {
+      "id": "r6-12-teireikai",
+      "name": "令和6年12月定例会",
+      "reiwaYear": 6,
+      "year": 2024,
+      "month": 12,
+      "sessionType": "定例会",
+      "date": "2024-12",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202412nittei.pdf",
+        "questions": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202412situmon.pdf",
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202412giketukekka.pdf"
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/3623"
+    },
+    {
+      "id": "r6-09-teireikai",
+      "name": "令和6年9月定例会",
+      "reiwaYear": 6,
+      "year": 2024,
+      "month": 9,
+      "sessionType": "定例会",
+      "date": "2024-09",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202409_nittei.pdf",
+        "questions": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202409situmon.pdf",
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202409_giketukekka.pdf"
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/3623"
+    },
+    {
+      "id": "r6-08-rinji",
+      "name": "令和6年8月臨時会",
+      "reiwaYear": 6,
+      "year": 2024,
+      "month": 8,
+      "sessionType": "臨時会",
+      "date": "2024-08",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202408rinji_nittei.pdf",
+        "questions": null,
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202408rinjigiketukekka.pdf"
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/3623"
+    },
+    {
+      "id": "r6-07-rinji",
+      "name": "令和6年7月臨時会",
+      "reiwaYear": 6,
+      "year": 2024,
+      "month": 7,
+      "sessionType": "臨時会",
+      "date": "2024-07",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202407rinji_nittei.pdf",
+        "questions": null,
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202407rinjigiketukekka.pdf"
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/3623"
+    },
+    {
+      "id": "r6-06-teireikai",
+      "name": "令和6年6月定例会",
+      "reiwaYear": 6,
+      "year": 2024,
+      "month": 6,
+      "sessionType": "定例会",
+      "date": "2024-06",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202406nittei.pdf",
+        "questions": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202406situmon.pdf",
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202406-giketukekka.pdf"
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/3623"
+    },
+    {
+      "id": "r6-05-rinji",
+      "name": "令和6年5月臨時会",
+      "reiwaYear": 6,
+      "year": 2024,
+      "month": 5,
+      "sessionType": "臨時会",
+      "date": "2024-05",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202405rinji_nittei.pdf",
+        "questions": null,
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202405rinjigiketukekka.pdf"
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/3623"
+    },
+    {
+      "id": "r6-03-rinji",
+      "name": "令和6年3月臨時会",
+      "reiwaYear": 6,
+      "year": 2024,
+      "month": 3,
+      "sessionType": "臨時会",
+      "date": "2024-03",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202403rinji_nittei.pdf",
+        "questions": null,
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202403rinjigiketukekka.pdf"
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/3623"
+    },
+    {
+      "id": "r6-03-teireikai",
+      "name": "令和6年3月定例会",
+      "reiwaYear": 6,
+      "year": 2024,
+      "month": 3,
+      "sessionType": "定例会",
+      "date": "2024-03",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202403nittei.pdf",
+        "questions": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202403situmon.pdf",
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202403giketukekka.pdf"
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/3623"
+    },
+    {
+      "id": "r6-01-rinji",
+      "name": "令和6年1月臨時会",
+      "reiwaYear": 6,
+      "year": 2024,
+      "month": 1,
+      "sessionType": "臨時会",
+      "date": "2024-01",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202401rinji_nittei.pdf",
+        "questions": null,
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/teireikai/r6/202401rinjigiketukekka.pdf"
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/3623"
+    }
+  ]
+}

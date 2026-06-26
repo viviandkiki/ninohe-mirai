@@ -1,0 +1,12 @@
+{
+  "version": "2026-06-26",
+  "note": "カスコアは編集部が各指標を総合して算出した評価値（0-100）。機械的な計算式ではなく、定量・定性両面を加味した編集判断。",
+  "scores": [
+    {"slug": "work", "score": 68, "scoreLabel": "B", "basis": "就業率・求人倍率・若年就業者数の3指標を均等加重"},
+    {"slug": "earn", "score": 52, "scoreLabel": "C+", "basis": "市内総生産・商業販売額・観光客数の3指標を均等加重"},
+    {"slug": "inherit", "score": 81, "scoreLabel": "A-", "basis": "文化財件数・伝統産業従事者・行事参加者を加重平均"},
+    {"slug": "connect", "score": 73, "scoreLabel": "B+", "basis": "移住者数・協力隊員数・連携協定数を均等加重"},
+    {"slug": "prepare", "score": 77, "scoreLabel": "B+", "basis": "防災計画整備・医師数・インフラ老朽化を総合評価"},
+    {"slug": "live", "score": 69, "scoreLabel": "B", "basis": "年少人口比率・学校数・市民満足度を均等加重"}
+  ]
+}
