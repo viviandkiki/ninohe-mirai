@@ -108,19 +108,19 @@ export default function GraphView({
         "link",
         forceLink<SimNode, SimLink>(links)
           .distance(l => {
-            if (l.kind === "keyword-keyword") return 115;
-            return Math.max(50, 135 - l.weight * 18);
+            if (l.kind === "keyword-keyword") return 180;
+            return Math.max(80, 200 - l.weight * 18);
           })
           .strength(l => {
-            if (l.kind === "keyword-keyword") return 0.35;
-            return Math.min(0.25 + l.weight * 0.05, 0.7);
+            if (l.kind === "keyword-keyword") return 0.2;
+            return Math.min(0.18 + l.weight * 0.04, 0.5);
           }),
       )
-      .force("charge", forceManyBody<SimNode>().strength(n => isActorType(n.type) ? -160 : -300))
-      .force("center", forceCenter(W / 2, H / 2).strength(0.03))
-      .force("collide", forceCollide<SimNode>().radius(n => n.radius + 12).strength(0.85))
-      .alphaDecay(0.010)
-      .velocityDecay(0.38)
+      .force("charge", forceManyBody<SimNode>().strength(n => isActorType(n.type) ? -280 : -520))
+      .force("center", forceCenter(W / 2, H / 2).strength(0.025))
+      .force("collide", forceCollide<SimNode>().radius(n => n.radius + 24).strength(0.9))
+      .alphaDecay(0.008)
+      .velocityDecay(0.42)
       .on("tick", () => setTick(t => t + 1));
 
     simNodesRef.current = nodes;
