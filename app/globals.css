@@ -134,8 +134,8 @@ h1, h2, h3 {
 @keyframes scrollLeft  { 0% { transform: translateX(0); }    100% { transform: translateX(-50%); } }
 @keyframes scrollRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
 
-.carousel-track-left  { display: flex; gap: 16px; width: max-content; animation: scrollLeft  30s linear infinite; }
-.carousel-track-right { display: flex; gap: 16px; width: max-content; animation: scrollRight 30s linear infinite; }
+.carousel-track-left  { display: flex; gap: 0; width: max-content; animation: scrollLeft  30s linear infinite; }
+.carousel-track-right { display: flex; gap: 0; width: max-content; animation: scrollRight 30s linear infinite; }
 
 .carousel-wrapper {
   overflow: hidden;

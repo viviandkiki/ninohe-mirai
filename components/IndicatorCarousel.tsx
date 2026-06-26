@@ -19,7 +19,7 @@ interface KpiItem {
 function KpiChip({ item }: { item: KpiItem }) {
   return (
     <div
-      className="flex-shrink-0 w-52 light-card p-5 carousel-card"
+      className="flex-shrink-0 w-52 light-card p-5 carousel-card mr-4"
       style={{ borderLeftColor: item.accentColor ?? "#2e7d8c", borderLeftWidth: 4 }}
     >
       <div className="flex items-start justify-between gap-1 mb-2">
