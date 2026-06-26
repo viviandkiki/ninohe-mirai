@@ -28,8 +28,8 @@ function UpdateBadgeInline({ date }: { date: string }) {
   const d = new Date(date);
   const label = `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日 更新`;
   return (
-    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#2e7d8c]/20 text-[#4dd4e7] text-sm font-semibold border border-[#2e7d8c]/40">
-      <span className="w-2 h-2 rounded-full bg-[#4dd4e7] animate-pulse" />
+    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#e0f2f7] text-[#0e6b7c] text-sm font-semibold border border-[#2e7d8c]/40">
+      <span className="w-2 h-2 rounded-full bg-[#2e7d8c] animate-pulse" />
       {label}
     </span>
   );
@@ -99,57 +99,57 @@ export default function HomePage() {
       <GSAPSetup />
 
       {/* HERO */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden border-b border-[#1e2a3a]">
+      <section className="relative min-h-[92vh] flex items-center overflow-hidden border-b border-[#e2e8f0]">
         <Image src="/HERO.png" alt="" fill className="object-cover object-center" priority quality={85} />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0e1a]/90 via-[#0a0e1a]/70 to-[#0a1520]/85 z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/88 via-[#f0f9fa]/75 to-[#e0f2f7]/80 z-[1]" />
         <ParticleLayer />
         <div className="relative z-10 max-w-5xl mx-auto px-4 py-20 w-full">
           {latestUpdate && (
             <div className="mb-6 hero-fade-in"><UpdateBadgeInline date={latestUpdate.date} /></div>
           )}
-          <h1 className="hero-h1 text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-6 overflow-hidden">
+          <h1 className="hero-h1 text-4xl sm:text-5xl lg:text-6xl font-black text-[#0f172a] leading-tight tracking-tight mb-6 overflow-hidden">
             二戸市の議会・行政・地域データを<br />市民に分かりやすく。
           </h1>
-          <p className="text-xl text-[#b0bec5] leading-relaxed max-w-2xl mb-10 hero-fade-in">
+          <p className="text-xl text-[#475569] leading-relaxed max-w-2xl mb-10 hero-fade-in">
             「ニノヘミライ」は、二戸市の公開情報を整理した市民ダッシュボードです。
             議会の動き、地域の指標、担い手のつながりを、ひとつの場所で確認できます。
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 hero-fade-in">
-            <div className="dark-card rounded-2xl p-6 neon-border kpi-hover">
-              <p className="text-sm font-bold text-[#6b7280] mb-2 uppercase tracking-widest">総人口</p>
-              <p className="text-5xl font-black text-[#4dd4e7] tabular-nums leading-none mb-1">
+            <div className="light-card p-6 kpi-hover">
+              <p className="text-sm font-bold text-[#475569] mb-2 uppercase tracking-widest">総人口</p>
+              <p className="text-5xl font-black text-[#0e6b7c] tabular-nums leading-none mb-1">
                 <AnimatedCounter target={23837} duration={1400} />
-                <span className="text-2xl font-medium ml-2 text-[#9ca3af]">人</span>
+                <span className="text-2xl font-medium ml-2 text-[#475569]">人</span>
               </p>
-              <p className="text-base text-red-400 font-semibold">2023年比 −1,843人</p>
+              <p className="text-base text-red-700 font-semibold">2023年比 −1,843人</p>
             </div>
-            <div className="dark-card rounded-2xl p-6 neon-border kpi-hover">
-              <p className="text-sm font-bold text-[#6b7280] mb-2 uppercase tracking-widest">移住定住者数</p>
-              <p className="text-5xl font-black text-emerald-400 tabular-nums leading-none mb-1">
+            <div className="light-card p-6 kpi-hover">
+              <p className="text-sm font-bold text-[#475569] mb-2 uppercase tracking-widest">移住定住者数</p>
+              <p className="text-5xl font-black text-emerald-700 tabular-nums leading-none mb-1">
                 <AnimatedCounter target={migration?.value ?? 64} duration={1000} />
-                <span className="text-2xl font-medium ml-2 text-[#9ca3af]">人</span>
+                <span className="text-2xl font-medium ml-2 text-[#475569]">人</span>
               </p>
-              <p className="text-base text-emerald-400 font-semibold">前年比 +18人</p>
+              <p className="text-base text-emerald-700 font-semibold">前年比 +18人</p>
             </div>
-            <div className="dark-card rounded-2xl p-6 neon-border kpi-hover">
-              <p className="text-sm font-bold text-[#6b7280] mb-2 uppercase tracking-widest">高齢化率</p>
-              <p className="text-5xl font-black text-orange-400 tabular-nums leading-none mb-1">
+            <div className="light-card p-6 kpi-hover">
+              <p className="text-sm font-bold text-[#475569] mb-2 uppercase tracking-widest">高齢化率</p>
+              <p className="text-5xl font-black text-orange-700 tabular-nums leading-none mb-1">
                 <AnimatedCounter target={aging?.value ?? 40.4} duration={1200} decimals={1} />
-                <span className="text-2xl font-medium ml-2 text-[#9ca3af]">%</span>
+                <span className="text-2xl font-medium ml-2 text-[#475569]">%</span>
               </p>
-              <p className="text-base text-orange-400 font-semibold">2023年比 +2.6pt</p>
+              <p className="text-base text-orange-700 font-semibold">2023年比 +2.6pt</p>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 hero-fade-in">
-            <Link href="/powers" className="inline-flex items-center justify-center gap-2 bg-[#2e7d8c] hover:bg-[#3a9aad] text-white font-bold px-8 py-4 rounded-xl transition-all text-xl shadow-lg shadow-[#2e7d8c]/30">
+            <Link href="/powers" className="inline-flex items-center justify-center gap-2 bg-[#2e7d8c] hover:bg-[#1a6477] text-white font-bold px-8 py-4 rounded-xl transition-all text-xl shadow-md">
               市の状況を見る <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link href="/graph" className="inline-flex items-center justify-center gap-2 dark-card border border-[#2e7d8c]/40 hover:border-[#4dd4e7] text-[#9ca3af] hover:text-white font-bold px-8 py-4 rounded-xl transition-all text-xl">
+            <Link href="/graph" className="inline-flex items-center justify-center gap-2 bg-white border-2 border-[#2e7d8c] text-[#0e6b7c] hover:bg-[#e0f2f7] font-bold px-8 py-4 rounded-xl transition-all text-xl">
               <Network className="w-5 h-5" /> キーワードマップ（全画面）
             </Link>
           </div>
         </div>
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce opacity-50">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce opacity-60">
           <div className="w-6 h-10 border-2 border-[#2e7d8c] rounded-full flex items-start justify-center pt-2">
             <div className="w-1 h-3 bg-[#2e7d8c] rounded-full" />
           </div>
