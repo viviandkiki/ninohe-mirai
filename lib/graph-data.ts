@@ -4,7 +4,8 @@ export interface GraphNode {
   id: string;
   label: string;
   sublabel?: string;
-  type: "member" | "theme" | "organization" | "npo" | "official" | "council" | "community";
+  shortLabel?: string;
+  type: string;
   color: string;
   radius: number;
 }
@@ -13,7 +14,7 @@ export interface GraphLink {
   source: string;
   target: string;
   weight: number;
-  kind: "actor-theme" | "actor-actor";
+  kind: "keyword-keyword" | "actor-keyword" | "actor-theme" | "actor-actor";
 }
 
 export interface GraphData {

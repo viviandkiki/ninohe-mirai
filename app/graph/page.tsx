@@ -6,12 +6,13 @@ import GraphViewWrapper from "@/components/GraphViewWrapper";
 
 export const metadata: Metadata = {
   title: "キーワードマップ",
-  description: "漆・九戸城・里山・南部美人…二戸を語るキーワードが有機的につながるナレッジグラフ。",
+  description: "漆・九戸城・里山・南部美人…二戸を語るキーワードと担い手が有機的につながるナレッジグラフ。",
 };
 
 const FILTER_OPTIONS = [
   { key: "all", label: "すべて" },
-  ...KEYWORD_CATEGORIES.map(cat => ({ key: cat, label: cat })),
+  ...KEYWORD_CATEGORIES.map(cat => ({ key: cat, label: cat, color: CATEGORY_COLORS[cat] })),
+  { key: "担い手", label: "担い手のみ" },
 ];
 
 export default function GraphPage() {
@@ -25,8 +26,8 @@ export default function GraphPage() {
         </p>
         <SectionHeading title="キーワードマップ" subtitle="二戸をひもとく言葉のネットワーク" />
         <p className="text-base text-[#4b5563] leading-relaxed max-w-2xl">
-          漆・九戸城・里山・南部美人など、二戸にまつわるキーワードが有機的につながります。
-          ノードをクリックすると説明とつながりが表示されます。キーワードは随時追加予定です。
+          漆・九戸城・里山・南部美人など、二戸にまつわるキーワードと担い手（行政・団体・NPO）が有機的につながります。
+          線の太さは関与の強さ、丸の大きさは接続数を表します。ノードをクリックするとつながりが表示されます。
         </p>
       </div>
 
