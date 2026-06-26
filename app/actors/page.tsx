@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { actors, getPowersForActor } from "@/lib/data";
+import { councilInfo } from "@/lib/council";
 import PageContainer from "@/components/PageContainer";
 import SectionHeading from "@/components/SectionHeading";
 import ActorCard from "@/components/ActorCard";
 import { ACTOR_TYPE_MAP } from "@/lib/utils";
 import type { ActorType } from "@/lib/schemas";
+import { ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "担い手",
@@ -33,6 +35,41 @@ export default function ActorsPage() {
           氏名は公開情報に基づき掲載しています。
         </p>
         <p className="text-xs text-[#6b7280]">掲載 {totalCount} 名・団体</p>
+      </div>
+
+      {/* 議会基本情報 */}
+      <div className="bg-white border border-[#e2ddd6] rounded-xl p-5 mb-8">
+        <p className="text-xs font-semibold text-[#2e7d8c] uppercase tracking-widest mb-3">COUNCIL INFO</p>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
+          <div>
+            <p className="text-xs text-[#4b5563] mb-0.5">現在の定数</p>
+            <p className="text-2xl font-bold text-[#111827]">{councilInfo.capacity}<span className="text-sm font-normal text-[#4b5563] ml-1">人</span></p>
+          </div>
+          <div>
+            <p className="text-xs text-[#4b5563] mb-0.5">前回選挙</p>
+            <p className="text-base font-semibold text-[#111827]">{councilInfo.lastElection}</p>
+          </div>
+          <div>
+            <p className="text-xs text-[#4b5563] mb-0.5">前回投票率</p>
+            <p className="text-2xl font-bold text-[#111827]">{councilInfo.lastElectionTurnout}<span className="text-sm font-normal text-[#4b5563] ml-0.5">%</span></p>
+          </div>
+          <div>
+            <p className="text-xs text-[#4b5563] mb-0.5">次回選挙</p>
+            <p className="text-base font-semibold text-[#111827]">{councilInfo.nextElection}</p>
+          </div>
+        </div>
+        <p className="text-sm text-amber-800 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mb-3">
+          ※ {councilInfo.nextElection}の選挙より定数が{councilInfo.capacity}人から<strong>{councilInfo.nextCapacity}人</strong>に削減予定です。
+        </p>
+        <a
+          href={councilInfo.sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-xs text-[#2e7d8c] hover:underline"
+        >
+          <ExternalLink className="w-3 h-3" />
+          出典：{councilInfo.source}
+        </a>
       </div>
 
       {/* Category legend */}
