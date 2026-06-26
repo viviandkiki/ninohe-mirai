@@ -83,6 +83,8 @@ export default function HomePage() {
               sourceNote="二戸市統計書"
               updatedAt="2023年"
               accentColor="#1e3a5f"
+              sourceTier="city"
+              geographyScope="二戸市"
             />
             <KpiCard
               title="移住定住者数"
@@ -93,6 +95,8 @@ export default function HomePage() {
               sourceNote="二戸市移住定住実績"
               updatedAt="2023年"
               accentColor="#2e7d8c"
+              sourceTier="city"
+              geographyScope="二戸市"
             />
             <KpiCard
               title="高齢化率"
@@ -100,9 +104,11 @@ export default function HomePage() {
               unit="%"
               change="前年比 +1.0pt"
               changeUp={false}
-              sourceNote="二戸市統計書"
+              sourceNote="e-Stat 社会・人口統計体系"
               updatedAt="2023年"
               accentColor="#c9614a"
+              sourceTier="estat"
+              geographyScope="二戸市"
             />
           </div>
 
@@ -164,9 +170,11 @@ export default function HomePage() {
               unit="%"
               change="前年比 −0.3pt"
               changeUp={false}
-              sourceNote="二戸市統計書"
+              sourceNote="e-Stat 国勢調査"
               updatedAt="2022年"
               accentColor="#c9614a"
+              sourceTier="estat"
+              geographyScope="二戸市"
             />
             <KpiCard
               title="市内総生産"
@@ -177,6 +185,8 @@ export default function HomePage() {
               sourceNote="岩手県市町村民所得統計"
               updatedAt="2021年"
               accentColor="#d97706"
+              sourceTier="estimate"
+              geographyScope="二戸市"
             />
             <KpiCard
               title="文化財指定件数"
@@ -187,6 +197,8 @@ export default function HomePage() {
               sourceNote="二戸市教育委員会"
               updatedAt="2024年"
               accentColor="#b8872a"
+              sourceTier="city"
+              geographyScope="二戸市"
             />
             <KpiCard
               title="地域おこし協力隊"
@@ -197,6 +209,8 @@ export default function HomePage() {
               sourceNote="二戸市公式"
               updatedAt="2024年"
               accentColor="#2e7d8c"
+              sourceTier="city"
+              geographyScope="二戸市"
             />
             <KpiCard
               title="市民生活満足度"
@@ -207,6 +221,8 @@ export default function HomePage() {
               sourceNote="市民意識調査"
               updatedAt="2023年"
               accentColor="#2d7a5f"
+              sourceTier="survey"
+              geographyScope="二戸市"
             />
             <KpiCard
               title="観光入込客数"
@@ -217,6 +233,8 @@ export default function HomePage() {
               sourceNote="岩手県観光統計"
               updatedAt="2023年"
               accentColor="#2d7a5f"
+              sourceTier="prefecture"
+              geographyScope="二戸市"
             />
             <KpiCard
               title="防災計画策定率"
@@ -227,6 +245,8 @@ export default function HomePage() {
               sourceNote="二戸市防災計画"
               updatedAt="2024年"
               accentColor="#3b6fa0"
+              sourceTier="city"
+              geographyScope="二戸市"
             />
             <KpiCard
               title="子育て支援満足度"
@@ -237,6 +257,8 @@ export default function HomePage() {
               sourceNote="市民意識調査"
               updatedAt="2023年"
               accentColor="#2d7a5f"
+              sourceTier="survey"
+              geographyScope="二戸市"
             />
           </div>
           <p className="text-xs text-[#4b5563] mt-1">
