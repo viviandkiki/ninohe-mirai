@@ -14,7 +14,7 @@ import PageContainer from "@/components/PageContainer";
 import KpiCard from "@/components/KpiCard";
 import Link from "next/link";
 import { ArrowRight, MapPin, Calendar, ExternalLink, Network } from "lucide-react";
-import { buildGraphData } from "@/lib/graph-data";
+import { buildKeywordGraphData, CATEGORY_COLORS, KEYWORD_CATEGORIES } from "@/lib/keyword-graph";
 import GraphViewWrapper from "@/components/GraphViewWrapper";
 import HeroCanvas from "@/components/HeroCanvas";
 import AnimatedCounter from "@/components/AnimatedCounter";
@@ -46,7 +46,11 @@ export default function HomePage() {
     .filter((m) => m.id.startsWith("mov-council-"))
     .slice(0, 4);
 
-  const graphData = buildGraphData();
+  const graphData = buildKeywordGraphData();
+  const kwFilterOptions = [
+    { key: "all", label: "すべて" },
+    ...KEYWORD_CATEGORIES.map(cat => ({ key: cat, label: cat })),
+  ];
 
   return (
     <>
@@ -120,7 +124,7 @@ export default function HomePage() {
               className="inline-flex items-center justify-center gap-2 bg-white border border-[#e2ddd6] hover:bg-[#e2ddd6]/60 text-[#4b5563] font-medium px-6 py-3 rounded-lg transition-colors text-base"
             >
               <Network className="w-4 h-4" />
-              論点マップを見る
+              キーワードマップを見る
             </Link>
           </div>
         </div>
@@ -360,11 +364,11 @@ export default function HomePage() {
         </section>
         </ScrollReveal>
 
-        {/* ===== Section 5: 論点マップ プレビュー ===== */}
+        {/* ===== Section 5: キーワードマップ プレビュー ===== */}
         <ScrollReveal delay={60}>
         <section className="mb-16">
           <div className="flex items-center justify-between mb-3">
-            <SectionHeading title="論点マップ" subtitle="テーマと担い手のつながり" />
+            <SectionHeading title="キーワードマップ" subtitle="二戸をひもとく言葉のネットワーク" />
             <Link
               href="/graph"
               className="flex items-center gap-1 text-sm text-[#2e7d8c] hover:opacity-80 font-medium"
@@ -373,16 +377,10 @@ export default function HomePage() {
             </Link>
           </div>
           <p className="text-base text-[#4b5563] leading-relaxed mb-4 max-w-2xl">
-            議員・行政・地域団体がどの政策テーマに関わっているかを可視化しています。
-            ノードをクリックするとつながりが確認できます。
+            漆・九戸城・里山・南部美人など、二戸にまつわるキーワードが力学的に配置されます。
+            ノードをクリックすると説明とつながりが表示されます。
           </p>
-          <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
-            <p className="text-sm text-amber-800">
-              <strong>編集部注：</strong>
-              このマップは公開情報をもとに編集部が整理したものです。発言量の評価ではなく、関与テーマの整理です。
-            </p>
-          </div>
-          <GraphViewWrapper data={graphData} height={420} />
+          <GraphViewWrapper data={graphData} height={420} filterOptions={kwFilterOptions} />
         </section>
         </ScrollReveal>
 

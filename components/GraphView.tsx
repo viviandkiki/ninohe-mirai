@@ -11,6 +11,8 @@ import {
 import type { SimulationNodeDatum, SimulationLinkDatum } from "d3-force";
 import type { GraphData, GraphNode } from "@/lib/graph-data";
 
+export type FilterOption = { key: string; label: string };
+
 // d3-force mutates nodes in place — extend GraphNode with simulation fields
 interface SimNode extends SimulationNodeDatum {
   id: string;
@@ -33,23 +35,18 @@ interface SimLink extends SimulationLinkDatum<SimNode> {
 const W = 860;
 const H = 580;
 
-const TYPE_LABELS: Record<string, string> = {
-  theme:     "政策テーマ",
-  official:  "行政",
-  council:   "議会",
-  npo:       "NPO・組合",
-  community: "地域団体",
-};
-
-const FILTER_OPTIONS = [
-  { key: "all",       label: "すべて" },
-  { key: "council",   label: "議会" },
-  { key: "official",  label: "行政" },
-  { key: "npo",       label: "NPO" },
-  { key: "community", label: "地域団体" },
+const DEFAULT_FILTER_OPTIONS: FilterOption[] = [
+  { key: "all", label: "すべて" },
 ];
 
-export default function GraphView({ data }: { data: GraphData; height?: number }) {
+export default function GraphView({
+  data,
+  filterOptions = DEFAULT_FILTER_OPTIONS,
+}: {
+  data: GraphData;
+  height?: number;
+  filterOptions?: FilterOption[];
+}) {
   const svgRef = useRef<SVGSVGElement>(null);
   // d3 mutates these arrays — keep in refs, not state
   const simNodesRef = useRef<SimNode[]>([]);
@@ -261,7 +258,7 @@ export default function GraphView({ data }: { data: GraphData; height?: number }
     <div className="flex flex-col gap-3">
       {/* Filter chips */}
       <div className="flex flex-wrap gap-2 items-center">
-        {FILTER_OPTIONS.map(opt => (
+        {filterOptions.map(opt => (
           <button
             key={opt.key}
             onClick={() => setFilterType(opt.key)}
@@ -449,7 +446,7 @@ export default function GraphView({ data }: { data: GraphData; height?: number }
                 <span className="text-white text-xs font-bold">{selectedNode.label.slice(0, 1)}</span>
               </div>
               <p className="text-[11px] text-[#6b7280] mb-0.5 font-medium uppercase tracking-wide">
-                {TYPE_LABELS[selectedNode.type] ?? selectedNode.type}
+                {selectedNode.type}
               </p>
               <h3 className="text-base font-bold text-[#111827] mb-1 leading-tight">{selectedNode.label}</h3>
               {selectedNode.sublabel && (
@@ -481,33 +478,20 @@ export default function GraphView({ data }: { data: GraphData; height?: number }
             </div>
           ) : (
             <div className="rounded-2xl p-4 border border-[#e2ddd6] bg-[#f9f8f5]">
-              <p className="text-sm font-bold text-[#111827] mb-3">凡例</p>
+              <p className="text-sm font-bold text-[#111827] mb-3">カテゴリー</p>
               <div className="space-y-2 mb-4">
-                {[
-                  { color: "#c9614a", label: "政策テーマ（大ノード）" },
-                  { color: "#1e3a5f", label: "行政" },
-                  { color: "#2e7d8c", label: "議会" },
-                  { color: "#2d7a5f", label: "地域団体" },
-                  { color: "#b8872a", label: "NPO・組合" },
-                ].map(item => (
-                  <div key={item.label} className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: item.color }} />
-                    <span className="text-xs text-[#4b5563]">{item.label}</span>
-                  </div>
-                ))}
+                {filterOptions.filter(o => o.key !== "all").map(opt => {
+                  const sample = data.nodes.find(n => n.type === opt.key);
+                  return sample ? (
+                    <div key={opt.key} className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: sample.color }} />
+                      <span className="text-xs text-[#4b5563]">{opt.label}</span>
+                    </div>
+                  ) : null;
+                })}
               </div>
-              <div className="border-t border-[#e2ddd6] pt-3 space-y-1.5">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 border-t border-[#4b5563]" />
-                  <span className="text-xs text-[#4b5563]">テーマとのつながり</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-8 border-t-2 border-dashed border-[#a78bfa]" />
-                  <span className="text-xs text-[#4b5563]">担い手間の共通関心</span>
-                </div>
-              </div>
-              <p className="text-[11px] text-[#9ca3af] mt-3 leading-relaxed">
-                共通の政策テーマを持つ担い手同士が破線でつながっています。グラフは5秒ごとにゆっくり再配置されます。
+              <p className="text-[11px] text-[#9ca3af] leading-relaxed">
+                ノードをクリックするとつながりが表示されます。グラフは5秒ごとに生き物のように動きます。
               </p>
             </div>
           )}

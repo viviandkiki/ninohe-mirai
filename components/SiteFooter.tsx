@@ -47,7 +47,7 @@ export default function SiteFooter() {
             <nav className="flex flex-col gap-2">
               {[
                 { href: "/powers", label: "市の現状：6つのテーマ" },
-                { href: "/graph", label: "論点マップ" },
+                { href: "/graph", label: "キーワードマップ" },
                 { href: "/movement", label: "動きと出来事" },
                 { href: "/actors", label: "担い手" },
                 { href: "/methodology", label: "調査方法・データ出典" },

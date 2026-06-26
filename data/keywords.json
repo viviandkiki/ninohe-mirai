@@ -1,0 +1,242 @@
+[
+  {
+    "id": "kw-urushi",
+    "label": "漆",
+    "category": "産業",
+    "description": "日本最大の国産漆産地。浄法寺産漆は全国シェア約7割。文化財修復や伝統工芸に欠かせない。",
+    "related": ["kw-joboji", "kw-lacquerware", "kw-forest", "kw-nanbubijin", "kw-lacquer-tapping"],
+    "weight": 3
+  },
+  {
+    "id": "kw-joboji-urushi",
+    "label": "浄法寺漆",
+    "category": "産業",
+    "description": "浄法寺地区で生産される高品質な国産漆。輪島塗・京漆器など全国の漆器産地に供給される。",
+    "related": ["kw-urushi", "kw-joboji", "kw-lacquerware", "kw-lacquer-tapping"],
+    "weight": 2
+  },
+  {
+    "id": "kw-forestry",
+    "label": "林業",
+    "category": "産業",
+    "description": "市域の約8割を占める山林を活用した基幹産業。漆木の栽培・管理も含む。",
+    "related": ["kw-urushi", "kw-forest", "kw-satoyama", "kw-agriculture", "kw-revitalization"],
+    "weight": 2
+  },
+  {
+    "id": "kw-agriculture",
+    "label": "農業",
+    "category": "産業",
+    "description": "短角牛・りんご・米など多彩な農産品が生産される二戸の基盤産業。",
+    "related": ["kw-tankaku", "kw-apple", "kw-forestry", "kw-satoyama", "kw-sake"],
+    "weight": 2
+  },
+  {
+    "id": "kw-tankaku",
+    "label": "短角牛",
+    "category": "産業",
+    "description": "岩手短角和牛。二戸の山間地で放牧される希少な在来品種。赤身肉として人気が高い。",
+    "related": ["kw-agriculture", "kw-satoyama", "kw-origashidake", "kw-revitalization"],
+    "weight": 2
+  },
+  {
+    "id": "kw-apple",
+    "label": "りんご",
+    "category": "産業",
+    "description": "浄法寺地区を中心に栽培されるりんご。澄んだ空気と寒暖差が甘みを生む。",
+    "related": ["kw-agriculture", "kw-joboji", "kw-satoyama"],
+    "weight": 1
+  },
+  {
+    "id": "kw-nanbubijin",
+    "label": "南部美人",
+    "category": "産業",
+    "description": "全国新酒鑑評会金賞・IWC世界一受賞の老舗蔵元。二戸の地下水で醸す。",
+    "related": ["kw-urushi", "kw-sake", "kw-tourism", "kw-migration"],
+    "weight": 2
+  },
+  {
+    "id": "kw-sake",
+    "label": "清酒",
+    "category": "産業",
+    "description": "二戸の清澄な水と良質な米から醸される地酒。南部美人をはじめ全国的評価が高い。",
+    "related": ["kw-nanbubijin", "kw-agriculture", "kw-mabuchi-river"],
+    "weight": 1
+  },
+  {
+    "id": "kw-tourism",
+    "label": "観光",
+    "category": "産業",
+    "description": "九戸城・天台寺・漆器体験など歴史と自然・ものづくりを融合した観光資源。",
+    "related": ["kw-kunohe-castle", "kw-tendaiji", "kw-origashidake", "kw-lacquerware", "kw-revitalization"],
+    "weight": 2
+  },
+  {
+    "id": "kw-kunohe-castle",
+    "label": "九戸城",
+    "category": "歴史",
+    "description": "国指定史跡。九戸政実の居城。天正の乱（1591年）の舞台となり、豊臣秀吉の全国統一に最後まで抵抗した。",
+    "related": ["kw-kunohe-masazane", "kw-kunohe-rebellion", "kw-tourism", "kw-ninohe"],
+    "weight": 3
+  },
+  {
+    "id": "kw-kunohe-masazane",
+    "label": "九戸政実",
+    "category": "歴史",
+    "description": "九戸城主。豊臣勢力に反旗を翻した武将。その激しい抵抗は「もののけ姫」の世界観にも影響を与えたとも言われる。",
+    "related": ["kw-kunohe-castle", "kw-kunohe-rebellion", "kw-nanbu-domain"],
+    "weight": 2
+  },
+  {
+    "id": "kw-kunohe-rebellion",
+    "label": "九戸の乱",
+    "category": "歴史",
+    "description": "1591年（天正19年）。豊臣秀吉の天下統一に最後まで抵抗した東北最後の反乱。",
+    "related": ["kw-kunohe-castle", "kw-kunohe-masazane", "kw-nanbu-domain"],
+    "weight": 2
+  },
+  {
+    "id": "kw-nanbu-domain",
+    "label": "南部藩",
+    "category": "歴史",
+    "description": "江戸時代に二戸地域を治めた藩。南部馬の産地として知られ、南部鉄器など独自文化を育んだ。",
+    "related": ["kw-kunohe-masazane", "kw-nanbu-horse", "kw-ninohe", "kw-festival"],
+    "weight": 2
+  },
+  {
+    "id": "kw-tendaiji",
+    "label": "天台寺",
+    "category": "歴史",
+    "description": "浄法寺の天台宗古刹。奈良時代創建。瀬戸内寂聴が住職を務め全国的に知られるように。",
+    "related": ["kw-joboji", "kw-tourism", "kw-traditional-crafts", "kw-forest"],
+    "weight": 2
+  },
+  {
+    "id": "kw-mabuchi-river",
+    "label": "馬淵川",
+    "category": "自然",
+    "description": "二戸市中心部を流れる一級河川。南部馬の産地だった歴史に由来する名前。清流で知られる。",
+    "related": ["kw-ninohe", "kw-agriculture", "kw-satoyama", "kw-sake", "kw-nanbu-horse"],
+    "weight": 2
+  },
+  {
+    "id": "kw-origashidake",
+    "label": "折爪岳",
+    "category": "自然",
+    "description": "市内最高峰（852m）。短角牛の夏期放牧地。山麓にはスキー場も。里山の象徴的な山。",
+    "related": ["kw-tankaku", "kw-forest", "kw-tourism", "kw-satoyama"],
+    "weight": 2
+  },
+  {
+    "id": "kw-forest",
+    "label": "森林",
+    "category": "自然",
+    "description": "市域の約8割を占める豊かな森林資源。漆・林業・里山文化の物質的な基盤。",
+    "related": ["kw-urushi", "kw-forestry", "kw-satoyama", "kw-tendaiji"],
+    "weight": 2
+  },
+  {
+    "id": "kw-satoyama",
+    "label": "里山",
+    "category": "自然",
+    "description": "人と自然が共存する農林景観。短角牛の放牧・漆の採取・農業が複合する二戸の生活文化の基盤。",
+    "related": ["kw-agriculture", "kw-forestry", "kw-tankaku", "kw-forest", "kw-apple"],
+    "weight": 2
+  },
+  {
+    "id": "kw-nanbu-horse",
+    "label": "南部馬",
+    "category": "自然",
+    "description": "南部地方（二戸周辺）を産地とする日本在来馬。馬淵川の名の由来とも言われ、南部藩の重要な産業だった。",
+    "related": ["kw-nanbu-domain", "kw-mabuchi-river", "kw-satoyama", "kw-festival"],
+    "weight": 1
+  },
+  {
+    "id": "kw-lacquerware",
+    "label": "漆器",
+    "category": "文化",
+    "description": "浄法寺塗をはじめとする漆器工芸。国産漆100%で作られる本物志向の工芸品。",
+    "related": ["kw-urushi", "kw-joboji-urushi", "kw-traditional-crafts", "kw-tourism", "kw-lacquer-tapping"],
+    "weight": 3
+  },
+  {
+    "id": "kw-lacquer-tapping",
+    "label": "漆かき",
+    "category": "文化",
+    "description": "漆の木から樹液を採取する伝統技術。夏の早朝に行われる熟練の職人技。後継者育成が課題。",
+    "related": ["kw-urushi", "kw-joboji-urushi", "kw-lacquerware", "kw-forestry"],
+    "weight": 2
+  },
+  {
+    "id": "kw-traditional-crafts",
+    "label": "伝統工芸",
+    "category": "文化",
+    "description": "漆器・木工など、森林資源と職人技が組み合わさった二戸の工芸の伝統。",
+    "related": ["kw-lacquerware", "kw-urushi", "kw-festival", "kw-tendaiji"],
+    "weight": 2
+  },
+  {
+    "id": "kw-joboji",
+    "label": "浄法寺",
+    "category": "文化",
+    "description": "漆・天台寺・りんごで知られる旧浄法寺町エリア。二戸市の北部。日本の原風景が残る。",
+    "related": ["kw-urushi", "kw-joboji-urushi", "kw-tendaiji", "kw-apple", "kw-forest"],
+    "weight": 2
+  },
+  {
+    "id": "kw-festival",
+    "label": "祭り・民俗",
+    "category": "文化",
+    "description": "南部地方の伝統行事・祭礼。馬と人のつながりを祝うチャグチャグ馬コや各地の神社祭事。",
+    "related": ["kw-traditional-crafts", "kw-nanbu-horse", "kw-ninohe", "kw-nanbu-domain"],
+    "weight": 1
+  },
+  {
+    "id": "kw-ninohe",
+    "label": "二戸市",
+    "category": "まち",
+    "description": "岩手県北部に位置する市。人口約2.4万人。漆と歴史と里山文化が重なる地。",
+    "related": ["kw-kunohe-castle", "kw-mabuchi-river", "kw-migration", "kw-depopulation", "kw-festival"],
+    "weight": 3
+  },
+  {
+    "id": "kw-migration",
+    "label": "移住定住",
+    "category": "まち",
+    "description": "二戸の豊かな自然・仕事・文化に惹かれて移り住む人を増やす取り組み。関係人口の創出も。",
+    "related": ["kw-ninohe", "kw-revitalization", "kw-childcare", "kw-nanbubijin", "kw-forestry"],
+    "weight": 2
+  },
+  {
+    "id": "kw-childcare",
+    "label": "子育て",
+    "category": "まち",
+    "description": "若い世代が安心して子育てできる環境づくり。里山での体験教育なども注目される。",
+    "related": ["kw-migration", "kw-healthcare", "kw-revitalization", "kw-satoyama"],
+    "weight": 2
+  },
+  {
+    "id": "kw-healthcare",
+    "label": "医療・福祉",
+    "category": "まち",
+    "description": "中核病院を中心とした地域医療体制の維持と充実。高齢者が安心して暮らせる体制づくり。",
+    "related": ["kw-childcare", "kw-depopulation", "kw-ninohe"],
+    "weight": 2
+  },
+  {
+    "id": "kw-revitalization",
+    "label": "地域おこし",
+    "category": "まち",
+    "description": "地域資源（漆・里山・食・歴史）を活かしたコミュニティ再生・産業振興の多様な取り組み。",
+    "related": ["kw-migration", "kw-childcare", "kw-tourism", "kw-forestry", "kw-tankaku"],
+    "weight": 2
+  },
+  {
+    "id": "kw-depopulation",
+    "label": "少子高齢化",
+    "category": "まち",
+    "description": "全国的な課題でもある人口減少・高齢化。二戸ではそれに対応した地域設計が模索されている。",
+    "related": ["kw-ninohe", "kw-healthcare", "kw-migration", "kw-revitalization"],
+    "weight": 2
+  }
+]
