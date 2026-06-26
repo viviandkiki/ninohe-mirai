@@ -1,6 +1,7 @@
 import { ACTOR_TYPE_MAP } from "@/lib/utils";
 import type { Actor, Power } from "@/lib/schemas";
 import PowerBadge from "./PowerBadge";
+import { ExternalLink } from "lucide-react";
 
 interface ActorCardProps {
   actor: Actor;
@@ -28,11 +29,23 @@ export default function ActorCard({ actor, relatedPowers = [] }: ActorCardProps)
       <p className="text-sm text-[#6b7280] leading-relaxed mb-4">{actor.summary}</p>
 
       {relatedPowers.length > 0 && (
-        <div className="flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap gap-1.5 mb-3">
           {relatedPowers.map((power) => (
             <PowerBadge key={power.slug} power={power} />
           ))}
         </div>
+      )}
+
+      {actor.url && (
+        <a
+          href={actor.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-xs text-[#2e7d8c] hover:underline"
+        >
+          <ExternalLink className="w-3 h-3" aria-hidden="true" />
+          公式サイト
+        </a>
       )}
     </div>
   );

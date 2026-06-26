@@ -69,6 +69,7 @@ export const ActorSchema = z.object({
   focusPowers: z.array(z.string()),
   lastActive: z.string(),
   summary: z.string(),
+  url: z.string().url().optional(),
 });
 export type Actor = z.infer<typeof ActorSchema>;
 
@@ -86,6 +87,43 @@ export const MovementSchema = z.object({
   sourceId: z.string().optional(),
 });
 export type Movement = z.infer<typeof MovementSchema>;
+
+export const CouncilMemberSchema = z.object({
+  id: z.string(),
+  seatNumber: z.number().int(),
+  name: z.string(),
+  nameKana: z.string(),
+  role: z.string(),
+  faction: z.string(),
+  party: z.string(),
+  committees: z.array(z.string()),
+  councilOps: z.string().nullable(),
+  age: z.number().int(),
+  background: z.string(),
+  term: z.string(),
+  votes2023: z.number().int(),
+  address: z.string(),
+  isNew2023: z.boolean(),
+  isFormer: z.boolean(),
+  note: z.string().optional(),
+});
+export type CouncilMember = z.infer<typeof CouncilMemberSchema>;
+
+export const MayorSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  nameKana: z.string(),
+  role: z.string(),
+  termNumber: z.number().int(),
+  termStart: z.string(),
+  termEnd: z.string(),
+  party: z.string(),
+  background: z.string(),
+  note: z.string(),
+  source: z.string(),
+  lastUpdated: z.string(),
+});
+export type Mayor = z.infer<typeof MayorSchema>;
 
 export const UpdateCategorySchema = z.enum(["data", "content", "design", "system"]);
 export type UpdateCategory = z.infer<typeof UpdateCategorySchema>;
