@@ -2,7 +2,7 @@
   {
     "id": "power-work",
     "slug": "work",
-    "name": "働く力",
+    "name": "しごと・雇用",
     "description": "市民が安心して働ける環境、雇用の質と量",
     "icon": "Briefcase",
     "color": "coral",
@@ -18,7 +18,7 @@
   {
     "id": "power-earn",
     "slug": "earn",
-    "name": "稼ぐ力",
+    "name": "産業・経済",
     "description": "地域経済の活力、産業の付加価値創出力",
     "icon": "TrendingUp",
     "color": "coral-orange",
@@ -34,7 +34,7 @@
   {
     "id": "power-inherit",
     "slug": "inherit",
-    "name": "受け継ぐ力",
+    "name": "文化・継承",
     "description": "文化・技術・土地の継承、伝統と革新のつながり",
     "icon": "BookOpen",
     "color": "gold",
@@ -50,7 +50,7 @@
   {
     "id": "power-connect",
     "slug": "connect",
-    "name": "つながる力",
+    "name": "移住・つながり",
     "description": "地域内外の人と組織のネットワーク、協働力",
     "icon": "Users",
     "color": "teal",
@@ -66,7 +66,7 @@
   {
     "id": "power-prepare",
     "slug": "prepare",
-    "name": "備える力",
+    "name": "医療・防災",
     "description": "防災・福祉・インフラの整備、将来へのリスク管理",
     "icon": "Shield",
     "color": "blue",
@@ -82,7 +82,7 @@
   {
     "id": "power-live",
     "slug": "live",
-    "name": "暮らせる力",
+    "name": "子育て・暮らし",
     "description": "日常生活の豊かさ、子育て・教育・自然環境",
     "icon": "Home",
     "color": "green-teal",
