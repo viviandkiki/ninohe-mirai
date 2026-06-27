@@ -60,9 +60,10 @@ export default function SiteHeader() {
         <div className="flex items-center gap-2 shrink-0">
           <LanguageToggle />
           <button
-            className="md:hidden p-2 rounded text-[#475569] hover:bg-[#f1f5f9] transition-colors"
+            className="md:hidden touch-target p-2 rounded text-[#475569] hover:bg-[#f1f5f9] transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="メニュー"
+            aria-expanded={menuOpen}
           >
             {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -70,13 +71,13 @@ export default function SiteHeader() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden border-t border-[#e2e8f0] bg-white">
+        <div className="md:hidden border-t border-[#e2e8f0] bg-white menu-slide-in">
           <nav className="max-w-5xl mx-auto px-4 py-3 flex flex-col gap-1">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-3 py-3 rounded text-base font-medium transition-colors ${
+                className={`px-4 min-h-[44px] flex items-center rounded text-base font-medium transition-colors ${
                   pathname.startsWith(link.href)
                     ? "bg-[#e0f2f7] text-[#0e6b7c]"
                     : "text-[#475569] hover:text-[#0f172a] hover:bg-[#f1f5f9]"

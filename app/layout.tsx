@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import ScrollProgress from "@/components/ScrollProgress";
 import { LocaleProvider } from "@/lib/i18n/context";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ninohe-mirai.example.com";
@@ -77,6 +78,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="min-h-full flex flex-col antialiased">
+        <ScrollProgress />
         <LocaleProvider>
           <SiteHeader />
           <div className="flex-1">{children}</div>
