@@ -7,6 +7,9 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "市の現状",
   description: "しごと・産業・文化・つながり・医療・暮らしの6つのテーマで、二戸市の現状を整理します。",
+  alternates: {
+    canonical: "/powers",
+  },
 };
 
 export default function PowersPage() {
@@ -27,7 +30,7 @@ export default function PowersPage() {
 
       <div className="mb-8">
         <p className="text-base font-semibold text-[#475569] leading-relaxed max-w-2xl mb-2">二戸の資源と課題を6つの視点から整理しています。</p>
-        <p className="text-sm text-[#6b7280] leading-relaxed max-w-2xl">
+        <p className="text-base text-[#6b7280] leading-relaxed max-w-2xl">
           ニノヘミライでは、二戸市の現状を「しごと・雇用」「産業・経済」「文化・継承」「移住・つながり」「医療・防災」「子育て・暮らし」の6つのテーマで整理しています。
           各テーマについて、指標データ・地域の動き・読み解き文を組み合わせて見える化しています。
         </p>
@@ -44,7 +47,7 @@ export default function PowersPage() {
 
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="bg-white border border-[#e5e1da] rounded-xl p-4">
-          <p className="text-xs font-semibold text-[#1a1a2e] mb-1">カスコアとは</p>
+          <p className="text-xs font-semibold text-[#1a1a2e] mb-1">スコアとは</p>
           <p className="text-xs text-[#6b7280] leading-relaxed">
             各力の総合評価値（0-100）。複数の定量指標と定性評価を組み合わせた編集部独自の指数です。
           </p>

@@ -31,11 +31,6 @@ export default function SiteFooter() {
               二戸市の公開情報を市民に分かりやすく届ける公共ダッシュボード。
               特定の候補者・政党を支持・批判するものではありません。
             </p>
-            <p className="text-xs text-white/40">
-              企画・制作：荻野光希
-              <br />
-              運営：ニノヘミライ編集部
-            </p>
           </div>
 
           {/* Navigation */}

@@ -135,11 +135,11 @@ export const translations = {
   },
   en: {
     siteName: "Ninohe Mirai",
-    siteTagline: "Visualizing Ninohe's resources and future",
+    siteTagline: "Ninohe City's public data, made clear for citizens",
     nav: {
       home: "Home",
       roots: "Roots",
-      powers: "City Stats",
+      powers: "City Overview",
       uniqueness: "Uniqueness",
       actors: "Community",
       movement: "Council",
@@ -172,7 +172,7 @@ export const translations = {
       asOf: "as of",
     },
     powers: {
-      heading: "6 Pillars of Ninohe",
+      heading: "6 Themes of Ninohe",
       subheading: "City conditions organized across 6 themes",
       work: { name: "Employment", desc: "Quality and quantity of jobs, working conditions" },
       earn: { name: "Industry & Economy", desc: "Local economic vitality and industrial value creation" },

@@ -39,18 +39,18 @@ export default function PowerCard({ power, indicatorCount }: PowerCardProps) {
       </div>
 
       <h3 className={`text-base font-bold ${colors.text} mb-0.5`}>{power.name}</h3>
-      <p className="text-sm text-[#475569] mb-3">{power.description}</p>
+      <p className="text-base text-[#475569] mb-3">{power.description}</p>
 
       {power.score !== undefined && (
         <ScoreBar score={power.score} className="mb-3" />
       )}
 
-      <p className={`text-sm font-semibold ${colors.text} mb-2`}>{power.headline}</p>
+      <p className={`text-base font-semibold ${colors.text} mb-2`}>{power.headline}</p>
 
-      <p className="text-sm text-[#475569] leading-relaxed line-clamp-3 mb-4">{power.summary}</p>
+      <p className="text-base text-[#475569] leading-relaxed line-clamp-3 mb-4">{power.summary}</p>
 
       {indicatorCount !== undefined && (
-        <p className="text-xs text-[#6b7280] mb-2">指標 {indicatorCount}件</p>
+        <p className="text-sm text-[#6b7280] mb-2">指標 {indicatorCount}件</p>
       )}
 
       <div className={`flex items-center gap-1 text-sm font-semibold ${colors.text} group-hover:gap-2 transition-all`}>

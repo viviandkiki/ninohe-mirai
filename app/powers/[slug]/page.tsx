@@ -46,6 +46,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: power.name,
     description: power.summary,
+    alternates: {
+      canonical: `/powers/${slug}`,
+    },
   };
 }
 
@@ -100,7 +103,7 @@ export default async function PowerDetailPage({ params }: { params: Promise<{ sl
               <h1 className={`text-2xl font-bold ${colors.text}`}>{power.name}</h1>
               <span className={`text-sm font-medium ${trend.color}`}>{trend.icon} {trend.label}</span>
             </div>
-            <p className="text-sm text-[#6b7280] mb-3">{power.description}</p>
+            <p className="text-base text-[#6b7280] mb-3">{power.description}</p>
 
             {displayScore !== undefined && (
               <div className="max-w-xs">
@@ -125,7 +128,7 @@ export default async function PowerDetailPage({ params }: { params: Promise<{ sl
       {/* Interpretation */}
       {power.interpretation && (
         <div className="bg-[#f7f4ef] border border-[#e5e1da] rounded-xl p-5 mb-6">
-          <p className="text-xs font-semibold text-[#2e7d8c] uppercase tracking-widest mb-2">EDITORIAL ANALYSIS</p>
+          <p className="text-xs font-semibold text-[#2e7d8c] uppercase tracking-widest mb-2">編集部のまとめ</p>
           <p className="text-sm text-[#1a1a2e] leading-relaxed">{power.interpretation}</p>
         </div>
       )}

@@ -32,7 +32,7 @@ export default function MovementCard({ movement, relatedActors = [], relatedPowe
       </div>
 
       <h3 className="text-base font-bold text-slate-800 mb-2 leading-snug">{movement.title}</h3>
-      <p className="text-sm text-slate-600 leading-relaxed mb-4">{movement.summary}</p>
+      <p className="text-base text-slate-600 leading-relaxed mb-4">{movement.summary}</p>
 
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-auto">
         {relatedPowers.length > 0 && (

@@ -79,11 +79,17 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="min-h-full flex flex-col antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-[#0e6b7c] focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-base focus:font-bold focus:no-underline"
+        >
+          メインコンテンツへスキップ
+        </a>
         <ScrollProgress />
         <FadeInSetup />
         <LocaleProvider>
           <SiteHeader />
-          <div className="flex-1">{children}</div>
+          <div id="main-content" className="flex-1">{children}</div>
           <SiteFooter />
         </LocaleProvider>
       </body>
