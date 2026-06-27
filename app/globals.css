@@ -24,6 +24,17 @@
   --color-text-muted:#475569;   /* AA-compliant gray */
   --color-border:    #cbd5e1;
   --color-civic-navy:#1e3a5f;
+
+  /* モーション */
+  --duration-fast:   150ms;
+  --duration-base:   300ms;
+  --duration-slow:   600ms;
+  --duration-count:  1200ms;
+  --ease-out:        cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:     cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* フェードイン */
+  --fade-distance:   24px;
 }
 
 body {
@@ -181,8 +192,65 @@ h1, h2, h3 {
 /* ===== Section Alt background ===== */
 .section-alt { background-color: var(--color-surface-alt); }
 
+/* ===== スクロールフェードイン ===== */
+[data-fade] {
+  opacity: 0;
+  transform: translateY(var(--fade-distance));
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+[data-fade].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-fade][data-delay="1"] { transition-delay: 100ms; }
+[data-fade][data-delay="2"] { transition-delay: 200ms; }
+[data-fade][data-delay="3"] { transition-delay: 300ms; }
+[data-fade][data-delay="4"] { transition-delay: 400ms; }
+[data-fade][data-delay="5"] { transition-delay: 500ms; }
+
+/* ===== カードホバー ===== */
+.motion-card {
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out);
+  will-change: transform;
+}
+.motion-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+}
+
+/* ===== カウントアップ数字 ===== */
+.count-number {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===== ナビリンクのアンダーライン ===== */
+.nav-link {
+  position: relative;
+  text-decoration: none;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width var(--duration-base) var(--ease-out);
+}
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after {
+  width: 100%;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .sr-init { opacity: 1; transform: none; transition: none; }
-  .carousel-track-left, .carousel-track-right { animation: none; }
-  .kw-pulse-section::before, .kw-pulse-section::after { animation: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

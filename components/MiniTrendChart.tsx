@@ -22,7 +22,7 @@ export default function MiniTrendChart({ data, unit = "", color = "#0d9488" }: M
   const padding = (max - min) * 0.2 || 1;
 
   return (
-    <div className="w-full h-24">
+    <div className="w-full h-24" data-fade>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data} margin={{ top: 4, right: 4, left: 4, bottom: 4 }}>
           <XAxis
@@ -52,6 +52,9 @@ export default function MiniTrendChart({ data, unit = "", color = "#0d9488" }: M
             strokeWidth={2}
             dot={{ r: 3, fill: color }}
             activeDot={{ r: 4 }}
+            isAnimationActive={true}
+            animationDuration={1000}
+            animationEasing="ease-out"
           />
         </LineChart>
       </ResponsiveContainer>

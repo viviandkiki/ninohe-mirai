@@ -10,9 +10,10 @@ import Image from "next/image";
 import { ArrowRight, Network, Calendar, ExternalLink, TrendingUp } from "lucide-react";
 import { buildKeywordGraphData, CATEGORY_COLORS, KEYWORD_CATEGORIES } from "@/lib/keyword-graph";
 import GraphViewWrapper from "@/components/GraphViewWrapper";
-import AnimatedCounter from "@/components/AnimatedCounter";
 import HeroGsapAnimator from "@/components/HeroGsapAnimator";
 import GSAPSetup from "@/components/GSAPSetup";
+import FadeInSetup from "@/components/FadeInSetup";
+import { HeroStatCard } from "@/components/HeroStatCard";
 import IndicatorCarousel from "@/components/IndicatorCarousel";
 import CouncilCarousel from "@/components/CouncilCarousel";
 import { POWER_COLOR_MAP, TREND_MAP } from "@/lib/utils";
@@ -97,6 +98,7 @@ export default function HomePage() {
     <>
       <HeroGsapAnimator />
       <GSAPSetup />
+      <FadeInSetup />
 
       {/* HERO */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden border-b border-[#e2e8f0]">
@@ -115,30 +117,31 @@ export default function HomePage() {
             議会の動き、地域の指標、担い手のつながりを、ひとつの場所で確認できます。
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 hero-fade-in">
-            <div className="light-card p-6 kpi-hover">
-              <p className="text-sm font-bold text-[#475569] mb-2 uppercase tracking-widest">総人口</p>
-              <p className="text-5xl font-black text-[#0e6b7c] tabular-nums leading-none mb-1">
-                <AnimatedCounter target={23837} duration={1400} />
-                <span className="text-2xl font-medium ml-2 text-[#475569]">人</span>
-              </p>
-              <p className="text-base text-red-700 font-semibold">2023年比 −1,843人</p>
-            </div>
-            <div className="light-card p-6 kpi-hover">
-              <p className="text-sm font-bold text-[#475569] mb-2 uppercase tracking-widest">移住定住者数</p>
-              <p className="text-5xl font-black text-emerald-700 tabular-nums leading-none mb-1">
-                <AnimatedCounter target={migration?.value ?? 64} duration={1000} />
-                <span className="text-2xl font-medium ml-2 text-[#475569]">人</span>
-              </p>
-              <p className="text-base text-emerald-700 font-semibold">前年比 +18人</p>
-            </div>
-            <div className="light-card p-6 kpi-hover">
-              <p className="text-sm font-bold text-[#475569] mb-2 uppercase tracking-widest">高齢化率</p>
-              <p className="text-5xl font-black text-orange-700 tabular-nums leading-none mb-1">
-                <AnimatedCounter target={aging?.value ?? 40.4} duration={1200} decimals={1} />
-                <span className="text-2xl font-medium ml-2 text-[#475569]">%</span>
-              </p>
-              <p className="text-base text-orange-700 font-semibold">2023年比 +2.6pt</p>
-            </div>
+            <HeroStatCard
+              label="二戸市の人口"
+              value={23000}
+              suffix="人"
+              note="岩手県14市の中で、下から3番目の規模"
+              source="岩手県オープンデータ 2025年3月"
+              delay={1}
+            />
+            <HeroStatCard
+              label="国産漆のシェア"
+              value={70}
+              suffix="%"
+              note="日本全国で使われる漆の70%が、二戸市・浄法寺で作られている"
+              source="林野庁"
+              delay={2}
+            />
+            <HeroStatCard
+              label="去年、二戸に移住してきた人"
+              value={18}
+              prefix="+"
+              suffix="人"
+              note="人口は減っているのに、選んで来る人は増えている"
+              source="二戸市移住定住実績 2023年"
+              delay={3}
+            />
           </div>
           <div className="flex flex-col sm:flex-row gap-4 hero-fade-in">
             <Link href="/powers" className="inline-flex items-center justify-center gap-2 bg-[#2e7d8c] hover:bg-[#1a6477] text-white font-bold px-8 py-4 rounded-xl transition-all text-xl shadow-md">
@@ -164,7 +167,7 @@ export default function HomePage() {
 
       {/* Section 2: 6テーマ */}
       <section className="section-fade max-w-5xl mx-auto px-4 py-16">
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-4" data-fade data-delay="1">
           <div>
             <p className="text-xs font-bold text-[#0e6b7c] uppercase tracking-widest mb-1">6 THEMES</p>
             <h2 className="text-3xl font-black text-[#0f172a]">市の現状：6つのテーマ</h2>
@@ -174,17 +177,18 @@ export default function HomePage() {
             詳細を見る <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
-        <p className="text-lg text-[#475569] leading-relaxed mb-8 max-w-2xl">
+        <p className="text-lg text-[#475569] leading-relaxed mb-8 max-w-2xl" data-fade data-delay="2">
           しごと・産業・文化・つながり・医療・暮らしの6つの切り口で、二戸市の現状を整理。各カードをクリックで詳細へ。
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {powers.map((power) => {
+          {powers.map((power, i) => {
             const colors = POWER_COLOR_MAP[power.slug as PowerSlug];
             const trend = TREND_MAP[power.trend];
             const Icon = ICON_MAP[power.icon] ?? Briefcase;
             return (
               <Link key={power.id} href={`/powers/${power.slug}`}
-                className="power-card-gsap light-card p-6 block hover:border-[#2e7d8c]/60 transition-colors group">
+                data-fade data-delay={Math.min(i + 1, 5)}
+                className="power-card-gsap light-card motion-card p-6 block hover:border-[#2e7d8c]/60 transition-colors group">
                 <div className="flex items-start justify-between mb-4">
                   <div className={`p-3 rounded-xl ${colors.badge}`}><Icon className="w-7 h-7" /></div>
                   <span className={`text-sm font-bold ${trend.color}`}>{trend.icon} {trend.label}</span>
@@ -221,7 +225,7 @@ export default function HomePage() {
       {/* Section 3: 主要指標カルーセル（左→右） */}
       <section className="section-fade py-16 section-alt">
         <div className="max-w-5xl mx-auto px-4 mb-8">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between" data-fade data-delay="1">
             <div>
               <p className="text-xs font-bold text-[#0e6b7c] uppercase tracking-widest mb-1">KEY INDICATORS</p>
               <h2 className="text-3xl font-black text-[#0f172a]">主要指標</h2>
@@ -231,7 +235,7 @@ export default function HomePage() {
               全指標を見る <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <p className="text-base text-[#475569] mt-3 max-w-2xl">公開統計をもとに整理した主要指標です。左から右へ流れています（ホバーで停止）。</p>
+          <p className="text-base text-[#475569] mt-3 max-w-2xl" data-fade data-delay="2">公開統計をもとに整理した主要指標です。左から右へ流れています（ホバーで停止）。</p>
         </div>
         <IndicatorCarousel items={kpiItems} />
         <p className="text-sm text-[#475569] max-w-5xl mx-auto px-4 mt-3">※ 最新の数値は各出典元でご確認ください。</p>
@@ -240,7 +244,7 @@ export default function HomePage() {
       {/* Section 4: 最近の議会（右→左カルーセル） */}
       <section className="section-fade py-16">
         <div className="max-w-5xl mx-auto px-4 mb-8">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between" data-fade data-delay="1">
             <div>
               <p className="text-xs font-bold text-[#0e6b7c] uppercase tracking-widest mb-1">COUNCIL</p>
               <h2 className="text-3xl font-black text-[#0f172a]">最近の議会</h2>
