@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback, useMemo } from "react";
+import type { NewsArticle } from "@/app/api/news/route";
 import {
   forceSimulation,
   forceLink,
@@ -61,6 +62,8 @@ export default function GraphView({
   const [selected, setSelected] = useState<string | null>(null);
   const [filterType, setFilterType] = useState("all");
   const [viewport, setViewport] = useState({ x: 0, y: 0, scale: 1 });
+  const [news, setNews] = useState<NewsArticle[]>([]);
+  const [newsLoading, setNewsLoading] = useState(false);
 
   const draggingNodeRef = useRef<SimNode | null>(null);
   const isPanningRef = useRef(false);
@@ -140,6 +143,22 @@ export default function GraphView({
 
     return () => { sim.stop(); clearInterval(breatheId); };
   }, [data]);
+
+  // ── ノード選択時にニュースを取得 ──────────────────────────────────────────
+  useEffect(() => {
+    if (!selected) { setNews([]); return; }
+    const node = simNodesRef.current.find(n => n.id === selected);
+    if (!node) return;
+
+    setNews([]);
+    setNewsLoading(true);
+    const query = node.label + (node.sublabel ? ` ${node.sublabel}` : "");
+    fetch(`/api/news?q=${encodeURIComponent(query)}&limit=5`)
+      .then(r => r.json())
+      .then(data => { setNews(data.articles ?? []); })
+      .catch(() => { setNews([]); })
+      .finally(() => setNewsLoading(false));
+  }, [selected]);
 
   // ── Selection: connected IDs ─────────────────────────────────────────────
   const connectedIds = useMemo(() => {
@@ -536,6 +555,50 @@ export default function GraphView({
                   )}
                 </>
               )}
+              {/* 関連ニュース */}
+              <div className="mt-4 pt-4 border-t border-[#f0f0f0]">
+                <p className="text-xs font-semibold text-[#4b5563] mb-2 flex items-center gap-1">
+                  <span>📰</span> 関連ニュース
+                </p>
+                {newsLoading ? (
+                  <div className="space-y-2">
+                    {[1, 2, 3].map(i => (
+                      <div key={i} className="animate-pulse rounded-lg bg-[#f1f5f9] p-2">
+                        <div className="h-3 bg-[#e2e8f0] rounded w-full mb-1.5" />
+                        <div className="h-3 bg-[#e2e8f0] rounded w-2/3" />
+                        <div className="h-2 bg-[#e2e8f0] rounded w-1/3 mt-1" />
+                      </div>
+                    ))}
+                  </div>
+                ) : news.length > 0 ? (
+                  <div className="space-y-2">
+                    {news.map((article, i) => (
+                      <a
+                        key={i}
+                        href={article.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block rounded-lg p-2.5 bg-[#f8fafc] hover:bg-[#e0f2f7] border border-[#e2e8f0] hover:border-[#2e7d8c]/40 transition-colors group"
+                      >
+                        <p className="text-xs font-medium text-[#0f172a] leading-snug line-clamp-2 group-hover:text-[#0e6b7c]">
+                          {article.title}
+                        </p>
+                        <div className="flex items-center gap-1 mt-1">
+                          {article.source && (
+                            <span className="text-[10px] text-[#475569] truncate max-w-[100px]">{article.source}</span>
+                          )}
+                          {article.publishedLabel && (
+                            <span className="text-[10px] text-[#94a3b8] ml-auto shrink-0">{article.publishedLabel}</span>
+                          )}
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-[11px] text-[#9ca3af]">関連ニュースが見つかりませんでした</p>
+                )}
+              </div>
+
               <button className="mt-4 text-xs text-[#9ca3af] hover:text-[#4b5563]" onClick={() => setSelected(null)}>
                 ✕ 選択解除
               </button>
