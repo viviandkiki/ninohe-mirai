@@ -283,7 +283,7 @@ export default function HomePage() {
 
       {/* HAIKEI3 */}
       <div className="relative h-44 overflow-hidden">
-        <Image src="/images/haikei3.jpg" alt="" fill className="object-cover object-[center_40%] opacity-35" />
+        <Image src="/images/haikei3.jpg" alt="" fill className="object-cover object-center opacity-35" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-transparent to-[#f8fafc]" />
       </div>
 
