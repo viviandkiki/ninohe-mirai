@@ -7,12 +7,11 @@ import {
 } from "@/lib/data";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Network, Calendar, ExternalLink, TrendingUp } from "lucide-react";
+import { ArrowRight, Network, ExternalLink, TrendingUp } from "lucide-react";
 import { buildKeywordGraphData, CATEGORY_COLORS, KEYWORD_CATEGORIES } from "@/lib/keyword-graph";
 import GraphViewWrapper from "@/components/GraphViewWrapper";
 import HeroGsapAnimator from "@/components/HeroGsapAnimator";
 import GSAPSetup from "@/components/GSAPSetup";
-import { HeroStatCard } from "@/components/HeroStatCard";
 import IndicatorCarousel from "@/components/IndicatorCarousel";
 import CouncilCarousel from "@/components/CouncilCarousel";
 import { POWER_COLOR_MAP, TREND_MAP } from "@/lib/utils";
@@ -99,7 +98,7 @@ export default function HomePage() {
       <GSAPSetup />
 
       {/* HERO */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden border-b border-[#e2e8f0]">
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden border-b border-[#e2e8f0]">
         <Image src="/HERO.png" alt="" fill className="object-cover object-center" priority quality={85} />
         <div className="absolute inset-0 bg-gradient-to-br from-white/88 via-[#f0f9fa]/75 to-[#e0f2f7]/80 z-[1]" />
         <ParticleLayer />
@@ -108,45 +107,17 @@ export default function HomePage() {
             <div className="mb-6 hero-fade-in"><UpdateBadgeInline date={latestUpdate.date} /></div>
           )}
           <h1 className="hero-h1 text-4xl sm:text-5xl lg:text-6xl font-black text-[#0f172a] leading-tight tracking-tight mb-6 overflow-hidden">
-            二戸市の議会・行政・地域データを<br />市民に分かりやすく。
+            国産漆の70%は、<br />この町で生まれる。
           </h1>
           <p className="text-xl text-[#475569] leading-relaxed max-w-2xl mb-10 hero-fade-in">
-            「ニノヘミライ」は、二戸市の公開情報を整理した市民ダッシュボードです。
-            議会の動き、地域の指標、担い手のつながりを、ひとつの場所で確認できます。
+            議会の記録・地域の指標・人のつながり——二戸にまつわる公開情報を、市民の言葉で整理しています。
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 hero-fade-in">
-            <HeroStatCard
-              label="二戸市の人口"
-              value={23000}
-              suffix="人"
-              note="岩手県14市の中で、下から3番目の規模"
-              source="岩手県オープンデータ 2025年3月"
-              delay={1}
-            />
-            <HeroStatCard
-              label="国産漆のシェア"
-              value={70}
-              suffix="%"
-              note="日本全国で使われる漆の70%が、二戸市・浄法寺で作られている"
-              source="林野庁"
-              delay={2}
-            />
-            <HeroStatCard
-              label="去年、二戸に移住してきた人"
-              value={18}
-              prefix="+"
-              suffix="人"
-              note="人口は減っているのに、選んで来る人は増えている"
-              source="二戸市移住定住実績 2023年"
-              delay={3}
-            />
-          </div>
           <div className="flex flex-col sm:flex-row gap-4 hero-fade-in">
             <Link href="/powers" className="inline-flex items-center justify-center gap-2 bg-[#2e7d8c] hover:bg-[#1a6477] text-white font-bold px-8 py-4 rounded-xl transition-all text-xl shadow-md">
-              市の状況を見る <ArrowRight className="w-5 h-5" />
+              まちの今を見る <ArrowRight className="w-5 h-5" />
             </Link>
             <Link href="/graph" className="inline-flex items-center justify-center gap-2 bg-white border-2 border-[#2e7d8c] text-[#0e6b7c] hover:bg-[#e0f2f7] font-bold px-8 py-4 rounded-xl transition-all text-xl">
-              <Network className="w-5 h-5" /> キーワードマップ（全画面）
+              <Network className="w-5 h-5" /> 言葉の地図で探索する
             </Link>
           </div>
         </div>
@@ -159,22 +130,41 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* HAIKEI1 */}
-      <div className="relative h-44 overflow-hidden">
-        <Image src="/HAIKEI1.png" alt="" fill className="object-cover object-top opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-transparent to-[#f8fafc]" />
-      </div>
+      {/* Section 2: キーワードマップ（最大の革新要素を前面化） */}
+      <section className="section-fade kw-pulse-section py-16 section-alt">
+        <div className="relative z-10 max-w-5xl mx-auto px-4">
+          <div className="flex items-center justify-between mb-4" data-fade-left>
+            <div>
+              <h2 className="text-3xl font-black text-[#0f172a]"><span className="heading-accent">二戸をひもとく言葉たち</span></h2>
+              <p className="text-lg text-[#475569] mt-2">キーワードのつながりから、この町を読む</p>
+            </div>
+            <Link href="/graph" className="flex items-center gap-2 bg-[#2e7d8c] hover:bg-[#1a6477] text-white font-bold px-5 py-2.5 rounded-xl transition-all text-lg shadow-md min-h-[44px]">
+              <Network className="w-5 h-5" /> 全画面で探索する
+            </Link>
+          </div>
+          <p className="text-lg text-[#475569] leading-relaxed mb-6 max-w-2xl">
+            漆・九戸城・里山・南部美人——この土地を形作る言葉が、ここでつながっています。気になるキーワードをクリックして、二戸の文脈を発見してください。
+          </p>
+          <div className="rounded-2xl overflow-hidden border border-[#e2e8f0]">
+            <div className="block md:hidden">
+              <GraphViewWrapper data={graphData} height={300} filterOptions={kwFilterOptions} />
+            </div>
+            <div className="hidden md:block">
+              <GraphViewWrapper data={graphData} height={460} filterOptions={kwFilterOptions} />
+            </div>
+          </div>
+        </div>
+      </section>
 
-      {/* Section 2: 6テーマ */}
+      {/* Section 3: まちの今：6つのレンズ */}
       <section className="section-fade max-w-5xl mx-auto px-4 py-16">
         <div className="flex items-center justify-between mb-4" data-fade-left>
           <div>
-            <p className="text-xs font-bold text-[#0e6b7c] uppercase tracking-widest mb-1">6 THEMES</p>
-            <h2 className="text-3xl font-black text-[#0f172a]"><span className="heading-accent">市の現状：6つのテーマ</span></h2>
-            <p className="text-lg text-[#475569] mt-2">公開データから見た二戸の今</p>
+            <h2 className="text-3xl font-black text-[#0f172a]"><span className="heading-accent">まちの今：6つのレンズ</span></h2>
+            <p className="text-lg text-[#475569] mt-2">公開データから見た二戸の現状</p>
           </div>
           <Link href="/powers" className="flex items-center gap-1.5 text-lg text-[#0e6b7c] hover:text-[#0f172a] font-bold transition-colors min-h-[44px]">
-            詳細を見る <ArrowRight className="w-4 h-4" />
+            すべてのテーマを見る <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
         <p className="text-lg text-[#475569] leading-relaxed mb-8 max-w-2xl" data-fade data-delay="2">
@@ -194,21 +184,10 @@ export default function HomePage() {
                   <span className={`text-sm font-bold ${trend.color}`}>{trend.icon} {trend.label}</span>
                 </div>
                 <h3 className={`text-xl font-black ${colors.text} mb-1`}>{power.name}</h3>
-                <p className="text-sm text-[#475569] mb-3">{power.description}</p>
-                {power.score !== undefined && (
-                  <div className="mb-4">
-                    <div className="flex justify-between text-sm text-[#475569] mb-1">
-                      <span>総合スコア</span><span className="font-bold text-[#0f172a]">{power.score}/100</span>
-                    </div>
-                    <div className="h-2 bg-[#e2e8f0] rounded-full overflow-hidden">
-                      <div className="h-full rounded-full bg-[#2e7d8c]" style={{ width: `${power.score}%` }} />
-                    </div>
-                  </div>
-                )}
-                <p className="text-base font-bold text-[#0f172a] mb-2 leading-snug">{power.headline}</p>
-                <p className="text-base text-[#475569] leading-relaxed line-clamp-3 mb-4">{power.summary}</p>
+                <p className="text-base text-[#475569] mb-4">{power.description}</p>
+                <p className="text-base font-bold text-[#0f172a] mb-4 leading-snug">{power.headline}</p>
                 <div className={`flex items-center gap-1.5 text-base font-bold ${colors.text} group-hover:gap-2.5 transition-all`}>
-                  詳細を見る <ArrowRight className="w-4 h-4" />
+                  現状を読む <ArrowRight className="w-4 h-4" />
                 </div>
               </Link>
             );
@@ -216,23 +195,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* HAIKEI2 */}
-      <div className="relative h-44 overflow-hidden">
-        <Image src="/HAIKEI2.png" alt="" fill className="object-cover object-center opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-transparent to-[#f8fafc]" />
-      </div>
-
-      {/* Section 3: 主要指標カルーセル（左→右） */}
+      {/* Section 4: 数字で見る二戸 */}
       <section className="section-fade py-16 section-alt">
         <div className="max-w-5xl mx-auto px-4 mb-8">
           <div className="flex items-center justify-between" data-fade-left>
             <div>
-              <p className="text-xs font-bold text-[#0e6b7c] uppercase tracking-widest mb-1">KEY INDICATORS</p>
-              <h2 className="text-3xl font-black text-[#0f172a]"><span className="heading-accent">主要指標</span></h2>
-              <p className="text-lg text-[#475569] mt-2">数値で見る二戸の現在地</p>
+              <h2 className="text-3xl font-black text-[#0f172a]"><span className="heading-accent">数字で見る二戸</span></h2>
+              <p className="text-lg text-[#475569] mt-2">公開統計から整理した主要指標</p>
             </div>
             <Link href="/powers" className="flex items-center gap-1.5 text-lg text-[#0e6b7c] hover:text-[#0f172a] font-bold transition-colors min-h-[44px]">
-              全指標を見る <ArrowRight className="w-4 h-4" />
+              すべての指標を確認する <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
           <p className="text-base text-[#475569] mt-3 max-w-2xl" data-fade data-delay="2">公開統計をもとに整理した主要指標です。左から右へ流れています（ホバーで停止）。</p>
@@ -241,104 +213,41 @@ export default function HomePage() {
         <p className="text-sm text-[#475569] max-w-5xl mx-auto px-4 mt-3">※ 最新の数値は各出典元でご確認ください。</p>
       </section>
 
-      {/* Section 4: 最近の議会（右→左カルーセル） */}
+      {/* Section 5: 議会と政策の動き */}
       <section className="section-fade py-16">
         <div className="max-w-5xl mx-auto px-4 mb-8">
           <div className="flex items-center justify-between" data-fade-left>
             <div>
-              <p className="text-xs font-bold text-[#0e6b7c] uppercase tracking-widest mb-1">COUNCIL</p>
-              <h2 className="text-3xl font-black text-[#0f172a]"><span className="heading-accent">最近の議会</span></h2>
+              <h2 className="text-3xl font-black text-[#0f172a]"><span className="heading-accent">議会と政策の動き</span></h2>
               <p className="text-lg text-[#475569] mt-2">市議会の最新セッション</p>
             </div>
             <a href="https://www.city.ninohe.lg.jp/menu/21" target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-lg text-[#0e6b7c] hover:text-[#0f172a] font-bold transition-colors min-h-[44px]">
-              議会公式 <ExternalLink className="w-4 h-4" />
+              市議会公式サイトへ <ExternalLink className="w-4 h-4" />
             </a>
           </div>
           <p className="text-base text-[#475569] mt-3 max-w-2xl">二戸市議会の定例会・臨時会の開催情報です。右から左へ流れています（ホバーで停止）。</p>
         </div>
         <CouncilCarousel movements={councilMovements.length > 0 ? councilMovements : recentMovements.slice(0, 6)} />
-        <div className="max-w-5xl mx-auto px-4 mt-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {recentMovements.slice(0, 2).map((movement) => {
-              const dateStr = movement.date.slice(0, 7).replace("-", "年") + "月";
-              return (
-                <div key={movement.id} className="light-card p-5">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Calendar className="w-4 h-4 text-[#2e7d8c]" />
-                    <span className="text-sm text-[#475569]">{dateStr}</span>
-                    <span className="px-2 py-0.5 rounded-full text-xs bg-[#e0f2f7] text-[#0e6b7c] border border-[#2e7d8c]/30">最新</span>
-                  </div>
-                  <p className="text-lg font-bold text-[#0f172a] leading-snug mb-1">{movement.title}</p>
-                  <p className="text-base text-[#475569] leading-relaxed line-clamp-2">{movement.summary}</p>
-                </div>
-              );
-            })}
-          </div>
-          <div className="mt-4 text-right">
-            <Link href="/movement" className="text-lg text-[#0e6b7c] hover:text-[#0f172a] font-bold transition-colors">すべての動きを見る →</Link>
-          </div>
+        <div className="max-w-5xl mx-auto px-4 mt-6 text-right">
+          <Link href="/movement" className="text-lg text-[#0e6b7c] hover:text-[#0f172a] font-bold transition-colors">動きをすべて見る →</Link>
         </div>
       </section>
-
-      {/* HAIKEI3 */}
-      <div className="relative h-44 overflow-hidden">
-        <Image src="/images/haikei3.jpg" alt="" fill className="object-cover object-center opacity-35" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-transparent to-[#f8fafc]" />
-      </div>
-
-      {/* Section 5: キーワードマップ */}
-      <section className="section-fade kw-pulse-section py-16 section-alt">
-        <div className="relative z-10 max-w-5xl mx-auto px-4">
-          <div className="flex items-center justify-between mb-4" data-fade-left>
-            <div>
-              <p className="text-xs font-bold text-[#0e6b7c] uppercase tracking-widest mb-1">KEYWORD MAP</p>
-              <h2 className="text-3xl font-black text-[#0f172a]"><span className="heading-accent">キーワードマップ</span></h2>
-              <p className="text-lg text-[#475569] mt-2">二戸をひもとく言葉のネットワーク</p>
-            </div>
-            <Link href="/graph" className="flex items-center gap-2 bg-[#2e7d8c] hover:bg-[#1a6477] text-white font-bold px-5 py-2.5 rounded-xl transition-all text-lg shadow-md min-h-[44px]">
-              <Network className="w-5 h-5" /> 全画面で開く
-            </Link>
-          </div>
-          <p className="text-lg text-[#475569] leading-relaxed mb-6 max-w-2xl">
-            漆・九戸城・里山・南部美人など、二戸にまつわるキーワードが力学的に配置されます。ノードをクリックすると説明とつながりが表示されます。
-          </p>
-          <div className="rounded-2xl overflow-hidden border border-[#e2e8f0]">
-            {/* mobile: 300px / md+: 460px */}
-            <div className="block md:hidden">
-              <GraphViewWrapper data={graphData} height={300} filterOptions={kwFilterOptions} />
-            </div>
-            <div className="hidden md:block">
-              <GraphViewWrapper data={graphData} height={460} filterOptions={kwFilterOptions} />
-            </div>
-          </div>
-          <div className="mt-5 text-center">
-            <Link href="/graph" className="inline-flex items-center gap-2 text-xl text-[#0e6b7c] hover:text-[#0f172a] font-bold transition-colors">
-              <Network className="w-5 h-5" /> 全画面キーワードマップで詳しく見る →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* HAIKEI4 */}
-      <div className="relative h-44 overflow-hidden">
-        <Image src="/images/haikei4.jpg" alt="" fill className="object-cover object-center opacity-35" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-transparent to-[#f8fafc]" />
-      </div>
 
       {/* About */}
       <section className="section-fade py-14">
         <div className="max-w-5xl mx-auto px-4">
           <div className="light-card p-8">
-            <h2 className="text-2xl font-black text-[#0f172a] mb-4">ニノヘミライとは</h2>
+            <h2 className="text-2xl font-black text-[#0f172a] mb-4">このダッシュボードについて</h2>
+            <p className="text-lg text-[#475569] leading-relaxed mb-3">
+              ニノヘミライは、二戸市の公開情報を市民の目線で整理した非公式ダッシュボードです。議会の動き、地域の指標、担い手のネットワークを一つの場所で確認できます。
+            </p>
             <p className="text-lg text-[#475569] leading-relaxed mb-6">
-              二戸市の公開データをもとに、市民・移住検討者・研究者が地域の現状を理解しやすくするダッシュボードです。
-              このサイトは特定の候補者・政党を支持・批判するものではありません。
-              掲載情報は公開情報に基づき、編集部が独自に整理したものです。
+              市民・移住検討者・研究者向けに設計されています。掲載データはすべて公開情報に基づき、出典と調査年を明記しています。特定の候補者・政党の支持・批判は行いません。
             </p>
             <div className="flex flex-wrap gap-5">
-              <Link href="/methodology" className="text-lg text-[#0e6b7c] hover:text-[#0f172a] font-semibold transition-colors">調査方法・データ出典 →</Link>
-              <Link href="/about" className="text-lg text-[#0e6b7c] hover:text-[#0f172a] font-semibold transition-colors">運営について →</Link>
+              <Link href="/methodology" className="text-lg text-[#0e6b7c] hover:text-[#0f172a] font-semibold transition-colors">データの根拠を確認する →</Link>
+              <Link href="/about" className="text-lg text-[#0e6b7c] hover:text-[#0f172a] font-semibold transition-colors">このサイトについて →</Link>
             </div>
           </div>
         </div>

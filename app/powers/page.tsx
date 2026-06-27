@@ -21,8 +21,7 @@ export default function PowersPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#0e6b7c]/70 to-transparent" />
         <div className="absolute inset-0 flex items-center px-8">
           <div>
-            <p className="text-xs font-bold text-white/80 uppercase tracking-widest mb-1">6 THEMES</p>
-            <h1 className="text-2xl sm:text-3xl font-black text-white drop-shadow">市の現状：6つのテーマ</h1>
+                <h1 className="text-2xl sm:text-3xl font-black text-white drop-shadow">まちの今：6つのレンズ</h1>
           </div>
         </div>
         <p className="absolute bottom-2 right-3 text-[10px] text-white/50">馬淵川 (CC BY-SA 3.0, Sengoku40)</p>

@@ -40,11 +40,11 @@ export default function SiteFooter() {
             </p>
             <nav className="flex flex-col gap-2">
               {[
-                { href: "/powers", label: "市の現状：6つのテーマ" },
-                { href: "/graph", label: "キーワードマップ" },
-                { href: "/movement", label: "動きと出来事" },
+                { href: "/powers", label: "まちの今：6つのレンズ" },
+                { href: "/graph", label: "言葉の地図" },
+                { href: "/movement", label: "議会と地域の動き" },
                 { href: "/actors", label: "担い手" },
-                { href: "/methodology", label: "調査方法・データ出典" },
+                { href: "/methodology", label: "データの根拠" },
                 { href: "/about", label: "このサイトについて" },
               ].map((link) => (
                 <Link
