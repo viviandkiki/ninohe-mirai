@@ -63,7 +63,7 @@ export default async function PowerDetailPage({ params }: { params: Promise<{ sl
       <nav className="text-xs text-[#6b7280] mb-6">
         <Link href="/" className="hover:text-[#1a1a2e]">ホーム</Link>
         <span className="mx-1.5">/</span>
-        <Link href="/powers" className="hover:text-[#1a1a2e]">6つの力</Link>
+        <Link href="/powers" className="hover:text-[#1a1a2e]">現状</Link>
         <span className="mx-1.5">/</span>
         <span className="text-[#1a1a2e]">{power.name}</span>
       </nav>

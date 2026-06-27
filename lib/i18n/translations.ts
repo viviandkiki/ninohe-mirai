@@ -40,7 +40,7 @@ export const translations = {
       asOf: "現在",
     },
     powers: {
-      heading: "二戸の6つの力",
+      heading: "二戸の6つのテーマ",
       subheading: "市の現状を6つのテーマで整理しています",
       work: { name: "しごと・雇用", desc: "市民が安心して働ける環境、雇用の質と量" },
       earn: { name: "産業・経済", desc: "地域経済の活力、産業の付加価値創出力" },

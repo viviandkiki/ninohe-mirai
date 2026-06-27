@@ -6,7 +6,7 @@ import { LocaleProvider } from "@/lib/i18n/context";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ninohe-mirai.example.com";
 const SITE_NAME = "ニノヘミライ";
-const SITE_DESCRIPTION = "二戸市の6つの力を軸に、資源・指標・地域の動きを市民にわかりやすく示す公共ダッシュボード。人口だけでは見えない、二戸の底力を可視化します。";
+const SITE_DESCRIPTION = "しごと・産業・文化・つながり・医療・暮らしの6つのテーマで、二戸市の現状を市民にわかりやすく示す公共ダッシュボード。人口だけでは見えない、二戸の底力を可視化します。";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
