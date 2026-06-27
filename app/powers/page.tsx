@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { powers, getIndicatorsForPower } from "@/lib/data";
 import PageContainer from "@/components/PageContainer";
 import PowerCard from "@/components/PowerCard";
-import SectionHeading from "@/components/SectionHeading";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "市の現状",
@@ -12,12 +12,21 @@ export const metadata: Metadata = {
 export default function PowersPage() {
   return (
     <PageContainer>
+      {/* Hero banner */}
+      <div className="relative h-36 sm:h-48 rounded-xl overflow-hidden mb-8 -mx-4 sm:mx-0">
+        <Image src="/images/haikei3.jpg" alt="奥入瀬渓流 — 東北の自然" fill className="object-cover object-[center_40%]" priority />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0e6b7c]/70 to-transparent" />
+        <div className="absolute inset-0 flex items-center px-8">
+          <div>
+            <p className="text-xs font-bold text-white/80 uppercase tracking-widest mb-1">6 THEMES</p>
+            <h1 className="text-2xl sm:text-3xl font-black text-white drop-shadow">市の現状：6つのテーマ</h1>
+          </div>
+        </div>
+        <p className="absolute bottom-2 right-3 text-[10px] text-white/50">奥入瀬渓流 (CC BY-SA 3.0)</p>
+      </div>
+
       <div className="mb-8">
-        <p className="text-[11px] font-semibold text-[#2e7d8c] uppercase tracking-widest mb-1">6 THEMES</p>
-        <SectionHeading
-          title="市の現状：6つのテーマ"
-          subtitle="二戸の資源と課題を6つの視点から整理しています"
-        />
+        <p className="text-base font-semibold text-[#475569] leading-relaxed max-w-2xl mb-2">二戸の資源と課題を6つの視点から整理しています。</p>
         <p className="text-sm text-[#6b7280] leading-relaxed max-w-2xl">
           ニノヘミライでは、二戸市の現状を「しごと・雇用」「産業・経済」「文化・継承」「移住・つながり」「医療・防災」「子育て・暮らし」の6つのテーマで整理しています。
           各テーマについて、指標データ・地域の動き・読み解き文を組み合わせて見える化しています。

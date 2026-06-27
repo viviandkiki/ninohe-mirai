@@ -12,7 +12,6 @@ import { buildKeywordGraphData, CATEGORY_COLORS, KEYWORD_CATEGORIES } from "@/li
 import GraphViewWrapper from "@/components/GraphViewWrapper";
 import HeroGsapAnimator from "@/components/HeroGsapAnimator";
 import GSAPSetup from "@/components/GSAPSetup";
-import FadeInSetup from "@/components/FadeInSetup";
 import { HeroStatCard } from "@/components/HeroStatCard";
 import IndicatorCarousel from "@/components/IndicatorCarousel";
 import CouncilCarousel from "@/components/CouncilCarousel";
@@ -98,7 +97,6 @@ export default function HomePage() {
     <>
       <HeroGsapAnimator />
       <GSAPSetup />
-      <FadeInSetup />
 
       {/* HERO */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden border-b border-[#e2e8f0]">
@@ -283,6 +281,12 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* HAIKEI3 */}
+      <div className="relative h-44 overflow-hidden">
+        <Image src="/images/haikei3.jpg" alt="" fill className="object-cover object-[center_40%] opacity-35" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-transparent to-[#f8fafc]" />
+      </div>
+
       {/* Section 5: キーワードマップ */}
       <section className="section-fade kw-pulse-section py-16 section-alt">
         <div className="relative z-10 max-w-5xl mx-auto px-4">
@@ -315,6 +319,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* HAIKEI4 */}
+      <div className="relative h-44 overflow-hidden">
+        <Image src="/images/haikei4.jpg" alt="" fill className="object-cover object-center opacity-35" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-transparent to-[#f8fafc]" />
+      </div>
 
       {/* About */}
       <section className="section-fade py-14">

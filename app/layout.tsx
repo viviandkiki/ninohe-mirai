@@ -3,6 +3,7 @@ import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ScrollProgress from "@/components/ScrollProgress";
+import FadeInSetup from "@/components/FadeInSetup";
 import { LocaleProvider } from "@/lib/i18n/context";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ninohe-mirai.example.com";
@@ -79,6 +80,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col antialiased">
         <ScrollProgress />
+        <FadeInSetup />
         <LocaleProvider>
           <SiteHeader />
           <div className="flex-1">{children}</div>
