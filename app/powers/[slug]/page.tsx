@@ -23,7 +23,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const POWER_IMAGES: Record<string, { src: string; alt: string; credit: string }> = {
-  work:    { src: "/images/haikei3.jpg",     alt: "奥入瀬渓流（東北・岩手の自然）",      credit: "奥入瀬渓流 — Towada-Hachimantai NP (CC BY-SA 3.0)" },
+  work:    { src: "/images/haikei3.jpg",     alt: "馬淵川（二戸市）",                    credit: "馬淵川 二戸市 (CC BY-SA 3.0, Sengoku40)" },
   earn:    { src: "/images/img-sake.jpg",    alt: "徳利と猪口（日本酒・地域産業）",       credit: "徳利と猪口 Miyajima (CC BY 2.0, shankar s.)" },
   inherit: { src: "/images/img-craft.jpg",   alt: "楽焼茶碗（江戸時代・伝統工芸）",      credit: "楽焼茶碗 江戸時代 (CC BY-SA 4.0, Gryffindor)" },
   connect: { src: "/images/img-matsuri.jpg", alt: "金魚ちょうちんねぶた祭り（地域のつながり）", credit: "金魚ちょうちんねぶた (CC BY-SA 3.0, Wikimedia Commons)" },

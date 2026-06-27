@@ -14,7 +14,7 @@ export default function PowersPage() {
     <PageContainer>
       {/* Hero banner */}
       <div className="relative h-36 sm:h-48 rounded-xl overflow-hidden mb-8 -mx-4 sm:mx-0">
-        <Image src="/images/haikei3.jpg" alt="奥入瀬渓流 — 東北の自然" fill className="object-cover object-[center_40%]" priority />
+        <Image src="/images/haikei3.jpg" alt="馬淵川 — 二戸市を流れる川" fill className="object-cover object-center" priority />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0e6b7c]/70 to-transparent" />
         <div className="absolute inset-0 flex items-center px-8">
           <div>
@@ -22,7 +22,7 @@ export default function PowersPage() {
             <h1 className="text-2xl sm:text-3xl font-black text-white drop-shadow">市の現状：6つのテーマ</h1>
           </div>
         </div>
-        <p className="absolute bottom-2 right-3 text-[10px] text-white/50">奥入瀬渓流 (CC BY-SA 3.0)</p>
+        <p className="absolute bottom-2 right-3 text-[10px] text-white/50">馬淵川 (CC BY-SA 3.0, Sengoku40)</p>
       </div>
 
       <div className="mb-8">
