@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { movements, getActorsForMovement, getPowerBySlug } from "@/lib/data";
+import { movements, getActorsForMovement, getPowerBySlug, getSourceById } from "@/lib/data";
 import PageContainer from "@/components/PageContainer";
 import SectionHeading from "@/components/SectionHeading";
 import MovementCard from "@/components/MovementCard";
@@ -79,12 +79,15 @@ export default function MovementPage() {
                   const relatedPowers = movement.powerSlugs
                     .map((slug) => getPowerBySlug(slug))
                     .filter((p): p is NonNullable<typeof p> => p !== undefined);
+                  const source = movement.sourceId ? getSourceById(movement.sourceId) : undefined;
                   return (
                     <MovementCard
                       key={movement.id}
                       movement={movement}
                       relatedActors={relatedActors}
                       relatedPowers={relatedPowers}
+                      sourceUrl={source?.url}
+                      sourceTitle={source?.title}
                     />
                   );
                 })}
