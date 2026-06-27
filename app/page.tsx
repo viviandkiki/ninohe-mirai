@@ -298,7 +298,13 @@ export default function HomePage() {
             漆・九戸城・里山・南部美人など、二戸にまつわるキーワードが力学的に配置されます。ノードをクリックすると説明とつながりが表示されます。
           </p>
           <div className="rounded-2xl overflow-hidden border border-[#e2e8f0]">
-            <GraphViewWrapper data={graphData} height={500} filterOptions={kwFilterOptions} />
+            {/* mobile: 300px / md+: 460px */}
+            <div className="block md:hidden">
+              <GraphViewWrapper data={graphData} height={300} filterOptions={kwFilterOptions} />
+            </div>
+            <div className="hidden md:block">
+              <GraphViewWrapper data={graphData} height={460} filterOptions={kwFilterOptions} />
+            </div>
           </div>
           <div className="mt-5 text-center">
             <Link href="/graph" className="inline-flex items-center gap-2 text-xl text-[#0e6b7c] hover:text-[#0f172a] font-bold transition-colors">
