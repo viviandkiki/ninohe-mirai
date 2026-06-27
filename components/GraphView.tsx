@@ -50,7 +50,7 @@ export default function GraphView({
   filterOptions?: FilterOption[];
   fullscreen?: boolean;
 }) {
-  const svgHeight = fullscreen ? "calc(100vh - 200px)" : (height ?? 560);
+  const svgHeight = fullscreen ? "calc(100vh - 200px)" : (height ?? 460);
   const svgRef = useRef<SVGSVGElement>(null);
   const simNodesRef = useRef<SimNode[]>([]);
   const simLinksRef = useRef<SimLink[]>([]);
@@ -280,8 +280,8 @@ export default function GraphView({
 
   return (
     <div className="flex flex-col gap-3">
-      {/* Filter chips */}
-      <div className="flex flex-wrap gap-2 items-center">
+      {/* Filter chips — mobile: 横スクロール */}
+      <div className="flex gap-2 items-center overflow-x-auto pb-1 scrollbar-none" style={{ WebkitOverflowScrolling: "touch" }}>
         {filterOptions.map(opt => (
           <button
             key={opt.key}
@@ -314,7 +314,12 @@ export default function GraphView({
             ref={svgRef}
             viewBox={`0 0 ${W} ${H}`}
             className="w-full block"
-            style={{ height: svgHeight, cursor: isPanningRef.current ? "grabbing" : "grab", touchAction: "none" }}
+            style={{
+              height: svgHeight,
+              minHeight: 260,
+              cursor: isPanningRef.current ? "grabbing" : "grab",
+              touchAction: "none",
+            }}
             onWheel={handleWheel}
             onPointerDown={onSvgPointerDown}
             onPointerMove={onPointerMove}

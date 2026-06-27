@@ -55,8 +55,11 @@ export default function GraphPage() {
 
       {/* フッター注記 */}
       <div className="px-4 py-3 border-t border-[#1e2a3a] bg-[#050810]">
-        <p className="text-sm text-[#4b5563] text-center">
+        <p className="hidden sm:block text-sm text-[#4b5563] text-center">
           線の太さ=関与の強さ ・ 丸の大きさ=接続数 ・ ドラッグで移動 ・ スクロールでズーム ・ ダブルクリックで固定解除
+        </p>
+        <p className="sm:hidden text-xs text-[#4b5563] text-center">
+          タップで選択 ・ 1本指でドラッグ ・ 2本指でズーム
         </p>
       </div>
     </div>
