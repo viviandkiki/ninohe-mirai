@@ -7,8 +7,10 @@ export function useFadeIn() {
       '(prefers-reduced-motion: reduce)'
     ).matches
 
+    const selector = '[data-fade], [data-fade-left], [data-fade-right], [data-pop]'
+
     if (prefersReduced) {
-      document.querySelectorAll('[data-fade]').forEach(el => {
+      document.querySelectorAll(selector).forEach(el => {
         el.classList.add('is-visible')
       })
       return
@@ -23,10 +25,10 @@ export function useFadeIn() {
           }
         })
       },
-      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
     )
 
-    document.querySelectorAll('[data-fade]').forEach(el => {
+    document.querySelectorAll(selector).forEach(el => {
       observer.observe(el)
     })
 

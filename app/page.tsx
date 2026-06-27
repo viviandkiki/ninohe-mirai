@@ -152,6 +152,8 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
+        <div className="deco-blob absolute top-[10%] right-[5%] w-72 h-72 hidden sm:block z-[2]" aria-hidden="true" />
+        <div className="deco-blob absolute bottom-[20%] left-[3%] w-48 h-48 hidden sm:block z-[2]" aria-hidden="true" />
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce opacity-60">
           <div className="w-6 h-10 border-2 border-[#2e7d8c] rounded-full flex items-start justify-center pt-2">
             <div className="w-1 h-3 bg-[#2e7d8c] rounded-full" />
@@ -167,13 +169,13 @@ export default function HomePage() {
 
       {/* Section 2: 6テーマ */}
       <section className="section-fade max-w-5xl mx-auto px-4 py-16">
-        <div className="flex items-center justify-between mb-4" data-fade data-delay="1">
+        <div className="flex items-center justify-between mb-4" data-fade-left>
           <div>
             <p className="text-xs font-bold text-[#0e6b7c] uppercase tracking-widest mb-1">6 THEMES</p>
-            <h2 className="text-3xl font-black text-[#0f172a]">市の現状：6つのテーマ</h2>
-            <p className="text-lg text-[#475569] mt-1">公開データから見た二戸の今</p>
+            <h2 className="text-3xl font-black text-[#0f172a]"><span className="heading-accent">市の現状：6つのテーマ</span></h2>
+            <p className="text-lg text-[#475569] mt-2">公開データから見た二戸の今</p>
           </div>
-          <Link href="/powers" className="flex items-center gap-1.5 text-lg text-[#0e6b7c] hover:text-[#0f172a] font-bold transition-colors">
+          <Link href="/powers" className="flex items-center gap-1.5 text-lg text-[#0e6b7c] hover:text-[#0f172a] font-bold transition-colors min-h-[44px]">
             詳細を見る <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -187,7 +189,7 @@ export default function HomePage() {
             const Icon = ICON_MAP[power.icon] ?? Briefcase;
             return (
               <Link key={power.id} href={`/powers/${power.slug}`}
-                data-fade data-delay={Math.min(i + 1, 5)}
+                data-pop data-delay={Math.min(i + 1, 6)}
                 className="power-card-gsap light-card motion-card p-6 block hover:border-[#2e7d8c]/60 transition-colors group">
                 <div className="flex items-start justify-between mb-4">
                   <div className={`p-3 rounded-xl ${colors.badge}`}><Icon className="w-7 h-7" /></div>
@@ -225,13 +227,13 @@ export default function HomePage() {
       {/* Section 3: 主要指標カルーセル（左→右） */}
       <section className="section-fade py-16 section-alt">
         <div className="max-w-5xl mx-auto px-4 mb-8">
-          <div className="flex items-center justify-between" data-fade data-delay="1">
+          <div className="flex items-center justify-between" data-fade-left>
             <div>
               <p className="text-xs font-bold text-[#0e6b7c] uppercase tracking-widest mb-1">KEY INDICATORS</p>
-              <h2 className="text-3xl font-black text-[#0f172a]">主要指標</h2>
-              <p className="text-lg text-[#475569] mt-1">数値で見る二戸の現在地</p>
+              <h2 className="text-3xl font-black text-[#0f172a]"><span className="heading-accent">主要指標</span></h2>
+              <p className="text-lg text-[#475569] mt-2">数値で見る二戸の現在地</p>
             </div>
-            <Link href="/powers" className="flex items-center gap-1.5 text-lg text-[#0e6b7c] hover:text-[#0f172a] font-bold transition-colors">
+            <Link href="/powers" className="flex items-center gap-1.5 text-lg text-[#0e6b7c] hover:text-[#0f172a] font-bold transition-colors min-h-[44px]">
               全指標を見る <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -244,14 +246,14 @@ export default function HomePage() {
       {/* Section 4: 最近の議会（右→左カルーセル） */}
       <section className="section-fade py-16">
         <div className="max-w-5xl mx-auto px-4 mb-8">
-          <div className="flex items-center justify-between" data-fade data-delay="1">
+          <div className="flex items-center justify-between" data-fade-left>
             <div>
               <p className="text-xs font-bold text-[#0e6b7c] uppercase tracking-widest mb-1">COUNCIL</p>
-              <h2 className="text-3xl font-black text-[#0f172a]">最近の議会</h2>
-              <p className="text-lg text-[#475569] mt-1">市議会の最新セッション</p>
+              <h2 className="text-3xl font-black text-[#0f172a]"><span className="heading-accent">最近の議会</span></h2>
+              <p className="text-lg text-[#475569] mt-2">市議会の最新セッション</p>
             </div>
             <a href="https://www.city.ninohe.lg.jp/menu/21" target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-lg text-[#0e6b7c] hover:text-[#0f172a] font-bold transition-colors">
+              className="flex items-center gap-1.5 text-lg text-[#0e6b7c] hover:text-[#0f172a] font-bold transition-colors min-h-[44px]">
               議会公式 <ExternalLink className="w-4 h-4" />
             </a>
           </div>
@@ -284,13 +286,13 @@ export default function HomePage() {
       {/* Section 5: キーワードマップ */}
       <section className="section-fade kw-pulse-section py-16 section-alt">
         <div className="relative z-10 max-w-5xl mx-auto px-4">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between mb-4" data-fade-left>
             <div>
               <p className="text-xs font-bold text-[#0e6b7c] uppercase tracking-widest mb-1">KEYWORD MAP</p>
-              <h2 className="text-3xl font-black text-[#0f172a]">キーワードマップ</h2>
-              <p className="text-lg text-[#475569] mt-1">二戸をひもとく言葉のネットワーク</p>
+              <h2 className="text-3xl font-black text-[#0f172a]"><span className="heading-accent">キーワードマップ</span></h2>
+              <p className="text-lg text-[#475569] mt-2">二戸をひもとく言葉のネットワーク</p>
             </div>
-            <Link href="/graph" className="flex items-center gap-2 bg-[#2e7d8c] hover:bg-[#1a6477] text-white font-bold px-5 py-2.5 rounded-xl transition-all text-lg shadow-md">
+            <Link href="/graph" className="flex items-center gap-2 bg-[#2e7d8c] hover:bg-[#1a6477] text-white font-bold px-5 py-2.5 rounded-xl transition-all text-lg shadow-md min-h-[44px]">
               <Network className="w-5 h-5" /> 全画面で開く
             </Link>
           </div>
