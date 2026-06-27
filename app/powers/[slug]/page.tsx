@@ -20,6 +20,16 @@ import MiniTrendChart from "@/components/MiniTrendChart";
 import ScoreBar from "@/components/ScoreBar";
 import { Briefcase, TrendingUp, BookOpen, Users, Shield, Home, CheckCircle2, AlertCircle } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+
+const POWER_IMAGES: Record<string, { src: string; alt: string; credit: string }> = {
+  work:    { src: "/images/haikei3.jpg",     alt: "奥入瀬渓流（東北・岩手の自然）",      credit: "奥入瀬渓流 — Towada-Hachimantai NP (CC BY-SA 3.0)" },
+  earn:    { src: "/images/img-sake.jpg",    alt: "徳利と猪口（日本酒・地域産業）",       credit: "徳利と猪口 Miyajima (CC BY 2.0, shankar s.)" },
+  inherit: { src: "/images/img-craft.jpg",   alt: "楽焼茶碗（江戸時代・伝統工芸）",      credit: "楽焼茶碗 江戸時代 (CC BY-SA 4.0, Gryffindor)" },
+  connect: { src: "/images/img-matsuri.jpg", alt: "金魚ちょうちんねぶた祭り（地域のつながり）", credit: "金魚ちょうちんねぶた (CC BY-SA 3.0, Wikimedia Commons)" },
+  prepare: { src: "/images/img-mountain.jpg",alt: "宝来山（岩手の山岳景観）",            credit: "宝来山 (CC BY-SA 3.0, Junpei Satoh)" },
+  live:    { src: "/images/haikei4.jpg",     alt: "稲の天日干し（農村の暮らし）",         credit: "稲の天日干し (CC BY-SA 3.0, Kropsoq)" },
+};
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Briefcase, TrendingUp, BookOpen, Users, Shield, Home,
@@ -57,8 +67,19 @@ export default async function PowerDetailPage({ params }: { params: Promise<{ sl
     .map((id) => getSourceById(id))
     .filter((s): s is NonNullable<typeof s> => s !== undefined);
 
+  const heroImage = POWER_IMAGES[slug];
+
   return (
     <PageContainer>
+      {/* Hero image */}
+      {heroImage && (
+        <div className="relative h-44 sm:h-60 rounded-xl overflow-hidden mb-6 -mx-4 sm:mx-0">
+          <Image src={heroImage.src} alt={heroImage.alt} fill className="object-cover" priority />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+          <p className="absolute bottom-2 right-3 text-[10px] text-white/60 drop-shadow">{heroImage.credit}</p>
+        </div>
+      )}
+
       {/* Breadcrumb */}
       <nav className="text-xs text-[#6b7280] mb-6">
         <Link href="/" className="hover:text-[#1a1a2e]">ホーム</Link>

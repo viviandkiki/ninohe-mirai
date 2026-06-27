@@ -27,7 +27,6 @@ export default function PowerCard({ power, indicatorCount }: PowerCardProps) {
   return (
     <Link
       href={`/powers/${power.slug}`}
-      data-pop
       className={`group block bg-white rounded-xl border border-[#e5e1da] ${colors.leftBorder} p-5 hover:shadow-lg transition-all hover:-translate-y-1`}
     >
       <div className="flex items-start justify-between mb-3">
