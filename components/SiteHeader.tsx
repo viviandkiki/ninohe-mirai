@@ -45,7 +45,8 @@ export default function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className={`px-3 py-1.5 rounded text-base transition-colors font-medium ${
+              aria-current={pathname.startsWith(link.href) ? "page" : undefined}
+              className={`nav-link px-3 py-1.5 rounded text-base transition-colors font-medium ${
                 pathname.startsWith(link.href)
                   ? "bg-[#e0f2f7] text-[#0e6b7c] font-semibold"
                   : "text-[#475569] hover:text-[#0f172a] hover:bg-[#f1f5f9]"
