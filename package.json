@@ -9,9 +9,13 @@
     "lint": "eslint",
     "type-check": "tsc --noEmit",
     "validate": "tsx scripts/validate/check-processed.ts",
-    "update-data": "tsx scripts/sync/update-all.ts"
+    "update-data": "tsx scripts/sync/update-all.ts",
+    "fetch-youtube": "tsx scripts/fetch/fetch-council-youtube.ts",
+    "fetch-transcripts": "tsx scripts/fetch/fetch-transcripts.ts",
+    "summarize-videos": "tsx scripts/transform/summarize-council-videos.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.106.0",
     "@supabase/supabase-js": "^2.108.2",
     "d3-force": "^3.0.0",
     "date-fns": "^4.4.0",

@@ -43,6 +43,7 @@ export default function SiteFooter() {
                 { href: "/powers", label: "まちの今：6つのレンズ" },
                 { href: "/graph", label: "言葉の地図" },
                 { href: "/movement", label: "議会と地域の動き" },
+                { href: "/council-videos", label: "議会放送アーカイブ" },
                 { href: "/actors", label: "担い手" },
                 { href: "/methodology", label: "データの根拠" },
                 { href: "/about", label: "このサイトについて" },

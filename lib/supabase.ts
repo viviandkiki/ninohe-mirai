@@ -20,6 +20,7 @@ export type CouncilVideo = {
   id: string;
   video_id: string;
   title: string;
+  description: string | null;
   session: string;
   session_date: string;
   session_type: string | null;
@@ -28,6 +29,9 @@ export type CouncilVideo = {
   summary: string | null;
   transcript_text: string | null;
   youtube_url: string;
+  thumbnail_url: string | null;
+  published_at: string | null;
+  duration_seconds: number | null;
   created_at: string;
   updated_at: string;
 };
