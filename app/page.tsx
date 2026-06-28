@@ -108,10 +108,10 @@ export default function HomePage() {
             <div className="mb-6 hero-fade-in"><UpdateBadgeInline date={latestUpdate.date} /></div>
           )}
           <h1 className="hero-h1 text-4xl sm:text-5xl lg:text-6xl font-black text-[#0f172a] leading-tight tracking-tight mb-6 overflow-hidden">
-            国産漆の70%は、<br />この町で生まれる。
+            あなたのまち、<br />二戸市の今を知る。
           </h1>
           <p className="text-xl text-[#475569] leading-relaxed max-w-2xl mb-10 hero-fade-in">
-            議会の記録・地域の指標・人のつながり——二戸にまつわる公開情報を、市民の言葉で整理しています。
+            議会・行政・地域データを、市民にわかりやすく整理した公共ダッシュボードです。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 hero-fade-in">
             <Link href="/powers" className="inline-flex items-center justify-center gap-2 bg-[#2e7d8c] hover:bg-[#1a6477] text-white font-bold px-8 py-4 rounded-xl transition-all text-xl shadow-md">
