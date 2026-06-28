@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useLocale } from "@/lib/i18n/context";
-import LanguageToggle from "./LanguageToggle";
 
 export default function SiteHeader() {
   const pathname = usePathname();
@@ -58,7 +57,6 @@ export default function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2 shrink-0">
-          <LanguageToggle />
           <button
             className="md:hidden touch-target p-2 rounded text-[#475569] hover:bg-[#f1f5f9] transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
