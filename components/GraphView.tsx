@@ -221,18 +221,23 @@ export default function GraphView({
     return { x: (cx - rect.left - vp.x) / vp.scale, y: (cy - rect.top - vp.y) / vp.scale };
   }, []);
 
-  const handleWheel = useCallback((e: React.WheelEvent) => {
-    e.preventDefault();
-    const factor = e.deltaY > 0 ? 0.88 : 1.14;
-    setViewport(v => {
-      const newScale = Math.max(0.2, Math.min(5, v.scale * factor));
-      const svg = svgRef.current;
-      if (!svg) return v;
-      const rect = svg.getBoundingClientRect();
-      const cx = e.clientX - rect.left;
-      const cy = e.clientY - rect.top;
-      return { x: cx - (cx - v.x) * (newScale / v.scale), y: cy - (cy - v.y) * (newScale / v.scale), scale: newScale };
-    });
+  // ── Wheel zoom: passive:false でページスクロールを横取りしてズームに使う ──
+  useEffect(() => {
+    const svg = svgRef.current;
+    if (!svg) return;
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      const factor = e.deltaY > 0 ? 0.88 : 1.14;
+      setViewport(v => {
+        const newScale = Math.max(0.2, Math.min(5, v.scale * factor));
+        const rect = svg.getBoundingClientRect();
+        const cx = e.clientX - rect.left;
+        const cy = e.clientY - rect.top;
+        return { x: cx - (cx - v.x) * (newScale / v.scale), y: cy - (cy - v.y) * (newScale / v.scale), scale: newScale };
+      });
+    };
+    svg.addEventListener("wheel", onWheel, { passive: false });
+    return () => svg.removeEventListener("wheel", onWheel);
   }, []);
 
   const onNodePointerDown = useCallback((e: React.PointerEvent, node: SimNode) => {
@@ -339,7 +344,6 @@ export default function GraphView({
               cursor: isPanningRef.current ? "grabbing" : "grab",
               touchAction: "none",
             }}
-            onWheel={handleWheel}
             onPointerDown={onSvgPointerDown}
             onPointerMove={onPointerMove}
             onPointerUp={onPointerUp}

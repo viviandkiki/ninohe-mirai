@@ -132,7 +132,7 @@ export default function HomePage() {
 
       {/* Section 2: キーワードマップ（最大の革新要素を前面化） */}
       <section className="section-fade kw-pulse-section py-16 section-alt">
-        <div className="relative z-10 max-w-5xl mx-auto px-4">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 mb-6">
           <div className="flex items-center justify-between mb-4" data-fade-left>
             <div>
               <h2 className="text-3xl font-black text-[#0f172a]"><span className="heading-accent">二戸をひもとく言葉たち</span></h2>
@@ -142,17 +142,13 @@ export default function HomePage() {
               <Network className="w-5 h-5" /> 全画面で探索する
             </Link>
           </div>
-          <p className="text-lg text-[#475569] leading-relaxed mb-6 max-w-2xl">
+          <p className="text-lg text-[#475569] leading-relaxed max-w-2xl">
             漆・九戸城・里山・南部美人——この土地を形作る言葉が、ここでつながっています。気になるキーワードをクリックして、二戸の文脈を発見してください。
           </p>
-          <div className="rounded-2xl overflow-hidden border border-[#e2e8f0]">
-            <div className="block md:hidden">
-              <GraphViewWrapper data={graphData} height={300} filterOptions={kwFilterOptions} />
-            </div>
-            <div className="hidden md:block">
-              <GraphViewWrapper data={graphData} height={460} filterOptions={kwFilterOptions} />
-            </div>
-          </div>
+        </div>
+        {/* 全幅グラフ */}
+        <div className="relative z-10 px-3 sm:px-6">
+          <GraphViewWrapper data={graphData} height={520} filterOptions={kwFilterOptions} />
         </div>
       </section>
 
