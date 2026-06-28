@@ -16,8 +16,10 @@ import SectionHeading from "@/components/SectionHeading";
 import StatCard from "@/components/StatCard";
 import MovementCard from "@/components/MovementCard";
 import SourceList from "@/components/SourceList";
-import MiniTrendChart from "@/components/MiniTrendChart";
+import dynamic from "next/dynamic";
 import ScoreBar from "@/components/ScoreBar";
+
+const MiniTrendChart = dynamic(() => import("@/components/MiniTrendChart"), { ssr: false });
 import { Briefcase, TrendingUp, BookOpen, Users, Shield, Home, CheckCircle2, AlertCircle } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";

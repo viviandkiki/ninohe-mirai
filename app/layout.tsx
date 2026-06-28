@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
+import { M_Plus_Rounded_1c } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ScrollProgress from "@/components/ScrollProgress";
 import FadeInSetup from "@/components/FadeInSetup";
 import { LocaleProvider } from "@/lib/i18n/context";
+
+const mPlus = M_Plus_Rounded_1c({
+  weight: ["400", "700", "800", "900"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mplus",
+  preload: false,
+});
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ninohe-mirai.example.com";
 const SITE_NAME = "ニノヘミライ";
@@ -73,11 +82,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className="h-full">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      </head>
+    <html lang="ja" className={`h-full ${mPlus.variable}`}>
       <body className="min-h-full flex flex-col antialiased">
         <a
           href="#main-content"

@@ -35,10 +35,10 @@ function UpdateBadgeInline({ date }: { date: string }) {
 }
 
 function ParticleLayer() {
-  const particles = Array.from({ length: 18 }, (_, i) => ({
-    left: `${(i * 37 + 11) % 100}%`,
-    delay: `${(i * 1.3) % 8}s`,
-    duration: `${6 + (i * 0.7) % 8}s`,
+  const particles = Array.from({ length: 10 }, (_, i) => ({
+    left: `${(i * 59 + 11) % 100}%`,
+    delay: `${(i * 1.7) % 8}s`,
+    duration: `${6 + (i * 1.1) % 8}s`,
     size: 2 + (i % 3),
     opacity: 0.3 + (i % 5) * 0.12,
   }));
@@ -56,6 +56,7 @@ function ParticleLayer() {
             animationDelay: p.delay,
             animationDuration: p.duration,
             opacity: p.opacity,
+            willChange: "transform",
           }}
         />
       ))}
@@ -99,7 +100,7 @@ export default function HomePage() {
 
       {/* HERO */}
       <section className="relative min-h-[80vh] flex items-center overflow-hidden border-b border-[#e2e8f0]">
-        <Image src="/HERO.png" alt="" fill className="object-cover object-center" priority quality={85} />
+        <Image src="/HERO.png" alt="" fill sizes="100vw" className="object-cover object-center" priority quality={85} />
         <div className="absolute inset-0 bg-gradient-to-br from-white/88 via-[#f0f9fa]/75 to-[#e0f2f7]/80 z-[1]" />
         <ParticleLayer />
         <div className="relative z-10 max-w-5xl mx-auto px-4 py-20 w-full">
