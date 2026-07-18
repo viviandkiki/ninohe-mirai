@@ -10,6 +10,56 @@
     "summary": "2026年1月26日就任の二戸市長。二戸市出身、元岩手県議会議長。二戸市議会議員を3期務めた後に岩手県議会議員として活動。浄法寺漆産業の振興や移住定住促進を重点施策として掲げる。"
   },
   {
+    "id": "actor-council-chair",
+    "type": "council",
+    "name": "田代 博之",
+    "role": "二戸市議会議長",
+    "affiliation": "二戸市議会",
+    "focusPowers": ["work", "earn", "inherit", "connect", "prepare", "live"],
+    "lastActive": "2026-06",
+    "summary": "二戸市議会議長。にのへ未来創生会所属、議会運営委員長を兼任。定例会・臨時会の議事進行を担う。"
+  },
+  {
+    "id": "actor-council-a",
+    "type": "council",
+    "name": "二戸市議会議員（有志）",
+    "role": "市議会議員",
+    "affiliation": "二戸市議会",
+    "focusPowers": ["work", "connect"],
+    "lastActive": "2025-06",
+    "summary": "政策提言・一般質問等の議会活動に参加した市議会議員。"
+  },
+  {
+    "id": "actor-council-b",
+    "type": "council",
+    "name": "二戸市議会議員（有志）",
+    "role": "市議会議員",
+    "affiliation": "二戸市議会",
+    "focusPowers": ["work", "connect"],
+    "lastActive": "2025-06",
+    "summary": "政策提言・一般質問等の議会活動に参加した市議会議員。"
+  },
+  {
+    "id": "actor-council-c",
+    "type": "council",
+    "name": "二戸市議会議員（有志）",
+    "role": "市議会議員",
+    "affiliation": "二戸市議会",
+    "focusPowers": ["work", "connect"],
+    "lastActive": "2024-06",
+    "summary": "政策提言・一般質問等の議会活動に参加した市議会議員。"
+  },
+  {
+    "id": "actor-commerce",
+    "type": "community",
+    "name": "二戸市商工会",
+    "role": "創業支援・商工振興",
+    "affiliation": "二戸市商工会",
+    "focusPowers": ["earn", "work"],
+    "lastActive": "2024-04",
+    "summary": "創業支援プログラム「二戸スタート」等を運営する商工経済団体。"
+  },
+  {
     "id": "actor-shokokai",
     "type": "community",
     "name": "二戸市商工会",
