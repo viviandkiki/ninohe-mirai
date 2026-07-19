@@ -5,8 +5,12 @@
     "name": "五日市 王",
     "role": "二戸市長（第9代）",
     "affiliation": "二戸市役所",
-    "focusPowers": ["work", "earn", "live"],
-    "lastActive": "2026-01",
+    "focusPowers": [
+      "work",
+      "earn",
+      "live"
+    ],
+    "lastActive": "2026-06",
     "summary": "2026年1月26日就任の二戸市長。二戸市出身、元岩手県議会議長。二戸市議会議員を3期務めた後に岩手県議会議員として活動。浄法寺漆産業の振興や移住定住促進を重点施策として掲げる。"
   },
   {
@@ -15,9 +19,16 @@
     "name": "田代 博之",
     "role": "二戸市議会議長",
     "affiliation": "二戸市議会",
-    "focusPowers": ["work", "earn", "inherit", "connect", "prepare", "live"],
+    "focusPowers": [
+      "work",
+      "earn",
+      "inherit",
+      "connect",
+      "prepare",
+      "live"
+    ],
     "lastActive": "2026-06",
-    "summary": "二戸市議会議長。にのへ未来創生会所属、議会運営委員長を兼任。定例会・臨時会の議事進行を担う。"
+    "summary": "議会運営・議事進行を統括。二戸市議会の中立的立場から議会改革を推進。"
   },
   {
     "id": "actor-council-a",
@@ -25,9 +36,12 @@
     "name": "二戸市議会議員（有志）",
     "role": "市議会議員",
     "affiliation": "二戸市議会",
-    "focusPowers": ["work", "connect"],
-    "lastActive": "2025-06",
-    "summary": "政策提言・一般質問等の議会活動に参加した市議会議員。"
+    "focusPowers": [
+      "work",
+      "connect"
+    ],
+    "lastActive": "2026-06",
+    "summary": "最大会派の代表。市政運営・地域経済に関する施策を積極的に議論する。"
   },
   {
     "id": "actor-council-b",
@@ -35,9 +49,12 @@
     "name": "二戸市議会議員（有志）",
     "role": "市議会議員",
     "affiliation": "二戸市議会",
-    "focusPowers": ["work", "connect"],
-    "lastActive": "2025-06",
-    "summary": "政策提言・一般質問等の議会活動に参加した市議会議員。"
+    "focusPowers": [
+      "work",
+      "connect"
+    ],
+    "lastActive": "2026-06",
+    "summary": "日本共産党二戸市議団の代表。福祉・医療・市民生活に関する質問を継続的に行う。"
   },
   {
     "id": "actor-council-c",
@@ -45,9 +62,12 @@
     "name": "二戸市議会議員（有志）",
     "role": "市議会議員",
     "affiliation": "二戸市議会",
-    "focusPowers": ["work", "connect"],
-    "lastActive": "2024-06",
-    "summary": "政策提言・一般質問等の議会活動に参加した市議会議員。"
+    "focusPowers": [
+      "work",
+      "connect"
+    ],
+    "lastActive": "2026-06",
+    "summary": "清和会の代表。地域産業・伝統文化の振興をテーマに活動する。"
   },
   {
     "id": "actor-commerce",
@@ -55,7 +75,10 @@
     "name": "二戸市商工会",
     "role": "創業支援・商工振興",
     "affiliation": "二戸市商工会",
-    "focusPowers": ["earn", "work"],
+    "focusPowers": [
+      "earn",
+      "work"
+    ],
     "lastActive": "2024-04",
     "summary": "創業支援プログラム「二戸スタート」等を運営する商工経済団体。"
   },
@@ -65,7 +88,10 @@
     "name": "二戸市商工会",
     "role": "商工経済団体",
     "affiliation": "二戸市商工会",
-    "focusPowers": ["earn", "work"],
+    "focusPowers": [
+      "earn",
+      "work"
+    ],
     "lastActive": "2026-01",
     "summary": "市内商工業者の経営支援・地域産業振興を担う。中小企業・個人事業主の経営相談・販路開拓支援が主な活動。",
     "url": "https://www.shokokai.com/ninohe/"
@@ -76,7 +102,10 @@
     "name": "二戸信用金庫",
     "role": "地域金融機関",
     "affiliation": "二戸信用金庫",
-    "focusPowers": ["earn", "work"],
+    "focusPowers": [
+      "earn",
+      "work"
+    ],
     "lastActive": "2026-01",
     "summary": "地域金融・中小企業支援を担う地域密着型金融機関。事業者向け融資・相談窓口を通じて地域経済を支える。"
   },
@@ -86,7 +115,11 @@
     "name": "JA岩手ふるさと（二戸地区）",
     "role": "農業協同組合",
     "affiliation": "JA岩手ふるさと",
-    "focusPowers": ["earn", "inherit", "live"],
+    "focusPowers": [
+      "earn",
+      "inherit",
+      "live"
+    ],
     "lastActive": "2026-01",
     "summary": "農業振興・農産物の販売・加工支援を担う。いわて短角牛・折爪三元豚「佐助」・雑穀・果物（サクランボ「夏恋」・りんご「冬恋」）など二戸地域農畜産物のブランド化を推進。"
   },
@@ -96,7 +129,10 @@
     "name": "岩手県北部森林管理署・林業関係団体",
     "role": "林業管理・漆林保全",
     "affiliation": "岩手県北部森林管理署",
-    "focusPowers": ["inherit", "earn"],
+    "focusPowers": [
+      "inherit",
+      "earn"
+    ],
     "lastActive": "2025-12",
     "summary": "浄法寺エリアを中心とした林業・漆林保全を担う。国産漆生産量日本一の生産基盤を維持するための漆林管理・若手後継者育成に取り組む。"
   },
@@ -106,7 +142,10 @@
     "name": "二戸市観光協会",
     "role": "観光振興団体",
     "affiliation": "二戸市観光協会",
-    "focusPowers": ["earn", "connect"],
+    "focusPowers": [
+      "earn",
+      "connect"
+    ],
     "lastActive": "2026-01",
     "summary": "二戸・浄法寺・金田一温泉エリアの観光振興を担う。九戸城址・浄法寺漆・金田一温泉などの観光資源を活用したグリーンツーリズム・インバウンド誘致を推進。"
   },
@@ -116,7 +155,10 @@
     "name": "二戸地区広域商工観光推進協議会",
     "role": "広域連携組織",
     "affiliation": "二戸地域広域",
-    "focusPowers": ["earn", "connect"],
+    "focusPowers": [
+      "earn",
+      "connect"
+    ],
     "lastActive": "2025-12",
     "summary": "二戸地域の市町村・商工会・観光協会・岩手県が連携する地域活性化組織。広域での観光・産業振興戦略を推進する。",
     "url": "https://www.pref.iwate.jp/kenpoku/nino_chiiki/1036771/index.html"
@@ -127,7 +169,10 @@
     "name": "二戸市立病院",
     "role": "地域中核病院",
     "affiliation": "二戸市",
-    "focusPowers": ["prepare", "live"],
+    "focusPowers": [
+      "prepare",
+      "live"
+    ],
     "lastActive": "2026-01",
     "summary": "二戸市の中核病院。高齢化率40%超の市において、急性期医療・外来・入院の中心的役割を担う。医師・看護師不足への対応が継続的な課題。"
   },
@@ -137,7 +182,10 @@
     "name": "二戸市社会福祉協議会",
     "role": "社会福祉組織",
     "affiliation": "二戸市",
-    "focusPowers": ["prepare", "live"],
+    "focusPowers": [
+      "prepare",
+      "live"
+    ],
     "lastActive": "2026-01",
     "summary": "地域の福祉・ボランティア活動を支援する社会福祉法人。高齢者支援・障がい者支援・子育て支援など幅広い福祉サービスを提供。"
   },
@@ -147,7 +195,10 @@
     "name": "二戸市公民館・地域公民館",
     "role": "生涯学習・地域コミュニティ",
     "affiliation": "二戸市教育委員会",
-    "focusPowers": ["live", "inherit"],
+    "focusPowers": [
+      "live",
+      "inherit"
+    ],
     "lastActive": "2026-01",
     "summary": "生涯学習・地域コミュニティ活動の拠点。市民講座・文化行事・地域交流イベントを通じて市民の学習機会と地域のつながりを支える。"
   },
@@ -157,7 +208,11 @@
     "name": "岩手県浄法寺漆生産組合",
     "role": "漆生産・文化継承",
     "affiliation": "二戸市浄法寺地区",
-    "focusPowers": ["inherit", "earn", "connect"],
+    "focusPowers": [
+      "inherit",
+      "earn",
+      "connect"
+    ],
     "lastActive": "2025-12",
     "summary": "国産漆生産量の約70%を担う浄法寺地区の漆掻き職人・漆林所有者が参加する組合。浄法寺漆は日本遺産「奥南部漆物語」の核心部分であり、UNESCO無形文化遺産にも関連認定。世界遺産・国宝の修復にも使用される。"
   },
@@ -167,7 +222,10 @@
     "name": "二戸市地域おこし協力隊OB・現役ネットワーク",
     "role": "移住・地域振興",
     "affiliation": "二戸市",
-    "focusPowers": ["connect", "live"],
+    "focusPowers": [
+      "connect",
+      "live"
+    ],
     "lastActive": "2026-01",
     "summary": "移住・定住促進と地域おこし活動を担う。現役隊員12名（2024年）と卒業生が農業・観光・福祉・IT等の分野で活動。定住率の高さが全国的に評価されている。"
   },
@@ -177,7 +235,10 @@
     "name": "金田一温泉観光協会",
     "role": "温泉観光振興",
     "affiliation": "二戸市金田一地区",
-    "focusPowers": ["earn", "connect"],
+    "focusPowers": [
+      "earn",
+      "connect"
+    ],
     "lastActive": "2026-01",
     "summary": "金田一温泉の観光振興・宿泊施設連携を担う。みちのくの奥座敷として知られる温泉郷の活性化に取り組む。"
   },
@@ -187,7 +248,10 @@
     "name": "二戸市NPOセンター・各種NPO法人",
     "role": "市民活動支援",
     "affiliation": "二戸市",
-    "focusPowers": ["connect", "live"],
+    "focusPowers": [
+      "connect",
+      "live"
+    ],
     "lastActive": "2025-12",
     "summary": "市内NPO・ボランティア団体の総合支援拠点。市民活動の立ち上げから運営まで伴走支援を行う。"
   },
@@ -197,7 +261,10 @@
     "name": "岩手県農業共済組合（二戸支所）",
     "role": "農業経営安定",
     "affiliation": "岩手県農業共済組合",
-    "focusPowers": ["earn", "prepare"],
+    "focusPowers": [
+      "earn",
+      "prepare"
+    ],
     "lastActive": "2025-12",
     "summary": "農業経営の安定化・農業共済を担う。気候変動による農業被害リスクへの対応として農業保険の普及・啓発を推進。"
   },
@@ -207,7 +274,11 @@
     "name": "岩手県県北広域振興局",
     "role": "県行政の出先機関",
     "affiliation": "岩手県",
-    "focusPowers": ["work", "earn", "connect"],
+    "focusPowers": [
+      "work",
+      "earn",
+      "connect"
+    ],
     "lastActive": "2026-01",
     "summary": "岩手県の地域振興・産業支援の出先機関。二戸地域振興センターを通じて産業振興・農林業支援・地域課題解決を支援。",
     "url": "https://www.pref.iwate.jp/kenpoku/nino_chiiki/"
@@ -218,7 +289,11 @@
     "name": "南部美人株式会社",
     "role": "酒蔵・地域ブランド",
     "affiliation": "二戸市",
-    "focusPowers": ["earn", "inherit", "connect"],
+    "focusPowers": [
+      "earn",
+      "inherit",
+      "connect"
+    ],
     "lastActive": "2026-01",
     "summary": "1902年創業の二戸市内の老舗酒蔵。世界50カ国以上に日本酒を輸出。2019年に世界初の日本酒ヴィーガン認証を取得。浄法寺漆を使ったクラフトジン・ウォッカなど地域素材を活かした新製品開発にも取り組む。"
   }

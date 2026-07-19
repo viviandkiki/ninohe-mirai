@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-26T06:29:22.505Z",
+  "fetchedAt": "2026-07-19T04:23:14.659Z",
   "pages": [
     {
       "url": "https://www.city.ninohe.lg.jp/Info/736",
@@ -18,14 +18,14 @@
     {
       "url": "https://www.city.ninohe.lg.jp/info/1187",
       "label": "財務諸表",
-      "title": "統一的な基準による財務諸表の公表について（平成28年度～）",
+      "title": "統一的な基準による財務諸表の公表について（令和３年度～）",
       "detectedDate": null,
       "httpStatus": 200
     },
     {
       "url": "https://www.city.ninohe.lg.jp/info/295",
       "label": "決算概要",
-      "title": "決算報告について （平成17～令和６年度）",
+      "title": "決算報告について （令和3～６年度）",
       "detectedDate": null,
       "httpStatus": 200
     },
