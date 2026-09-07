@@ -1,6 +1,21 @@
 {
-  "fetchedAt": "2026-09-06T07:03:24.758Z",
+  "fetchedAt": "2026-09-07T07:14:51.095Z",
   "sessions": [
+    {
+      "id": "r8-08-rinji",
+      "name": "令和8年8月臨時会",
+      "reiwaYear": 8,
+      "year": 2026,
+      "month": 8,
+      "sessionType": "臨時会",
+      "date": "2026-08",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/2026_8_rinzi_singinittei.pdf",
+        "questions": null,
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/2026_8_rinzi_giketukekka.pdf"
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/4487"
+    },
     {
       "id": "r8-06-teireikai",
       "name": "令和8年6月定例会",
@@ -10,9 +25,9 @@
       "sessionType": "定例会",
       "date": "2026-06",
       "pdfs": {
-        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/R8_6singinittei.pdf",
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/2026_6singinittei.pdf",
         "questions": null,
-        "results": null
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/2026_6giketukekka.pdf"
       },
       "sourceUrl": "https://www.city.ninohe.lg.jp/Info/4487"
     },
@@ -27,7 +42,7 @@
       "pdfs": {
         "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/R8_3singinittei.pdf",
         "questions": "https://www.city.ninohe.lg.jp/div/gikai/pdf/R8_3ippan.pdf",
-        "results": null
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/2026_3giketukekka.pdf"
       },
       "sourceUrl": "https://www.city.ninohe.lg.jp/Info/4487"
     },

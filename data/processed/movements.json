@@ -1,5 +1,19 @@
 [
   {
+    "id": "mov-council-r8-08-rinji",
+    "date": "2026-08-01",
+    "title": "令和8年8月臨時会",
+    "summary": "二戸市議会令和8年8月臨時会が開催されました。議決結果は市議会ウェブサイトで公開されています。",
+    "type": "announcement",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
     "id": "mov-council-r8-06-teireikai",
     "date": "2026-06-01",
     "title": "令和8年6月定例会",
