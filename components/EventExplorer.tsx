@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useCallback, useMemo, useState } from "react";
 import {
+  ArrowRight,
   CalendarDays,
   CheckCircle2,
   ChevronLeft,
@@ -32,6 +33,7 @@ type PeriodFilter = "all" | "today" | "weekend" | "30days";
 interface EventExplorerProps {
   events: NinoheEvent[];
   googleMapsApiKey?: string;
+  nowIso: string;
 }
 
 const PERIOD_OPTIONS: { value: PeriodFilter; label: string }[] = [
@@ -42,36 +44,58 @@ const PERIOD_OPTIONS: { value: PeriodFilter; label: string }[] = [
 ];
 
 const WEEKDAYS = ["日", "月", "火", "水", "木", "金", "土"];
-const MONTH_FORMATTER = new Intl.DateTimeFormat("ja-JP", { month: "short" });
-const DAY_FORMATTER = new Intl.DateTimeFormat("ja-JP", { day: "numeric" });
+const TOKYO_TIME_ZONE = "Asia/Tokyo";
+const DAY_IN_MILLISECONDS = 24 * 60 * 60 * 1000;
+const MONTH_FORMATTER = new Intl.DateTimeFormat("ja-JP", { month: "short", timeZone: TOKYO_TIME_ZONE });
+const DAY_FORMATTER = new Intl.DateTimeFormat("ja-JP", { day: "numeric", timeZone: TOKYO_TIME_ZONE });
+const FEATURED_DATE_FORMATTER = new Intl.DateTimeFormat("ja-JP", {
+  month: "numeric",
+  day: "numeric",
+  weekday: "short",
+  timeZone: TOKYO_TIME_ZONE,
+});
 
-function startOfDay(date: Date) {
-  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+function getTokyoDateParts(date: Date) {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    timeZone: TOKYO_TIME_ZONE,
+  }).formatToParts(date);
+  const value = (type: Intl.DateTimeFormatPartTypes) => Number(parts.find((part) => part.type === type)?.value);
+  return { year: value("year"), month: value("month"), day: value("day") };
+}
+
+function startOfTokyoDay(date: Date) {
+  const { year, month, day } = getTokyoDateParts(date);
+  return new Date(`${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}T00:00:00+09:00`);
+}
+
+function addDays(date: Date, days: number) {
+  return new Date(date.getTime() + days * DAY_IN_MILLISECONDS);
 }
 
 function endOfDay(date: Date) {
-  return new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59, 999);
+  return new Date(date.getTime() + DAY_IN_MILLISECONDS - 1);
 }
 
 function getRange(period: PeriodFilter, now: Date | null) {
   if (!now) return null;
-  const today = startOfDay(now);
+  const today = startOfTokyoDay(now);
 
   if (period === "all") return { start: today, end: new Date("9999-12-31T23:59:59+09:00") };
 
   if (period === "today") return { start: today, end: endOfDay(today) };
   if (period === "30days") {
-    const end = new Date(today);
-    end.setDate(end.getDate() + 30);
+    const end = addDays(today, 30);
     return { start: today, end: endOfDay(end) };
   }
 
-  const saturday = new Date(today);
-  const untilSaturday = (6 - today.getDay() + 7) % 7;
-  saturday.setDate(saturday.getDate() + untilSaturday);
-  const sunday = new Date(saturday);
-  sunday.setDate(sunday.getDate() + 1);
-  return { start: startOfDay(saturday), end: endOfDay(sunday) };
+  const { year, month, day } = getTokyoDateParts(today);
+  const dayOfWeek = new Date(Date.UTC(year, month - 1, day)).getUTCDay();
+  const saturday = addDays(today, (6 - dayOfWeek + 7) % 7);
+  const sunday = addDays(saturday, 1);
+  return { start: saturday, end: endOfDay(sunday) };
 }
 
 function overlaps(event: NinoheEvent, start: Date, end: Date) {
@@ -81,6 +105,43 @@ function overlaps(event: NinoheEvent, start: Date, end: Date) {
 function formatVerified(date: string) {
   const [year, month, day] = date.split("-");
   return `${year}年${Number(month)}月${Number(day)}日確認`;
+}
+
+function FeaturedEventCard({ event, timingLabel, onSelect }: { event: NinoheEvent; timingLabel: string; onSelect: () => void }) {
+  const style = EVENT_CATEGORY_STYLES[event.category];
+
+  return (
+    <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+      <div className="flex items-center justify-between gap-3">
+        <span
+          className="inline-flex rounded-full px-2.5 py-1 text-xs font-bold"
+          style={{ backgroundColor: style.background, color: style.color }}
+        >
+          {event.category}
+        </span>
+        <span className="text-xs font-bold text-slate-500">{timingLabel}</span>
+      </div>
+      <h4 className="mt-3 text-base font-black leading-snug text-slate-900">{event.title}</h4>
+      <div className="mt-3 space-y-1.5 text-sm text-slate-600">
+        <p className="flex items-start gap-2">
+          <Clock3 className="mt-0.5 h-4 w-4 shrink-0 text-[#0e6b7c]" aria-hidden="true" />
+          <span>{event.scheduleLabel}</span>
+        </p>
+        <p className="flex items-start gap-2">
+          <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#0e6b7c]" aria-hidden="true" />
+          <span>{event.venue}</span>
+        </p>
+      </div>
+      <button
+        type="button"
+        onClick={onSelect}
+        className="mt-4 inline-flex min-h-11 w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#0f172a] px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-[#1e293b]"
+      >
+        地図で場所を見る
+        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+      </button>
+    </article>
+  );
 }
 
 function EventCard({ event, selected, onSelect }: { event: NinoheEvent; selected: boolean; onSelect: () => void }) {
@@ -307,14 +368,39 @@ function CalendarView({ events, onSelect }: { events: NinoheEvent[]; onSelect: (
   );
 }
 
-export default function EventExplorer({ events, googleMapsApiKey }: EventExplorerProps) {
+export default function EventExplorer({ events, googleMapsApiKey, nowIso }: EventExplorerProps) {
   const [view, setView] = useState<ViewMode>("map");
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<string>("all");
   const [area, setArea] = useState<string>("all");
   const [period, setPeriod] = useState<PeriodFilter>("all");
-  const [now] = useState(() => new Date());
+  const now = useMemo(() => new Date(nowIso), [nowIso]);
   const [selectedId, setSelectedId] = useState<string | null>(events[0]?.id ?? null);
+
+  const featuredGroups = useMemo(() => {
+    const todayStart = startOfTokyoDay(now);
+    const tomorrowStart = addDays(todayStart, 1);
+    const dayAfterTomorrowStart = addDays(todayStart, 2);
+    const { year, month, day } = getTokyoDateParts(todayStart);
+    const dayOfWeek = new Date(Date.UTC(year, month - 1, day)).getUTCDay();
+    const weekEnd = endOfDay(addDays(todayStart, 7 - dayOfWeek));
+
+    const todayEvents = events.filter((event) => overlaps(event, todayStart, endOfDay(todayStart)));
+    const shownIds = new Set(todayEvents.map((event) => event.id));
+    const tomorrowEvents = events.filter(
+      (event) => !shownIds.has(event.id) && overlaps(event, tomorrowStart, endOfDay(tomorrowStart)),
+    );
+    tomorrowEvents.forEach((event) => shownIds.add(event.id));
+    const weekEvents = dayAfterTomorrowStart <= weekEnd
+      ? events.filter((event) => !shownIds.has(event.id) && overlaps(event, dayAfterTomorrowStart, weekEnd))
+      : [];
+
+    return [
+      { label: "今日", description: "本日開催・開催中", events: todayEvents },
+      { label: "明日", description: "明日から始まる催し", events: tomorrowEvents },
+      { label: "今週", description: "日曜日までの予定", events: weekEvents },
+    ];
+  }, [events, now]);
 
   const filteredEvents = useMemo(() => {
     const normalizedQuery = query.trim().toLocaleLowerCase("ja");
@@ -341,11 +427,54 @@ export default function EventExplorer({ events, googleMapsApiKey }: EventExplore
     setSelectedId(id);
     setView("map");
   }, []);
+  const handleFeaturedSelect = useCallback((id: string) => {
+    setSelectedId(id);
+    setView("map");
+    window.requestAnimationFrame(() => {
+      document.getElementById("event-map")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }, []);
 
   const hasFilters = query || category !== "all" || area !== "all" || period !== "all";
 
   return (
     <div>
+      <section className="mb-6 rounded-2xl bg-[#f0f9fa] p-4 sm:p-6" aria-labelledby="featured-events-heading">
+        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs font-bold tracking-[0.16em] text-[#0e6b7c]">COMING UP</p>
+            <h2 id="featured-events-heading" className="mt-1 text-2xl font-black text-slate-950">今日・明日・今週のイベント</h2>
+          </div>
+          <p className="text-sm text-slate-600">同じイベントは一度だけ表示しています</p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+          {featuredGroups.map((group) => (
+            <div key={group.label}>
+              <div className="mb-2 flex items-baseline justify-between gap-3">
+                <h3 className="text-lg font-black text-slate-900">{group.label}</h3>
+                <p className="text-xs font-medium text-slate-500">{group.description}</p>
+              </div>
+              <div className="space-y-3">
+                {group.events.map((event) => (
+                  <FeaturedEventCard
+                    key={event.id}
+                    event={event}
+                    timingLabel={group.label === "今週" ? FEATURED_DATE_FORMATTER.format(new Date(event.start)) : group.label}
+                    onSelect={() => handleFeaturedSelect(event.id)}
+                  />
+                ))}
+                {group.events.length === 0 ? (
+                  <div className="flex min-h-28 items-center justify-center rounded-xl border border-dashed border-slate-300 bg-white/70 px-4 text-center">
+                    <p className="text-sm font-medium text-slate-500">現在、該当するイベントはありません</p>
+                  </div>
+                ) : null}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <div className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 shadow-sm mb-5">
         <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.8fr_0.8fr] gap-3">
           <label className="block">
@@ -457,7 +586,7 @@ export default function EventExplorer({ events, googleMapsApiKey }: EventExplore
       {view === "calendar" && <CalendarView events={filteredEvents} onSelect={handleCalendarSelect} />}
 
       {view === "map" && (
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.2fr)_minmax(340px,0.8fr)] rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+        <div id="event-map" className="scroll-mt-24 grid grid-cols-1 lg:grid-cols-[minmax(0,1.2fr)_minmax(340px,0.8fr)] rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
           <div className="min-h-[420px] lg:min-h-[680px] lg:sticky lg:top-20">
             <GoogleEventMap
               events={filteredEvents}

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ExternalLink, MapPin } from "lucide-react";
+import type { CircleMarker, Map as LeafletMap } from "leaflet";
 import { eventGoogleMapsUrl, type NinoheEvent } from "@/lib/events";
 
 interface GoogleEventMapProps {
@@ -18,7 +19,7 @@ function loadGoogleMaps(apiKey: string) {
   if (window.google?.maps) return Promise.resolve(window.google);
   if (googleMapsPromise) return googleMapsPromise;
 
-  googleMapsPromise = new Promise((resolve, reject) => {
+  const promise = new Promise<typeof google>((resolve, reject) => {
     const existing = document.querySelector<HTMLScriptElement>('script[data-ninohe-google-maps="true"]');
     if (existing) {
       existing.addEventListener("load", () => resolve(window.google));
@@ -34,9 +35,13 @@ function loadGoogleMaps(apiKey: string) {
     script.onload = () => resolve(window.google);
     script.onerror = () => reject(new Error("Google Maps failed to load."));
     document.head.appendChild(script);
+  }).catch((error) => {
+    googleMapsPromise = null;
+    throw error;
   });
+  googleMapsPromise = promise;
 
-  return googleMapsPromise;
+  return promise;
 }
 
 const PIN_COLORS: Record<NinoheEvent["category"], string> = {
@@ -49,12 +54,122 @@ const PIN_COLORS: Record<NinoheEvent["category"], string> = {
   "行政・地域": "#475569",
 };
 
+function FallbackEventMap({ events, selectedId, onSelect }: Omit<GoogleEventMapProps, "apiKey">) {
+  const mapElementRef = useRef<HTMLDivElement>(null);
+  const mapRef = useRef<LeafletMap | null>(null);
+  const markersRef = useRef<Map<string, CircleMarker>>(new Map());
+  const selectedIdRef = useRef(selectedId);
+  const selected = events.find((event) => event.id === selectedId) ?? events[0] ?? null;
+
+  useEffect(() => {
+    selectedIdRef.current = selectedId;
+  }, [selectedId]);
+
+  useEffect(() => {
+    if (!mapElementRef.current || events.length === 0) return;
+    let cancelled = false;
+    let initializedMap: LeafletMap | null = null;
+
+    void import("leaflet").then((leafletModule) => {
+      if (cancelled || !mapElementRef.current) return;
+      const leaflet = leafletModule.default;
+      const map = leaflet.map(mapElementRef.current, {
+        zoomControl: true,
+        scrollWheelZoom: false,
+      });
+      initializedMap = map;
+      mapRef.current = map;
+
+      leaflet
+        .tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+          maxZoom: 19,
+        })
+        .addTo(map);
+
+      const bounds = leaflet.latLngBounds([]);
+      const markers = new Map<string, CircleMarker>();
+      for (const event of events) {
+        const isSelected = event.id === selectedIdRef.current;
+        const marker = leaflet.circleMarker([event.latitude, event.longitude], {
+          radius: isSelected ? 10 : 8,
+          color: "#ffffff",
+          weight: 3,
+          fillColor: PIN_COLORS[event.category],
+          fillOpacity: 1,
+        });
+        marker.bindTooltip(event.title, { direction: "top", offset: [0, -8] });
+        marker.on("click", () => onSelect(event.id));
+        marker.addTo(map);
+        markers.set(event.id, marker);
+        bounds.extend([event.latitude, event.longitude]);
+      }
+      markersRef.current = markers;
+
+      if (events.length === 1) {
+        map.setView(bounds.getCenter(), 14);
+      } else {
+        map.fitBounds(bounds, { padding: [44, 44] });
+      }
+    });
+
+    return () => {
+      cancelled = true;
+      markersRef.current.clear();
+      if (initializedMap) initializedMap.remove();
+      mapRef.current = null;
+    };
+  }, [events, onSelect]);
+
+  useEffect(() => {
+    if (!selected || !mapRef.current) return;
+    for (const [id, marker] of markersRef.current) {
+      const isSelected = id === selected.id;
+      marker.setRadius(isSelected ? 10 : 8);
+      marker.setStyle({ weight: isSelected ? 4 : 3 });
+      if (isSelected) marker.bringToFront();
+    }
+    mapRef.current.panTo([selected.latitude, selected.longitude]);
+  }, [selected]);
+
+  return (
+    <div className="relative min-h-[420px] h-full overflow-hidden bg-[#eaf3f5]" role="region" aria-label="イベント会場の地図">
+      <div ref={mapElementRef} className="absolute inset-0 min-h-[420px] h-full w-full" />
+
+      <div className="pointer-events-none absolute left-3 right-3 top-3 z-[500] flex items-start justify-between gap-3">
+        <div className="max-w-[calc(100%-3.5rem)] rounded-lg border border-slate-200 bg-white/95 px-3 py-2 shadow-lg backdrop-blur-sm">
+          <p className="text-xs font-black tracking-wide text-[#0e6b7c]">VENUE MAP</p>
+          <p className="truncate text-sm font-bold text-slate-900">{selected?.venue ?? "二戸市"}</p>
+          <p className="text-xs text-slate-500">地点を選択・詳細はGoogleマップへ</p>
+        </div>
+      </div>
+
+      {selected && (
+        <a
+          href={eventGoogleMapsUrl(selected)}
+          target="_blank"
+          rel="noreferrer"
+          className="absolute bottom-7 left-3 z-[500] inline-flex min-h-11 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-bold text-[#0e6b7c] shadow-lg transition-colors hover:bg-[#f0f9fa]"
+        >
+          Googleマップで開く
+          <ExternalLink className="w-4 h-4" aria-hidden="true" />
+        </a>
+      )}
+    </div>
+  );
+}
+
 export default function GoogleEventMap({ events, selectedId, onSelect, apiKey }: GoogleEventMapProps) {
   const mapElementRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<google.maps.Map | null>(null);
   const markersRef = useRef<Map<string, google.maps.Marker>>(new Map());
+  const selectedIdRef = useRef(selectedId);
   const [loadFailed, setLoadFailed] = useState(false);
   const selected = events.find((event) => event.id === selectedId) ?? events[0] ?? null;
+
+  useEffect(() => {
+    selectedIdRef.current = selectedId;
+  }, [selectedId]);
 
   useEffect(() => {
     if (!apiKey || !mapElementRef.current || events.length === 0) return;
@@ -91,9 +206,9 @@ export default function GoogleEventMap({ events, selectedId, onSelect, apiKey }:
               fillOpacity: 1,
               strokeColor: "#ffffff",
               strokeWeight: 3,
-              scale: event.id === selectedId ? 10 : 8,
+              scale: event.id === selectedIdRef.current ? 10 : 8,
             },
-            zIndex: event.id === selectedId ? 10 : 1,
+            zIndex: event.id === selectedIdRef.current ? 10 : 1,
           });
           listeners.push(marker.addListener("click", () => onSelect(event.id)));
           markers.set(event.id, marker);
@@ -117,7 +232,7 @@ export default function GoogleEventMap({ events, selectedId, onSelect, apiKey }:
       markersRef.current = new Map();
       mapRef.current = null;
     };
-  }, [apiKey, events, onSelect, selectedId]);
+  }, [apiKey, events, onSelect]);
 
   useEffect(() => {
     if (!apiKey || !mapRef.current || !selected) return;
@@ -150,75 +265,7 @@ export default function GoogleEventMap({ events, selectedId, onSelect, apiKey }:
   }
 
   if (!apiKey || loadFailed) {
-    const bounds = { north: 40.31, south: 40.12, east: 141.34, west: 141.07 };
-    const positionFor = (event: NinoheEvent, index: number) => ({
-      left: `${Math.min(94, Math.max(6, ((event.longitude - bounds.west) / (bounds.east - bounds.west)) * 100 + (index % 3) * 1.2))}%`,
-      top: `${Math.min(88, Math.max(8, ((bounds.north - event.latitude) / (bounds.north - bounds.south)) * 100 + (index % 2) * 1.2))}%`,
-    });
-
-    return (
-      <div
-        className="relative min-h-[420px] h-full overflow-hidden bg-[#eaf3f5]"
-        style={{
-          backgroundImage: "linear-gradient(rgba(14,107,124,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(14,107,124,0.08) 1px, transparent 1px)",
-          backgroundSize: "36px 36px",
-        }}
-        role="region"
-        aria-label="二戸市内のイベント位置を示す概略図"
-      >
-        <div className="absolute inset-5 rounded-[2rem] border-2 border-[#0e6b7c]/15 bg-white/35 shadow-inner" aria-hidden="true" />
-        <div className="absolute left-5 top-5 rounded-lg bg-white/95 px-3 py-2 shadow border border-slate-200">
-          <p className="text-xs font-black tracking-wide text-[#0e6b7c]">イベント位置（概略）</p>
-          <p className="text-xs text-slate-500">正確な場所はGoogleマップで確認</p>
-        </div>
-        <div className="absolute right-5 top-5 w-9 h-9 rounded-full bg-[#0f172a] text-white flex items-center justify-center text-xs font-black shadow" aria-hidden="true">
-          N
-        </div>
-
-        {events.map((event, index) => {
-          const isSelected = event.id === selected?.id;
-          const position = positionFor(event, index);
-          return (
-            <button
-              key={event.id}
-              type="button"
-              onClick={() => onSelect(event.id)}
-              className={`absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer transition-transform hover:scale-110 ${isSelected ? "z-20 scale-110" : "z-10"}`}
-              style={position}
-              aria-label={`${event.title}を選択`}
-              aria-pressed={isSelected}
-              title={event.title}
-            >
-              <span
-                className={`flex items-center justify-center rounded-full border-[3px] border-white shadow-lg ${isSelected ? "w-12 h-12" : "w-10 h-10"}`}
-                style={{ backgroundColor: PIN_COLORS[event.category] }}
-              >
-                <MapPin className="w-5 h-5 text-white" aria-hidden="true" />
-              </span>
-              {isSelected && (
-                <span className="absolute left-1/2 top-full mt-2 -translate-x-1/2 w-max max-w-52 rounded-lg bg-[#0f172a] px-3 py-2 text-xs font-bold leading-snug text-white shadow-xl">
-                  {event.venue}
-                </span>
-              )}
-            </button>
-          );
-        })}
-
-        {selected && (
-          <>
-            <a
-              href={eventGoogleMapsUrl(selected)}
-              target="_blank"
-              rel="noreferrer"
-              className="absolute left-3 bottom-3 min-h-11 inline-flex items-center gap-2 rounded-lg bg-white px-3 py-2 text-sm font-bold text-[#0e6b7c] shadow-lg border border-slate-200 hover:bg-[#f0f9fa] transition-colors"
-            >
-              Googleマップで開く
-              <ExternalLink className="w-4 h-4" aria-hidden="true" />
-            </a>
-          </>
-        )}
-      </div>
-    );
+    return <FallbackEventMap events={events} selectedId={selectedId} onSelect={onSelect} />;
   }
 
   return <div ref={mapElementRef} className="min-h-[420px] h-full w-full" aria-label="イベント開催場所のGoogleマップ" />;

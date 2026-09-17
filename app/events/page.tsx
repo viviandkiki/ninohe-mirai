@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description: "二戸市内のイベントを日付・カテゴリ・地区から探し、開催場所をGoogleマップで確認できます。",
 };
 
+export const dynamic = "force-dynamic";
+
 const SOURCE_GROUPS = [
   {
     title: "現在収録している一次情報",
@@ -41,6 +43,7 @@ const SOURCE_GROUPS = [
 
 export default function EventsPage() {
   const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+  const nowIso = new Date().toISOString();
   const structuredData = events.map((event) => ({
     "@context": "https://schema.org",
     "@type": "Event",
@@ -88,7 +91,7 @@ export default function EventsPage() {
         </p>
       </header>
 
-      <EventExplorer events={events} googleMapsApiKey={googleMapsApiKey} />
+      <EventExplorer events={events} googleMapsApiKey={googleMapsApiKey} nowIso={nowIso} />
 
       <section className="mt-12 sm:mt-16" aria-labelledby="source-heading">
         <div className="max-w-3xl mb-6">

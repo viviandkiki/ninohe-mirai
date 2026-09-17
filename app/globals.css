@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
 
 /* ===== WCAG AA 準拠カラーパレット =====
    Normal text contrast ≥ 4.5:1  / Large text ≥ 3:1
