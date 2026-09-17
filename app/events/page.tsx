@@ -27,12 +27,14 @@ const SOURCE_GROUPS = [
     ],
   },
   {
-    title: "地域・個人の発信",
-    description: "SNSや地域ブログで催しの存在を発見し、主催者への確認後に公開します。",
+    title: "地域メディア・SNSの発信",
+    description: "WalkerplusやXで催しを発見し、公式・主催者情報と照合してから公開します。",
     links: [
+      { label: "Walkerplus 岩手県イベント", href: "https://www.walkerplus.com/event_list/ar0203/" },
+      { label: "田中舘愛橘記念科学館 公式X", href: "https://x.com/T_Aikitu_sci" },
+      { label: "岩手県県北広域振興局 公式X", href: "https://x.com/iwate_kennpoku" },
       { label: "おでかけ二戸イベント情報", href: "https://mix.jpn.org/" },
       { label: "広報にのへ", href: "https://www.city.ninohe.lg.jp/div/jouhou/koho/index.html" },
-      { label: "二戸市シビックセンター", href: "https://www.city.ninohe.lg.jp/Info/2322" },
     ],
   },
 ];
@@ -77,7 +79,7 @@ export default function EventsPage() {
           <span className="inline-flex items-center rounded-full bg-[#e0f2f7] px-3 py-1 text-sm font-bold text-[#0e6b7c]">
             NINOHE EVENT MAP
           </span>
-          <span className="text-sm text-slate-500">公式・主催者情報を編集部が確認して掲載</span>
+          <span className="text-sm text-slate-500">公式・主催者情報を確認し、発見元も表示</span>
         </div>
         <h1 className="font-black tracking-tight text-slate-950">二戸のイベントを、日付と地図から探す</h1>
         <p className="mt-3 max-w-3xl text-base sm:text-lg leading-relaxed text-slate-600">

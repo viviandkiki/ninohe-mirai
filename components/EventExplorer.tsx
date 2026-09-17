@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useCallback, useMemo, useState } from "react";
 import {
   CalendarDays,
@@ -8,6 +9,7 @@ import {
   ChevronRight,
   Clock3,
   ExternalLink,
+  ImageIcon,
   List,
   Map as MapIcon,
   MapPin,
@@ -40,6 +42,8 @@ const PERIOD_OPTIONS: { value: PeriodFilter; label: string }[] = [
 ];
 
 const WEEKDAYS = ["日", "月", "火", "水", "木", "金", "土"];
+const MONTH_FORMATTER = new Intl.DateTimeFormat("ja-JP", { month: "short" });
+const DAY_FORMATTER = new Intl.DateTimeFormat("ja-JP", { day: "numeric" });
 
 function startOfDay(date: Date) {
   return new Date(date.getFullYear(), date.getMonth(), date.getDate());
@@ -81,6 +85,7 @@ function formatVerified(date: string) {
 
 function EventCard({ event, selected, onSelect }: { event: NinoheEvent; selected: boolean; onSelect: () => void }) {
   const style = EVENT_CATEGORY_STYLES[event.category];
+  const startDate = new Date(event.start);
 
   return (
     <article
@@ -92,17 +97,46 @@ function EventCard({ event, selected, onSelect }: { event: NinoheEvent; selected
         type="button"
         onClick={onSelect}
         aria-pressed={selected}
-        className="w-full text-left px-4 pt-4 pb-3 rounded-t-2xl cursor-pointer"
+        className="w-full text-left rounded-t-2xl cursor-pointer overflow-hidden"
       >
-        <div className="flex items-start gap-3">
-          <div className="w-14 shrink-0 rounded-xl bg-[#0f172a] text-white text-center overflow-hidden">
+        <div
+          className="relative aspect-[16/9] min-h-36 overflow-hidden border-b border-slate-100"
+          style={event.imageUrl ? undefined : { backgroundColor: style.background }}
+        >
+          {event.imageUrl ? (
+            <Image
+              src={event.imageUrl}
+              alt={event.imageAlt ?? `${event.title}の告知画像`}
+              fill
+              sizes="(max-width: 1023px) 100vw, 420px"
+              className="object-contain bg-slate-100"
+            />
+          ) : (
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 p-5 text-center" style={{ color: style.color }}>
+              <ImageIcon className="h-9 w-9" aria-hidden="true" />
+              <span className="text-sm font-black tracking-wide">{event.category}</span>
+              <span className="max-w-xs text-xs font-medium opacity-80">公式画像は一次情報からご確認ください</span>
+            </div>
+          )}
+
+          <div className="absolute left-3 top-3 w-14 shrink-0 rounded-xl bg-[#0f172a] text-center text-white shadow-md overflow-hidden">
             <span className="block bg-[#0e6b7c] text-xs font-bold py-1">
-              {new Intl.DateTimeFormat("ja-JP", { month: "short" }).format(new Date(event.start))}
+              {MONTH_FORMATTER.format(startDate)}
             </span>
             <span className="block text-2xl font-black leading-none py-2">
-              {new Intl.DateTimeFormat("ja-JP", { day: "numeric" }).format(new Date(event.start))}
+              {DAY_FORMATTER.format(startDate)}
             </span>
           </div>
+
+          {event.imageCredit ? (
+            <span className="absolute bottom-2 right-2 max-w-[calc(100%-1rem)] rounded-md bg-slate-950/75 px-2 py-1 text-[10px] font-medium text-white">
+              {event.imageCredit}
+            </span>
+          ) : null}
+        </div>
+
+        <div className="px-4 pt-4 pb-3">
+          <div className="flex items-start gap-3">
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-2 mb-1.5">
               <span
@@ -129,34 +163,60 @@ function EventCard({ event, selected, onSelect }: { event: NinoheEvent; selected
         </div>
 
         <p className="mt-3 text-sm leading-relaxed text-slate-600">{event.summary}</p>
+        </div>
       </button>
 
-      <div className="px-4 py-3 border-t border-slate-100 flex flex-wrap items-center gap-x-4 gap-y-2">
-        <span className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600">
-          <Ticket className="w-4 h-4" aria-hidden="true" />
-          {event.fee}
-        </span>
-        <span className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600">
-          <CheckCircle2 className="w-4 h-4" aria-hidden="true" />
-          {event.reservation}
-        </span>
-        <div className="sm:ml-auto flex items-center gap-3">
-          <a
-            href={event.sourceUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="text-xs font-bold text-slate-600 hover:text-slate-900 underline underline-offset-4"
-            aria-label={`${EVENT_SOURCE_LABELS[event.sourceType]}：${event.sourceName}`}
-          >
-            {EVENT_SOURCE_LABELS[event.sourceType]}：{event.sourceName}
-          </a>
+      <div className="border-t border-slate-100 px-4 py-3">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <span className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600">
+            <Ticket className="w-4 h-4" aria-hidden="true" />
+            {event.fee}
+          </span>
+          <span className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600">
+            <CheckCircle2 className="w-4 h-4" aria-hidden="true" />
+            {event.reservation}
+          </span>
+        </div>
+
+        <div className="mt-3 flex flex-col gap-2 border-t border-slate-100 pt-3 sm:flex-row sm:items-end sm:justify-between">
+          <div className="min-w-0 text-xs leading-relaxed text-slate-500">
+            <p>
+              {EVENT_SOURCE_LABELS[event.sourceType]}：
+              <a
+                href={event.sourceUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="font-bold text-slate-700 underline underline-offset-4 hover:text-slate-950"
+              >
+                {event.sourceName}
+              </a>
+            </p>
+            <p>情報確認：{formatVerified(event.verifiedAt)}</p>
+            {event.discoveredVia?.length ? (
+              <p className="mt-1 flex flex-wrap gap-x-2 gap-y-1">
+                <span>発見元：</span>
+                {event.discoveredVia.map((source) => (
+                  <a
+                    key={source.url}
+                    href={source.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-bold text-[#0e6b7c] underline underline-offset-4 hover:text-[#095766]"
+                  >
+                    {source.name}
+                  </a>
+                ))}
+              </p>
+            ) : null}
+          </div>
+
           <a
             href={eventGoogleMapsUrl(event)}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex min-h-11 items-center gap-1.5 rounded-lg bg-[#0e6b7c] px-3 py-2 text-xs font-bold text-white hover:bg-[#095766] transition-colors no-underline"
+            className="inline-flex min-h-11 shrink-0 items-center justify-center gap-1.5 rounded-lg bg-[#0e6b7c] px-4 py-2 text-sm font-bold text-white no-underline transition-colors hover:bg-[#095766]"
           >
-            Googleマップ
+            会場をGoogleマップで見る
             <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
           </a>
         </div>

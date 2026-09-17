@@ -25,6 +25,17 @@ const eventSchema = z.object({
   sourceName: z.string().min(1),
   sourceType: z.enum(EVENT_SOURCE_TYPES).default("official"),
   sourceUrl: z.url(),
+  imageUrl: z.url().optional(),
+  imageAlt: z.string().min(1).optional(),
+  imageCredit: z.string().min(1).optional(),
+  discoveredVia: z
+    .array(
+      z.object({
+        name: z.string().min(1),
+        url: z.url(),
+      }),
+    )
+    .optional(),
   verifiedAt: z.iso.date(),
 });
 
