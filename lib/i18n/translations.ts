@@ -6,6 +6,7 @@ export const translations = {
     siteTagline: "二戸の資源と未来を見える化する",
     nav: {
       home: "トップ",
+      events: "イベント",
       roots: "ルーツ",
       powers: "現状",
       uniqueness: "独自性",
@@ -138,6 +139,7 @@ export const translations = {
     siteTagline: "Ninohe City's public data, made clear for citizens",
     nav: {
       home: "Home",
+      events: "Events",
       roots: "Roots",
       powers: "City Overview",
       uniqueness: "Uniqueness",

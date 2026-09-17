@@ -36,6 +36,18 @@
 | 出典 | 説明 | 区分 |
 |------|------|------|
 | data/manual/scores.json | カスコア（総合評価指数）。編集部が複数指標を元に設定 | 推計値 |
+| data/manual/events.json | 公式発表済みイベントの日時・会場・位置・出典 | 公式情報を編集部が確認 |
+
+## イベント情報
+
+| 出典 | URL | 主な使用データ | 更新頻度 |
+|------|-----|---------------|---------|
+| 二戸市観光ツーリズム協会「催事」 | https://www.ninohe-kanko.com/event | 祭り、観光、体験、マルシェ | 随時 |
+| 二戸市イベントカレンダー | https://www.city.ninohe.lg.jp/Info/326 | 年間行事、季節の催し | 随時 |
+| 広報にのへ | https://www.city.ninohe.lg.jp/ | 健康、子育て、文化、地域行事 | 月2回 |
+| 二戸市シビックセンター | https://www.city.ninohe.lg.jp/Info/2322 | 展示、科学、文化イベント | 随時 |
+
+詳しい取得順序と確認ルールは [event-data-plan.md](event-data-plan.md) を参照してください。
 
 ## 注意事項
 

@@ -1,22 +1,5 @@
 import Link from "next/link";
 
-function MountainLogoSmall() {
-  return (
-    <svg
-      width="20"
-      height="16"
-      viewBox="0 0 28 22"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path d="M14 2L24 20H4L14 2Z" fill="#2e7d8c" fillOpacity="0.7" />
-      <path d="M21 8L27 20H15L21 8Z" fill="#2e7d8c" fillOpacity="0.35" />
-      <path d="M8 11L13 20H3L8 11Z" fill="#b8872a" fillOpacity="0.45" />
-    </svg>
-  );
-}
-
 export default function SiteFooter() {
   return (
     <footer className="mt-auto border-t border-[#1e2a3a] bg-[#050810] text-white">
@@ -40,6 +23,7 @@ export default function SiteFooter() {
             </p>
             <nav className="flex flex-col gap-2">
               {[
+                { href: "/events", label: "二戸イベントカレンダー" },
                 { href: "/powers", label: "まちの今：6つのレンズ" },
                 { href: "/graph", label: "言葉の地図" },
                 { href: "/movement", label: "議会と地域の動き" },

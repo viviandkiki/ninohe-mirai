@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { CalendarDays, Menu, X } from "lucide-react";
 import { useLocale } from "@/lib/i18n/context";
 
 export default function SiteHeader() {
@@ -13,6 +13,7 @@ export default function SiteHeader() {
   const { t } = useLocale();
 
   const NAV_LINKS = [
+    { href: "/events", label: t.nav.events, icon: CalendarDays },
     { href: "/powers", label: t.nav.powers },
     { href: "/graph", label: t.nav.graph },
     { href: "/movement", label: t.nav.movement },
@@ -45,20 +46,23 @@ export default function SiteHeader() {
               key={link.href}
               href={link.href}
               aria-current={pathname.startsWith(link.href) ? "page" : undefined}
-              className={`nav-link px-3 py-1.5 rounded text-base transition-colors font-medium ${
+              className={`nav-link px-2.5 py-1.5 rounded text-sm transition-colors font-medium ${
                 pathname.startsWith(link.href)
                   ? "bg-[#e0f2f7] text-[#0e6b7c] font-semibold"
                   : "text-[#475569] hover:text-[#0f172a] hover:bg-[#f1f5f9]"
               }`}
             >
-              {link.label}
+              <span className="inline-flex items-center gap-1.5">
+                {link.icon && <link.icon className="w-4 h-4" aria-hidden="true" />}
+                {link.label}
+              </span>
             </Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-2 shrink-0">
           <button
-            className="md:hidden touch-target p-2 rounded text-[#475569] hover:bg-[#f1f5f9] transition-colors"
+            className="md:!hidden touch-target p-2 rounded text-[#475569] hover:bg-[#f1f5f9] transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="メニュー"
             aria-expanded={menuOpen}
@@ -82,7 +86,10 @@ export default function SiteHeader() {
                 }`}
                 onClick={() => setMenuOpen(false)}
               >
-                {link.label}
+                <span className="inline-flex items-center gap-2">
+                  {link.icon && <link.icon className="w-4 h-4" aria-hidden="true" />}
+                  {link.label}
+                </span>
               </Link>
             ))}
           </nav>

@@ -35,6 +35,7 @@
 | パス | 説明 |
 |------|------|
 | `/` | トップ（ヒーロー・6つの力・最近の動き） |
+| `/events` | 二戸イベントカレンダー（地図・カレンダー・一覧） |
 | `/powers` | 6つの力 一覧 |
 | `/powers/[slug]` | 各力の詳細（指標・グラフ・動き） |
 | `/movement` | 動き 一覧 |
@@ -131,6 +132,7 @@ npx vercel
 | [docs/data-pipeline.md](docs/data-pipeline.md) | データ変換パイプライン |
 | [docs/deployment.md](docs/deployment.md) | Vercel デプロイ手順 |
 | [docs/github-actions.md](docs/github-actions.md) | CI/CD ワークフロー |
+| [docs/event-data-plan.md](docs/event-data-plan.md) | イベント情報源・確認・地図化の運用計画 |
 | [docs/public-repo-policy.md](docs/public-repo-policy.md) | 公開リポジトリポリシー |
 
 ---
