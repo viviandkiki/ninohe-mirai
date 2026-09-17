@@ -36,7 +36,7 @@
 | 出典 | 説明 | 区分 |
 |------|------|------|
 | data/manual/scores.json | カスコア（総合評価指数）。編集部が複数指標を元に設定 | 推計値 |
-| data/manual/events.json | 公式発表済みイベントの日時・会場・位置・出典 | 公式情報を編集部が確認 |
+| data/manual/events.json | イベントの日時・会場・位置・出典種別 | 公式・主催者情報を編集部が確認 |
 
 ## イベント情報
 
@@ -46,6 +46,12 @@
 | 二戸市イベントカレンダー | https://www.city.ninohe.lg.jp/Info/326 | 年間行事、季節の催し | 随時 |
 | 広報にのへ | https://www.city.ninohe.lg.jp/ | 健康、子育て、文化、地域行事 | 月2回 |
 | 二戸市シビックセンター | https://www.city.ninohe.lg.jp/Info/2322 | 展示、科学、文化イベント | 随時 |
+| 二戸青果市場「日曜朝市」 | https://www.city.ninohe.lg.jp/info/2451 | 朝市の年間日程、販売予定品 | 年1回・変更時 |
+| なにゃーと公式サイト | https://nanyato-sisetu.com/ | 会場情報、施設主催イベント | 随時 |
+| なにゃーとよ市の会 | https://mix.jpn.org/yoichi | 7のつく日の定期市、出店情報 | 開催前 |
+| おでかけ二戸イベント情報 | https://mix.jpn.org/ | 個人・地域団体のイベント候補 | 随時 |
+
+個人SNSや地域ブログは「発見元」として扱い、主催者情報との照合または直接確認を行ってから公開します。
 
 詳しい取得順序と確認ルールは [event-data-plan.md](event-data-plan.md) を参照してください。
 

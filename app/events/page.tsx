@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Database, RefreshCw, ShieldCheck } from "lucide-react";
+import { Database, Radio, RefreshCw, ShieldCheck } from "lucide-react";
 import EventExplorer from "@/components/EventExplorer";
 import { events } from "@/lib/events";
 
@@ -18,12 +18,21 @@ const SOURCE_GROUPS = [
     ],
   },
   {
-    title: "次に統合する情報源",
-    description: "観光イベント以外の講座、子育て、文化、地域行事まで範囲を広げます。",
+    title: "主催者・会場の発信",
+    description: "定期市や小規模マルシェは、主催者と会場の発信を確認して掲載します。",
     links: [
+      { label: "なにゃーとよ市の会", href: "https://mix.jpn.org/yoichi" },
+      { label: "なにゃーと公式サイト", href: "https://nanyato-sisetu.com/" },
+      { label: "二戸青果市場 日曜朝市", href: "https://www.city.ninohe.lg.jp/info/2451" },
+    ],
+  },
+  {
+    title: "地域・個人の発信",
+    description: "SNSや地域ブログで催しの存在を発見し、主催者への確認後に公開します。",
+    links: [
+      { label: "おでかけ二戸イベント情報", href: "https://mix.jpn.org/" },
       { label: "広報にのへ", href: "https://www.city.ninohe.lg.jp/div/jouhou/koho/index.html" },
       { label: "二戸市シビックセンター", href: "https://www.city.ninohe.lg.jp/Info/2322" },
-      { label: "二戸市民文化会館", href: "https://www.nbsk.or.jp/bunka/" },
     ],
   },
 ];
@@ -68,7 +77,7 @@ export default function EventsPage() {
           <span className="inline-flex items-center rounded-full bg-[#e0f2f7] px-3 py-1 text-sm font-bold text-[#0e6b7c]">
             NINOHE EVENT MAP
           </span>
-          <span className="text-sm text-slate-500">公式情報を編集部が確認して掲載</span>
+          <span className="text-sm text-slate-500">公式・主催者情報を編集部が確認して掲載</span>
         </div>
         <h1 className="font-black tracking-tight text-slate-950">二戸のイベントを、日付と地図から探す</h1>
         <p className="mt-3 max-w-3xl text-base sm:text-lg leading-relaxed text-slate-600">
@@ -88,12 +97,18 @@ export default function EventsPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {SOURCE_GROUPS.map((group, index) => (
             <article key={group.title} className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
               <div className="flex items-start gap-3">
                 <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${index === 0 ? "bg-[#e0f2f7] text-[#0e6b7c]" : "bg-[#f1f5f9] text-slate-600"}`}>
-                  {index === 0 ? <ShieldCheck className="w-6 h-6" aria-hidden="true" /> : <Database className="w-6 h-6" aria-hidden="true" />}
+                  {index === 0 ? (
+                    <ShieldCheck className="w-6 h-6" aria-hidden="true" />
+                  ) : index === 1 ? (
+                    <Database className="w-6 h-6" aria-hidden="true" />
+                  ) : (
+                    <Radio className="w-6 h-6" aria-hidden="true" />
+                  )}
                 </div>
                 <div>
                   <h3 className="text-lg font-black text-slate-900">{group.title}</h3>
@@ -124,7 +139,7 @@ export default function EventsPage() {
             <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-5 text-white/75">
               <div>
                 <p className="font-black text-white mb-1">1. 公式情報を定期確認</p>
-                <p className="text-sm leading-relaxed">観光協会、市公式、施設カレンダーを巡回し、新規・変更・中止を確認します。</p>
+                <p className="text-sm leading-relaxed">観光協会、市公式、施設サイトに加え、主催者SNSや地域ブログも巡回します。</p>
               </div>
               <div>
                 <p className="font-black text-white mb-1">2. 主催者から受け付け</p>
@@ -132,7 +147,7 @@ export default function EventsPage() {
               </div>
               <div>
                 <p className="font-black text-white mb-1">3. 公開前に人が確認</p>
-                <p className="text-sm leading-relaxed">日時・会場・出典・重複を編集部が確認してから地図へ反映します。</p>
+                <p className="text-sm leading-relaxed">個人発信は発見の入口として扱い、日時・会場を主催者に確認してから反映します。</p>
               </div>
             </div>
           </div>

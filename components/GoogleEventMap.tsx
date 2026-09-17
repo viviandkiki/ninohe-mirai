@@ -42,6 +42,7 @@ function loadGoogleMaps(apiKey: string) {
 const PIN_COLORS: Record<NinoheEvent["category"], string> = {
   "祭り": "#b54a34",
   "食・マルシェ": "#92670e",
+  "朝市・市日": "#627d1b",
   "体験・講座": "#0e6b7c",
   "文化・芸術": "#6941a5",
   "子ども・家族": "#2f6b39",

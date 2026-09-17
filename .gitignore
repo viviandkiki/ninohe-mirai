@@ -50,3 +50,4 @@ data/raw/private/
 next-env.d.ts
 
 .vercel
+.env*

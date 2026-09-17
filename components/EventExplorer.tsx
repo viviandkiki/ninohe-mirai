@@ -19,6 +19,7 @@ import {
   EVENT_AREAS,
   EVENT_CATEGORIES,
   EVENT_CATEGORY_STYLES,
+  EVENT_SOURCE_LABELS,
   eventGoogleMapsUrl,
   type NinoheEvent,
 } from "@/lib/events";
@@ -49,8 +50,10 @@ function endOfDay(date: Date) {
 }
 
 function getRange(period: PeriodFilter, now: Date | null) {
-  if (!now || period === "all") return null;
+  if (!now) return null;
   const today = startOfDay(now);
+
+  if (period === "all") return { start: today, end: new Date("9999-12-31T23:59:59+09:00") };
 
   if (period === "today") return { start: today, end: endOfDay(today) };
   if (period === "30days") {
@@ -143,8 +146,9 @@ function EventCard({ event, selected, onSelect }: { event: NinoheEvent; selected
             target="_blank"
             rel="noreferrer"
             className="text-xs font-bold text-slate-600 hover:text-slate-900 underline underline-offset-4"
+            aria-label={`${EVENT_SOURCE_LABELS[event.sourceType]}：${event.sourceName}`}
           >
-            公式情報
+            {EVENT_SOURCE_LABELS[event.sourceType]}：{event.sourceName}
           </a>
           <a
             href={eventGoogleMapsUrl(event)}
