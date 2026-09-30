@@ -1,6 +1,21 @@
 {
-  "fetchedAt": "2026-09-29T08:17:20.487Z",
+  "fetchedAt": "2026-09-30T08:17:41.523Z",
   "sessions": [
+    {
+      "id": "r8-10-teireikai",
+      "name": "令和8年10月定例会",
+      "reiwaYear": 8,
+      "year": 2026,
+      "month": 10,
+      "sessionType": "定例会",
+      "date": "2026-10",
+      "pdfs": {
+        "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/gikai/R8_10_singinittei.pdf",
+        "questions": "https://www.city.ninohe.lg.jp/div/gikai/pdf/gikai/R8_10_ippan.pdf",
+        "results": null
+      },
+      "sourceUrl": "https://www.city.ninohe.lg.jp/Info/4487"
+    },
     {
       "id": "r8-08-rinji",
       "name": "令和8年8月臨時会",

@@ -1,5 +1,19 @@
 [
   {
+    "id": "mov-council-r8-10-teireikai",
+    "date": "2026-10-01",
+    "title": "令和8年10月定例会",
+    "summary": "二戸市議会令和8年10月定例会が開催されました。一般質問では各議員が市政課題について質問を行いました。",
+    "type": "policy",
+    "actorIds": [
+      "actor-council-chair"
+    ],
+    "powerSlugs": [
+      "work"
+    ],
+    "sourceId": "src-ninohe-council"
+  },
+  {
     "id": "mov-council-r8-08-rinji",
     "date": "2026-08-01",
     "title": "令和8年8月臨時会",
