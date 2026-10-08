@@ -5,7 +5,7 @@ import { Mountain, Heart, BookOpen, ExternalLink, Shield } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "このサイトについて",
-  description: "ニノヘミライの運営方針・目的・チームを紹介します。",
+  description: "ニノヘミライの目的、編集方針、運営者を紹介します。",
 };
 
 export default function AboutPage() {
@@ -67,12 +67,15 @@ export default function AboutPage() {
             <h2 className="text-base font-bold text-[#1a1a2e] mb-3">編集方針</h2>
             <div className="space-y-3 text-sm text-[#6b7280] leading-relaxed">
               <p>
-                ニノヘミライは特定の政治団体・企業・行政機関の広報媒体ではありません。
-                掲載内容はすべて編集部の判断によるもので、スポンサーシップによる内容の変更はありません。
+                ニノヘミライは、荻野光希が個人で企画・運営する非公式の地域情報サイトです。
+                二戸市、二戸市議会、政党、会派、企業その他の団体が運営する公式広報媒体ではありません。
               </p>
               <p>
-                カスコア（総合評価指数）は公開データに基づきますが、指標の選定・重みづけには編集部の判断が入ります。
+                カスコア（総合評価指数）は公開データに基づきますが、指標の選定・重みづけ、掲載テーマ、要約には運営者の判断が入ります。
                 これをもって公式評価とは異なることをご承知おきください。
+              </p>
+              <p>
+                掲載料、広告料、協賛、寄付その他の利害関係がある情報を掲載する場合は、その関係を記事内で明示します。
               </p>
             </div>
           </div>
@@ -86,15 +89,17 @@ export default function AboutPage() {
             <h2 className="text-base font-bold text-[#1a1a2e] mb-3">運営</h2>
             <div className="space-y-4 text-sm text-[#6b7280]">
               <div className="border-l-2 border-[#2e7d8c] pl-4">
-                <p className="font-semibold text-[#1a1a2e] mb-1">ニノヘミライ編集部</p>
+                <p className="font-semibold text-[#1a1a2e] mb-1">個人運営</p>
                 <p className="leading-relaxed">
-                  二戸市の未来に関心を持つ市民・関係者のボランティアグループです。
-                  特定の政治団体・企業とは関係を持っていません。
+                  運営・企画・制作：荻野光希（二戸市議会議員）
                 </p>
               </div>
               <div className="border-l-2 border-[#b8872a] pl-4">
-                <p className="font-semibold text-[#1a1a2e] mb-1">企画・制作</p>
-                <p>荻野光希</p>
+                <p className="font-semibold text-[#1a1a2e] mb-1">運営者の立場について</p>
+                <p className="leading-relaxed">
+                  運営者は二戸市議会議員ですが、このサイトは議員活動の公式報告、後援会活動、選挙運動を目的とするものではありません。
+                  運営者の立場が編集判断に影響し得ることを前提に、出典、更新日、調査方法、訂正窓口を公開します。
+                </p>
               </div>
             </div>
           </div>
@@ -105,10 +110,10 @@ export default function AboutPage() {
           <h2 className="text-sm font-bold text-[#1a1a2e] mb-3">このサイトはこれではありません</h2>
           <ul className="space-y-2 text-sm text-[#6b7280]">
             {[
-              "二戸市の公式サイトではありません",
-              "特定候補・政党の支援サイトではありません",
+              "二戸市・二戸市議会の公式サイトではありません",
+              "特定候補への投票依頼や選挙運動を目的とするサイトではありません",
               "行政批判を目的としたサイトではありません",
-              "企業・団体の広告媒体ではありません",
+              "行政や第三者による公式評価ではありません",
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-2">
                 <span className="text-[#c9614a] mt-0.5 shrink-0">✗</span>

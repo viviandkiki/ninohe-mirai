@@ -11,8 +11,8 @@ export default function SiteFooter() {
               <span className="text-xl text-white font-black tracking-tight">ニノヘミライ</span>
             </div>
             <p className="text-sm text-white/60 leading-relaxed mb-3">
-              二戸市の公開情報を市民に分かりやすく届ける公共ダッシュボード。
-              特定の候補者・政党を支持・批判するものではありません。
+              荻野光希が個人で運営する、二戸市の非公式な地域情報ダッシュボードです。
+              二戸市・二戸市議会の公式サイトではありません。
             </p>
           </div>
 
@@ -50,23 +50,27 @@ export default function SiteFooter() {
             </p>
             <ul className="space-y-2 text-base text-white/60 leading-relaxed">
               <li>・ 掲載データは公開情報に基づきます</li>
-              <li>・ 事実と編集部の要約は分けて表示します</li>
-              <li>・ 私人の個人情報は掲載しません</li>
+              <li>・ 事実と運営者の要約は分けて表示します</li>
+              <li>・ 個人情報は必要最小限に扱います</li>
               <li>・ 発言量だけで人物を評価しません</li>
               <li>・ 候補者の優劣・ランキングは行いません</li>
             </ul>
             <p className="text-xs text-white/40 mt-3">
               主な出典：二戸市・岩手県・国統計・二戸市議会
             </p>
+            <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+              <Link href="/privacy" className="text-white/60 hover:text-[#4dd4e7] transition-colors">プライバシー方針</Link>
+              <Link href="/terms" className="text-white/60 hover:text-[#4dd4e7] transition-colors">利用条件</Link>
+            </div>
           </div>
         </div>
 
         <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
           <p className="text-xs text-white/30 leading-relaxed">
-            掲載データは公開情報をもとに編集部が独自に整理したものです。
+            掲載データは公開情報をもとに運営者が独自に整理したものです。
             最新・正確な情報は各公式サイトをご確認ください。
           </p>
-          <p className="text-xs text-white/20 shrink-0">© 2026 ニノヘミライ編集部</p>
+          <p className="text-xs text-white/20 shrink-0">© 2026 荻野光希 / ニノヘミライ</p>
         </div>
       </div>
     </footer>

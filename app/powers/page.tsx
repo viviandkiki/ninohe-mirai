@@ -48,13 +48,13 @@ export default function PowersPage() {
         <div className="bg-white border border-[#e5e1da] rounded-xl p-4">
           <p className="text-xs font-semibold text-[#1a1a2e] mb-1">スコアとは</p>
           <p className="text-xs text-[#6b7280] leading-relaxed">
-            各力の総合評価値（0-100）。複数の定量指標と定性評価を組み合わせた編集部独自の指数です。
+            各力の総合評価値（0-100）。複数の定量指標と定性評価を組み合わせた本サイト独自の指数です。
           </p>
         </div>
         <div className="bg-white border border-[#e5e1da] rounded-xl p-4">
           <p className="text-xs font-semibold text-[#1a1a2e] mb-1">6つのテーマの枠組みについて</p>
           <p className="text-xs text-[#6b7280] leading-relaxed">
-            二戸市総合計画や各種統計を参照しながら、ニノヘミライ編集部が独自に設定した分類です。公式の行政分類とは異なる場合があります。
+            二戸市総合計画や各種統計を参照しながら、本サイトが独自に設定した分類です。公式の行政分類とは異なる場合があります。
           </p>
         </div>
         <div className="bg-white border border-[#e5e1da] rounded-xl p-4">

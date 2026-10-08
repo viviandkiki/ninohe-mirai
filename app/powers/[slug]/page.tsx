@@ -128,7 +128,7 @@ export default async function PowerDetailPage({ params }: { params: Promise<{ sl
       {/* Interpretation */}
       {power.interpretation && (
         <div className="bg-[#f7f4ef] border border-[#e5e1da] rounded-xl p-5 mb-6">
-          <p className="text-xs font-semibold text-[#2e7d8c] uppercase tracking-widest mb-2">編集部のまとめ</p>
+          <p className="text-xs font-semibold text-[#2e7d8c] uppercase tracking-widest mb-2">運営者のまとめ</p>
           <p className="text-sm text-[#1a1a2e] leading-relaxed">{power.interpretation}</p>
         </div>
       )}

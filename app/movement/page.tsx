@@ -99,7 +99,7 @@ export default function MovementPage() {
 
       <div className="mt-10 p-5 bg-[#f7f4ef] border border-[#e5e1da] rounded-xl">
         <p className="text-xs text-[#6b7280] leading-relaxed">
-          掲載内容は公開情報をもとに編集部が整理したものです。内容の正確性には最大限配慮していますが、最新情報は各公式サイトをご確認ください。
+          掲載内容は公開情報をもとに運営者が整理したものです。内容の正確性には最大限配慮していますが、最新情報は各公式サイトをご確認ください。
         </p>
       </div>
     </PageContainer>

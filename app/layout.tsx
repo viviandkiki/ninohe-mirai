@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   keywords: ["二戸市", "岩手県", "地域活性化", "オープンデータ", "公共ダッシュボード", "まちのデータ"],
-  authors: [{ name: "ニノヘミライ編集部" }],
+  authors: [{ name: "荻野光希" }],
   creator: "荻野光希",
-  publisher: "ニノヘミライ編集部",
+  publisher: "荻野光希 / ニノヘミライ",
   icons: {
     icon: [
       { url: "/rogo.png", type: "image/png" },

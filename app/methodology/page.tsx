@@ -32,7 +32,7 @@ const PROCESSING_STEPS = [
   { label: "収集", desc: "公官庁・自治体が公開しているCSV・PDF・Webページから原データを収集" },
   { label: "変換", desc: "JSON形式に標準化。年度・単位・地域コードを統一" },
   { label: "検証", desc: "Zodスキーマで型チェック・値域チェックを実施" },
-  { label: "掲載", desc: "編集部レビューを経て本サイトに掲載" },
+  { label: "掲載", desc: "運営者の確認を経て本サイトに掲載" },
 ];
 
 export default function MethodologyPage() {
@@ -56,7 +56,7 @@ export default function MethodologyPage() {
             行政の公式分類とは異なる場合があります。
           </p>
           <p>
-            カスコア（Kascore）は、複数の定量指標と定性評価を組み合わせた編集部独自の指数です。
+            カスコア（Kascore）は、複数の定量指標と定性評価を組み合わせた本サイト独自の指数です。
             各テーマの状態を0-100のスコアと評価ラベル（A〜D）で表します。
           </p>
         </div>
@@ -164,7 +164,7 @@ export default function MethodologyPage() {
         <h2 className="text-sm font-bold text-[#1a1a2e] mb-4">指標実装台帳</h2>
         <p className="text-xs text-[#6b7280] mb-3 leading-relaxed">
           以下の指標を定点観測対象として管理しています。
-          状態が <span className="bg-amber-50 text-amber-600 px-1 rounded text-[10px] font-medium">manual</span> のものは編集部が手動で確認・更新します。
+          状態が <span className="bg-amber-50 text-amber-600 px-1 rounded text-[10px] font-medium">manual</span> のものは運営者が手動で確認・更新します。
           <span className="bg-slate-100 text-[#6b7280] px-1 rounded text-[10px] font-medium ml-1">planned</span> は自動取得の実装を準備中です。
         </p>
         <div className="bg-white border border-[#e5e1da] rounded-xl overflow-x-auto">
@@ -227,7 +227,7 @@ export default function MethodologyPage() {
         <p className="text-sm text-[#6b7280] leading-relaxed">
           本サイトの情報は最大限正確を期していますが、公式情報との差異が生じる場合があります。
           重要な判断には必ず各公式サイトの最新情報をご確認ください。
-          また、「活かされている資源」「活かしきれていない課題」の評価および「カスコア」は編集部の主観を含みます。
+          また、「活かされている資源」「活かしきれていない課題」の評価および「カスコア」は運営者の判断を含みます。
         </p>
       </section>
 

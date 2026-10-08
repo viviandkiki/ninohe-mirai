@@ -7,7 +7,7 @@ import {
 } from "@/lib/data";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Network, ExternalLink, TrendingUp } from "lucide-react";
+import { ArrowRight, CalendarDays, Network, ExternalLink, TrendingUp } from "lucide-react";
 import { buildKeywordGraphData, CATEGORY_COLORS, KEYWORD_CATEGORIES } from "@/lib/keyword-graph";
 import GraphViewWrapper from "@/components/GraphViewWrapper";
 import HeroGsapAnimator from "@/components/HeroGsapAnimator";
@@ -75,6 +75,18 @@ export default function HomePage() {
     .slice(0, 8);
 
   const graphData = buildKeywordGraphData();
+  const homeGraphExcludedIds = new Set(["kw-nanbubijin", "actor-nanbu-bijin"]);
+  const homeGraphData = {
+    nodes: graphData.nodes
+      .filter((node) => !homeGraphExcludedIds.has(node.id))
+      .map((node) => ({
+        ...node,
+        sublabel: node.sublabel?.replaceAll("南部美人", "市内の蔵元"),
+      })),
+    links: graphData.links.filter(
+      (link) => !homeGraphExcludedIds.has(link.source) && !homeGraphExcludedIds.has(link.target),
+    ),
+  };
   const kwFilterOptions = [
     { key: "all", label: "すべて" },
     ...KEYWORD_CATEGORIES.map(cat => ({ key: cat, label: cat, color: CATEGORY_COLORS[cat] })),
@@ -131,7 +143,45 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Section 2: キーワードマップ（最大の革新要素を前面化） */}
+      {/* Section 2: このサイトの目的とイベントカレンダー */}
+      <section className="section-fade border-b border-[#d8e3e6] bg-white py-14 sm:py-16">
+        <div className="mx-auto grid max-w-5xl gap-10 px-4 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
+          <div data-fade-left>
+            <h2 className="text-3xl font-black tracking-tight text-[#0f172a]">
+              <span className="heading-accent">このサイトの目的</span>
+            </h2>
+            <p className="mt-5 text-3xl font-black leading-tight text-[#0f172a] sm:text-4xl">
+              二戸のいろいろを、見える化する。
+            </p>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#475569]">
+              人、場所、出来事、地域の動き、公開データ。別々の場所にある二戸の情報をつなぎ、
+              市民が地域を知り、出かけ、考えるきっかけをつくります。
+            </p>
+          </div>
+
+          <Link
+            href="/events"
+            className="group border-l-4 border-[#2e7d8c] bg-[#f0f9fa] px-6 py-5 transition-colors hover:bg-[#e0f2f7] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e7d8c] focus-visible:ring-offset-4"
+            data-fade
+            data-delay="2"
+          >
+            <div className="flex items-start gap-4">
+              <CalendarDays className="mt-1 h-7 w-7 shrink-0 text-[#0e6b7c]" aria-hidden="true" />
+              <div>
+                <h3 className="text-xl font-black text-[#0f172a]">二戸のイベントカレンダー</h3>
+                <p className="mt-2 text-base leading-relaxed text-[#475569]">
+                  今日・明日・今週の催しを、日付と地図から探せます。
+                </p>
+                <span className="mt-4 inline-flex items-center gap-2 font-bold text-[#0e6b7c] group-hover:text-[#0f172a]">
+                  イベントを探す <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </span>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* Section 3: キーワードマップ（最大の革新要素を前面化） */}
       <section className="section-fade kw-pulse-section py-16 section-alt">
         <div className="relative z-10 max-w-5xl mx-auto px-4 mb-6">
           <div className="flex items-center justify-between mb-4" data-fade-left>
@@ -144,12 +194,12 @@ export default function HomePage() {
             </Link>
           </div>
           <p className="text-lg text-[#475569] leading-relaxed max-w-2xl">
-            漆・九戸城・里山・南部美人——この土地を形作る言葉が、ここでつながっています。気になるキーワードをクリックして、二戸の文脈を発見してください。
+            漆・九戸城・里山・清酒——この土地を形作る言葉が、ここでつながっています。気になるキーワードをクリックして、二戸の文脈を発見してください。
           </p>
         </div>
         {/* 全幅グラフ */}
         <div className="relative z-10 px-3 sm:px-6">
-          <GraphViewWrapper data={graphData} height={520} filterOptions={kwFilterOptions} />
+          <GraphViewWrapper data={homeGraphData} height={520} filterOptions={kwFilterOptions} />
         </div>
       </section>
 
@@ -237,10 +287,10 @@ export default function HomePage() {
           <div className="light-card p-8">
             <h2 className="text-2xl font-black text-[#0f172a] mb-4">このダッシュボードについて</h2>
             <p className="text-lg text-[#475569] leading-relaxed mb-3">
-              ニノヘミライは、二戸市の公開情報を市民の目線で整理した非公式ダッシュボードです。議会の動き、地域の指標、担い手のネットワークを一つの場所で確認できます。
+              ニノヘミライは、荻野光希が個人で運営し、二戸市の公開情報を市民の目線で整理する非公式ダッシュボードです。議会の動き、地域の指標、担い手のネットワークを一つの場所で確認できます。
             </p>
             <p className="text-lg text-[#475569] leading-relaxed mb-6">
-              市民・移住検討者・研究者向けに設計されています。掲載データはすべて公開情報に基づき、出典と調査年を明記しています。特定の候補者・政党の支持・批判は行いません。
+              運営者は二戸市議会議員ですが、二戸市・二戸市議会の公式サイトではなく、選挙運動を目的とするものでもありません。出典と調査年を示し、事実と運営者の要約を分けて掲載します。
             </p>
             <div className="flex flex-wrap gap-5">
               <Link href="/methodology" className="text-lg text-[#0e6b7c] hover:text-[#0f172a] font-semibold transition-colors">データの根拠を確認する →</Link>
