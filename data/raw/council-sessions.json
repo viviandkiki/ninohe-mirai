@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-26T07:40:45.101Z",
+  "fetchedAt": "2026-10-27T07:38:25.488Z",
   "sessions": [
     {
       "id": "r8-10-teireikai",
@@ -12,7 +12,7 @@
       "pdfs": {
         "schedule": "https://www.city.ninohe.lg.jp/div/gikai/pdf/gikai/R8_10_singinittei.pdf",
         "questions": "https://www.city.ninohe.lg.jp/div/gikai/pdf/gikai/R8_10_ippan.pdf",
-        "results": null
+        "results": "https://www.city.ninohe.lg.jp/div/gikai/pdf/gikai/2026_10giketukekka.pdf"
       },
       "sourceUrl": "https://www.city.ninohe.lg.jp/Info/4487"
     },
